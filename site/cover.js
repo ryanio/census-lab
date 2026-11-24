@@ -127,11 +127,10 @@ function tenurePrint(parent, d) {
 function initCover() {
   el("edition-count").textContent = studies.length + " studies";
   for (const study of studies) {
-    const url = "#" + study.id,
-      nav = link(study.nav, url);
+    const url = studyURL(study.id),
+      nav = document.querySelector('[data-tab="' + study.id + '"]');
+    nav.href = url;
     nav.prepend(icon(study.icon));
-    nav.dataset.tab = study.id;
-    el("publication").append(nav);
     const card = link("", url);
     card.className = "edition-card " + study.theme;
     const print = node("div");

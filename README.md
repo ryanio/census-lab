@@ -22,6 +22,10 @@ Edit the layout in `site/template.html`, the shared type, color and spacing rule
 
 Run `python3 render.py 2026-11-24` to rebuild the standalone HTML from the checked-in edition records. Use `--check` to detect a stale build. The output runs from disk and at a Pages project subpath.
 
+## Search and sharing
+
+The root and the three edition pages (`overlap.html`, `traits.html`, and `hands.html`) have permanent URLs. Their initial HTML includes findings from the edition records, authorship, canonical links and social previews. Dataset metadata links to dated CSVs. The Pages build generates `sitemap.xml`. Regenerate the favicon and share-card PNGs with `python3 social_art.py` when the artwork changes (requires rsvg-convert).
+
 ## Refresh and preview
 
 Use Python 3.11 or later from the repo root. OpenSea reads use `OPENSEA_API_KEY`, the log replay also uses `ETHERSCAN_API_KEY` and `ALCHEMY_API_KEY`. Choose a fresh UTC date for a new crawl. Completed collections for a date are cached locally to resume interrupted runs.

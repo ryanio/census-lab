@@ -3,11 +3,42 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Census | NFT field studies</title>
-    <meta
-      name="description"
-      content="An illustrated census of Ethereum NFT communities, traits and holding histories."
-    />
+    <title>Census | Ethereum NFT field studies</title>
+<link rel="sitemap" type="application/xml" href="https://ryanio.github.io/census-lab/sitemap.xml">
+<link rel="canonical" href="https://ryanio.github.io/census-lab/">
+<link rel="icon" type="image/svg+xml" href="https://ryanio.github.io/census-lab/assets/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="https://ryanio.github.io/census-lab/assets/favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://ryanio.github.io/census-lab/assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Census">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Census | Ethereum NFT field studies">
+<meta property="og:description" content="Explore holder overlap across 50 Ethereum NFT collections, trait frequencies and listing floors, and onchain holding histories. Field studies by Ryan Ghods.">
+<meta property="og:url" content="https://ryanio.github.io/census-lab/">
+<meta property="og:image" content="https://ryanio.github.io/census-lab/assets/home.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Census | Ethereum NFT field studies">
+<meta name="description" content="Explore holder overlap across 50 Ethereum NFT collections, trait frequencies and listing floors, and onchain holding histories. Field studies by Ryan Ghods.">
+<meta name="author" content="Ryan Ghods">
+<meta name="theme-color" content="#19171e">
+<meta name="robots" content="max-image-preview:large">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@r_alx_z">
+<meta name="twitter:title" content="Census | Ethereum NFT field studies">
+<meta name="twitter:description" content="Explore holder overlap across 50 Ethereum NFT collections, trait frequencies and listing floors, and onchain holding histories. Field studies by Ryan Ghods.">
+<meta name="twitter:image" content="https://ryanio.github.io/census-lab/assets/home.png">
+<meta name="twitter:image:alt" content="Census | Ethereum NFT field studies">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://ryanio.github.io/census-lab/#website", "url": "https://ryanio.github.io/census-lab/", "name": "Census", "creator": {"@type": "Person", "name": "Ryan Ghods", "url": "https://ryanio.com/", "sameAs": ["https://x.com/r_alx_z", "https://github.com/ryanio"]}}, {"@type": "CollectionPage", "@id": "https://ryanio.github.io/census-lab/#page", "url": "https://ryanio.github.io/census-lab/", "name": "Census | Ethereum NFT field studies", "description": "Explore holder overlap across 50 Ethereum NFT collections, trait frequencies and listing floors, and onchain holding histories. Field studies by Ryan Ghods.", "inLanguage": "en", "isPartOf": {"@id": "https://ryanio.github.io/census-lab/#website"}, "image": "https://ryanio.github.io/census-lab/assets/home.png", "author": {"@type": "Person", "name": "Ryan Ghods", "url": "https://ryanio.com/", "sameAs": ["https://x.com/r_alx_z", "https://github.com/ryanio"]}, "hasPart": [{"@type": "WebPage", "url": "https://ryanio.github.io/census-lab/overlap.html", "name": "NFT holder overlap map | Census"}, {"@type": "WebPage", "url": "https://ryanio.github.io/census-lab/traits.html", "name": "NFT trait frequencies and listing floors | Census"}, {"@type": "WebPage", "url": "https://ryanio.github.io/census-lab/hands.html", "name": "Diamond hands: NFT holding histories | Census"}]}]}</script>
+    <script>
+      // Preserve shared fragment links when opening the former single-page site.
+      const legacyStudy = location.hash.slice(1).split("/")[0];
+      if (location.protocol !== "file:" && ["home","overlap","traits","hands"].includes(legacyStudy) && legacyStudy !== "home") {
+        const page = legacyStudy === "home" ? "./" : legacyStudy + ".html";
+        location.replace(page + location.search + (location.hash.includes("/") ? location.hash : ""));
+      }
+    </script>
     <style>
       :root {
   --paper: #f4f1e9;
@@ -705,6 +736,8 @@ nav .icon {
   opacity: 0.35;
 }
 .hover-card {
+  top: 0;
+  left: 0;
   pointer-events: none;
   position: absolute;
   z-index: 1;
@@ -776,9 +809,30 @@ nav .icon {
   font-size: 14px;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  .hover-card {
+    transition: transform 100ms ease-out;
+  }
+  .hover-card:not([hidden]) {
+    animation: atlas-appear 120ms ease-out;
+  }
+  #ribbons g:has(> [data-pair]),
+  #ribbons [data-slug] {
+    transition: opacity 120ms ease-out;
+  }
+  @keyframes atlas-appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
     </style>
   </head>
-  <body>
+  <body data-entry="home">
     <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" style="position:absolute"><desc>ISC License
 
 Copyright (c) 2026 Lucide Icons and Contributors
@@ -854,8 +908,8 @@ SOFTWARE.
     <a class="skip" href="#content">Skip to content</a>
     <header>
       <div class="mast">
-        <a class="brand" href="#home"><i aria-hidden="true">✳</i> Census</a>
-        <nav id="publication" aria-label="Editions"></nav>
+        <a class="brand" href="./"><i aria-hidden="true">✳</i> Census</a>
+        <nav id="publication" aria-label="Editions"><a data-tab="overlap" href="overlap.html">Overlap map</a><a data-tab="traits" href="traits.html">Traits</a><a data-tab="hands" href="hands.html">Diamond hands</a></nav>
         <nav class="external" aria-label="Other Census sites">
           <a href="https://ryanio.github.io/pfp-census/"
             ><svg class="icon" aria-hidden="true">
@@ -872,7 +926,7 @@ SOFTWARE.
       </div>
     </header>
     <main id="content" tabindex="-1">
-      <section id="home">
+      <section id="home" >
         <div class="front">
           <div class="front-in">
             <div class="intro">
@@ -882,14 +936,14 @@ SOFTWARE.
                 Explore the wallets, artwork and holding histories of Ethereum
                 NFT collections.
               </p>
-              <a class="primary" id="map-link" href="#overlap"
+              <a class="primary" id="map-link" href="overlap.html"
                 ><svg class="icon" aria-hidden="true">
                   <use href="#icon-network" />
                 </svg>
                 Explore the overlap map</a
               >
               <div class="issue">
-                <span>Edition</span> <time id="date"></time>
+                <span>Edition</span> <time id="date">2026-11-24</time>
               </div>
             </div>
             <figure class="atlas">
@@ -930,11 +984,12 @@ SOFTWARE.
             <span id="edition-count"></span>
           </div>
           <div id="editions"></div>
+          <noscript><p>Explore holder overlap across 50 Ethereum NFT collections, trait frequencies and listing floors, and onchain holding histories. Field studies by Ryan Ghods.</p></noscript>
         </div>
       </section>
       <section id="overlap" class="study" hidden>
         <h1>Community overlap</h1>
-        <p>
+        <p>Across 1,225 NFT collection pairs, Mutant Ape Yacht Club and Bored Ape Kennel Club share the most holder addresses (2,872).
           Which collections share the most holder addresses? Choose a collection
           to find its five closest neighbors across this Ethereum sample.
         </p>
@@ -977,7 +1032,7 @@ SOFTWARE.
       </section>
       <section id="traits" class="study" hidden>
         <h1>Trait studies</h1>
-        <p>
+        <p>Explore 38,900 text trait values across 50 Ethereum NFT collections. Compare rare and common traits, listed ETH floors, and illustrated backgrounds.
           Explore the rarest and most common text traits in each collection. In
           the background strip, each example occupies a share proportional to
           its trait count.
@@ -1025,7 +1080,7 @@ SOFTWARE.
       </section>
       <section id="hands" class="study" hidden>
         <h1>Diamond hands</h1>
-        <p>
+        <p>Of 736 verified tokens across Autoglyphs and DEAFBEEF, 67 have stayed at their mint-recipient address continuously.
           How long has each NFT been in its current wallet? Tenure starts at the
           most recent change of address. A self-transfer keeps the clock
           running.
@@ -1203,11 +1258,10 @@ function tenurePrint(parent, d) {
 function initCover() {
   el("edition-count").textContent = studies.length + " studies";
   for (const study of studies) {
-    const url = "#" + study.id,
-      nav = link(study.nav, url);
+    const url = studyURL(study.id),
+      nav = document.querySelector('[data-tab="' + study.id + '"]');
+    nav.href = url;
     nav.prepend(icon(study.icon));
-    nav.dataset.tab = study.id;
-    el("publication").append(nav);
     const card = link("", url);
     card.className = "edition-card " + study.theme;
     const print = node("div");
@@ -1393,22 +1447,10 @@ function initAtlas() {
       y = pointer ? pointer.y - box.top : box.height * 0.56;
     const w = card.offsetWidth,
       h = card.offsetHeight;
-    card.style.left =
-      Math.max(
-        pad,
-        Math.min(
-          box.width - w - pad,
-          x + w + 16 <= box.width ? x + 14 : x - w - 14,
-        ),
-      ) + "px";
-    card.style.top =
-      Math.max(
-        pad,
-        Math.min(
-          box.height - h - pad,
-          y + h + 16 <= box.height ? y + 14 : y - h - 14,
-        ),
-      ) + "px";
+    // Clamp continuously at the edges; flipping sides makes the card jump a full card width.
+    const left = Math.max(pad, Math.min(box.width - w - pad, x + 16));
+    const top = Math.max(pad, Math.min(box.height - h - pad, y + 16));
+    card.style.transform = `translate3d(${left}px, ${top}px, 0)`;
   }
   function person(slug, share) {
     const row = node("div");
@@ -1482,31 +1524,61 @@ function initAtlas() {
       last = focus;
     }
     const lead = pinned || filter.value || pairs.at(-1);
-    el("map-link").href = lead
-      ? "#overlap/" + (typeof lead === "string" ? lead : lead.a)
-      : "#overlap";
+    el("map-link").href = studyURL(
+      "overlap",
+      typeof lead === "string" ? lead : lead?.a,
+    );
     position();
   }
+  let pending, timer, frame;
+  function cancelHover() {
+    clearTimeout(timer);
+    cancelAnimationFrame(frame);
+    pending = undefined;
+    frame = 0;
+  }
+  function consider(next) {
+    if (next === pending) return;
+    clearTimeout(timer);
+    pending = next;
+    if (next === hover) return;
+    timer = setTimeout(
+      () => {
+        hover = next;
+        if (!next && !pinned) pointer = null;
+        refresh();
+      },
+      next ? 95 : 140,
+    );
+  }
   function reset() {
+    cancelHover();
     pinned = hover = pointer = null;
     filter.value = "";
     refresh();
   }
   filter.onchange = () => {
+    cancelHover();
     pinned = hover = pointer = null;
     refresh();
   };
   chart.onpointermove = (e) => {
     if (e.pointerType === "touch") return;
-    hover = target(e);
     pointer = { x: e.clientX, y: e.clientY };
-    refresh();
+    if (!frame)
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        consider(target({ clientX: pointer.x, clientY: pointer.y }));
+        position();
+      });
   };
   chart.onpointerleave = () => {
-    hover = pointer = null;
-    refresh();
+    cancelAnimationFrame(frame);
+    frame = 0;
+    consider(null);
   };
   chart.onclick = (e) => {
+    cancelHover();
     const hit = target(e);
     if (!hit || hit === pinned) {
       reset();
@@ -1521,6 +1593,7 @@ function initAtlas() {
   chart.onkeydown = (e) => {
     if (!["ArrowLeft", "ArrowRight", "Escape"].includes(e.key)) return;
     e.preventDefault();
+    cancelHover();
     if (e.key === "Escape") {
       reset();
       return;
@@ -1579,8 +1652,13 @@ el("date").textContent = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   timeZone: "UTC",
 }).format(new Date(data.edition + "T00:00:00Z"));
+function studyURL(tab, slug) {
+  const fragment = "#" + tab + (slug ? "/" + slug : "");
+  if (location.protocol === "file:") return fragment;
+  return (tab === "home" ? "./" : tab + ".html") + (slug ? fragment : "");
+}
 function navigate(tab, slug) {
-  location.hash = tab + (slug ? "/" + slug : "");
+  location.href = studyURL(tab, slug);
 }
 function getPairs(s) {
   return data.pairs
@@ -1648,7 +1726,7 @@ function map(s) {
       ...visible.map((r) => {
         const tr = node("tr"),
           cell = node("td"),
-          a = link(names[r.other], "#overlap/" + r.other);
+          a = link(names[r.other], studyURL("overlap", r.other));
         cell.append(a);
         tr.append(
           cell,
@@ -1877,6 +1955,7 @@ function hands(slug) {
 }
 function render() {
   let [tab, s] = location.hash.slice(1).split("/");
+  if (!tab) tab = document.body.dataset.entry;
   if (tab !== "home" && !studies.some((study) => study.id === tab))
     tab = "home";
   if (tab === "hands") {
@@ -1920,7 +1999,7 @@ function startAnalytics() {
   let referrer = document.referrer;
   return (tab) => {
     const url = new URL(location.href);
-    url.hash = tab === "home" ? "" : tab;
+    url.hash = "";
     gtag("event", "page_view", {
       page_title: el(tab)
         .querySelector("h1")
@@ -1954,6 +2033,8 @@ document.querySelector(".skip").onclick = (event) => {
 for (const [slug, series] of Object.entries(data.holdings))
   el("hold-series").add(new Option(series.name, slug));
 el("hold-series").onchange = (e) => navigate("hands", e.target.value);
+if (location.protocol === "file:")
+  document.querySelector("header .brand").href = "#home";
 initCover();
 render();
 lastTab = document.body.dataset.edition;

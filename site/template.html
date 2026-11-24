@@ -3,22 +3,26 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Census | NFT field studies</title>
-    <meta
-      name="description"
-      content="An illustrated census of Ethereum NFT communities, traits and holding histories."
-    />
+    <!--__METADATA__-->
+    <script>
+      // Preserve shared fragment links when opening the former single-page site.
+      const legacyStudy = location.hash.slice(1).split("/")[0];
+      if (location.protocol !== "file:" && ["home","overlap","traits","hands"].includes(legacyStudy) && legacyStudy !== "__ENTRY__") {
+        const page = legacyStudy === "home" ? "./" : legacyStudy + ".html";
+        location.replace(page + location.search + (location.hash.includes("/") ? location.hash : ""));
+      }
+    </script>
     <style>
       /*__STYLE__*/
     </style>
   </head>
-  <body>
+  <body data-entry="__ENTRY__">
     <!--__ICONS__-->
     <a class="skip" href="#content">Skip to content</a>
     <header>
       <div class="mast">
-        <a class="brand" href="#home"><i aria-hidden="true">✳</i> Census</a>
-        <nav id="publication" aria-label="Editions"></nav>
+        <a class="brand" href="./"><i aria-hidden="true">✳</i> Census</a>
+        <nav id="publication" aria-label="Editions"><!--__NAV__--></nav>
         <nav class="external" aria-label="Other Census sites">
           <a href="https://ryanio.github.io/pfp-census/"
             ><svg class="icon" aria-hidden="true">
@@ -35,7 +39,7 @@
       </div>
     </header>
     <main id="content" tabindex="-1">
-      <section id="home">
+      <section id="home" __VISIBLE_home__>
         <div class="front">
           <div class="front-in">
             <div class="intro">
@@ -45,14 +49,14 @@
                 Explore the wallets, artwork and holding histories of Ethereum
                 NFT collections.
               </p>
-              <a class="primary" id="map-link" href="#overlap"
+              <a class="primary" id="map-link" href="overlap.html"
                 ><svg class="icon" aria-hidden="true">
                   <use href="#icon-network" />
                 </svg>
                 Explore the overlap map</a
               >
               <div class="issue">
-                <span>Edition</span> <time id="date"></time>
+                <span>Edition</span> <time id="date">__DATE__</time>
               </div>
             </div>
             <figure class="atlas">
@@ -93,11 +97,12 @@
             <span id="edition-count"></span>
           </div>
           <div id="editions"></div>
+          <noscript><p><!--__SUMMARY_home__--></p></noscript>
         </div>
       </section>
-      <section id="overlap" class="study" hidden>
+      <section id="overlap" class="study" __VISIBLE_overlap__>
         <h1>Community overlap</h1>
-        <p>
+        <p><!--__SUMMARY_overlap__-->
           Which collections share the most holder addresses? Choose a collection
           to find its five closest neighbors across this Ethereum sample.
         </p>
@@ -138,9 +143,9 @@
           <a href="coverage.csv">Crawl windows</a>
         </p>
       </section>
-      <section id="traits" class="study" hidden>
+      <section id="traits" class="study" __VISIBLE_traits__>
         <h1>Trait studies</h1>
-        <p>
+        <p><!--__SUMMARY_traits__-->
           Explore the rarest and most common text traits in each collection. In
           the background strip, each example occupies a share proportional to
           its trait count.
@@ -186,9 +191,9 @@
           <a href="backgrounds.csv">Illustrated backgrounds</a>
         </p>
       </section>
-      <section id="hands" class="study" hidden>
+      <section id="hands" class="study" __VISIBLE_hands__>
         <h1>Diamond hands</h1>
-        <p>
+        <p><!--__SUMMARY_hands__-->
           How long has each NFT been in its current wallet? Tenure starts at the
           most recent change of address. A self-transfer keeps the clock
           running.

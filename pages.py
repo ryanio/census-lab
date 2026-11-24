@@ -5,7 +5,8 @@ import shutil
 from datetime import date
 from pathlib import Path
 
-from render import render
+from discovery import PAGES, ROOT, page_path
+from render import SITE, render
 
 ASSETS = (
     "index.html",
@@ -29,6 +30,8 @@ def package(destination):
     if (latest / "index.html").read_text() != render(latest):
         raise ValueError(f"Rebuild {latest} before packaging")
     destination.mkdir(parents=True, exist_ok=False)
+    shutil.copytree(SITE / "assets", destination / "assets")
+    urls = []
     for edition in editions:
         date.fromisoformat(edition.name)
         archive = destination / edition
@@ -37,6 +40,20 @@ def package(destination):
             shutil.copyfile(edition / name, archive / name)
             if edition == editions[-1]:
                 shutil.copyfile(edition / name, destination / name)
+        base = ROOT if edition == latest else ROOT + edition.as_posix() + "/"
+        for entry in PAGES:
+            name = page_path(entry) or "index.html"
+            html = render(edition, entry, base)
+            (archive / name).write_text(html)
+            if edition == latest:
+                (destination / name).write_text(html)
+            urls.append(base + page_path(entry))
+    entries = "".join(f"<url><loc>{url}</loc></url>" for url in urls)
+    (destination / "sitemap.xml").write_text(
+        '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        + entries
+        + "</urlset>\n"
+    )
     (destination / ".nojekyll").touch()
 
 

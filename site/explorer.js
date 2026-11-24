@@ -24,8 +24,13 @@ el("date").textContent = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
   timeZone: "UTC",
 }).format(new Date(data.edition + "T00:00:00Z"));
+function studyURL(tab, slug) {
+  const fragment = "#" + tab + (slug ? "/" + slug : "");
+  if (location.protocol === "file:") return fragment;
+  return (tab === "home" ? "./" : tab + ".html") + (slug ? fragment : "");
+}
 function navigate(tab, slug) {
-  location.hash = tab + (slug ? "/" + slug : "");
+  location.href = studyURL(tab, slug);
 }
 function getPairs(s) {
   return data.pairs
@@ -93,7 +98,7 @@ function map(s) {
       ...visible.map((r) => {
         const tr = node("tr"),
           cell = node("td"),
-          a = link(names[r.other], "#overlap/" + r.other);
+          a = link(names[r.other], studyURL("overlap", r.other));
         cell.append(a);
         tr.append(
           cell,
@@ -322,6 +327,7 @@ function hands(slug) {
 }
 function render() {
   let [tab, s] = location.hash.slice(1).split("/");
+  if (!tab) tab = document.body.dataset.entry;
   if (tab !== "home" && !studies.some((study) => study.id === tab))
     tab = "home";
   if (tab === "hands") {
@@ -365,7 +371,7 @@ function startAnalytics() {
   let referrer = document.referrer;
   return (tab) => {
     const url = new URL(location.href);
-    url.hash = tab === "home" ? "" : tab;
+    url.hash = "";
     gtag("event", "page_view", {
       page_title: el(tab)
         .querySelector("h1")
@@ -399,6 +405,8 @@ document.querySelector(".skip").onclick = (event) => {
 for (const [slug, series] of Object.entries(data.holdings))
   el("hold-series").add(new Option(series.name, slug));
 el("hold-series").onchange = (e) => navigate("hands", e.target.value);
+if (location.protocol === "file:")
+  document.querySelector("header .brand").href = "#home";
 initCover();
 render();
 lastTab = document.body.dataset.edition;

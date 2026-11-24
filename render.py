@@ -7,6 +7,8 @@ import json
 from html import escape
 from pathlib import Path
 
+from discovery import PAGES, ROOT, descriptions, metadata, page_path
+
 HOLD_COLLECTIONS = {"autoglyphs": "Autoglyphs", "deafbeef": "DEAFBEEF"}
 
 SITE = Path(__file__).parent / "site"
@@ -17,7 +19,7 @@ def read_csv(path):
         return list(csv.DictReader(file))
 
 
-def render(directory):
+def render(directory, entry="home", base=ROOT):
     pairs = read_csv(directory / "overlap.csv")
     for pair in pairs:
         for key in ("shared", "holders_a", "holders_b", "top100_shared"):
@@ -57,6 +59,20 @@ def render(directory):
         "traits": trait_index,
     }
     page = (SITE / "template.html").read_text()
+    summaries = descriptions(snapshot)
+    page = page.replace(
+        "<!--__METADATA__-->", metadata(entry, snapshot, base, summaries[entry])
+    )
+    page = page.replace("__ENTRY__", entry).replace("__DATE__", directory.name)
+    nav = "".join(
+        f'<a data-tab="{key}" href="{page_path(key)}">{label}</a>'
+        for key, (_, label, _) in PAGES.items()
+        if key != "home"
+    )
+    page = page.replace("<!--__NAV__-->", nav)
+    for key in PAGES:
+        page = page.replace(f"__VISIBLE_{key}__", "" if key == entry else "hidden")
+        page = page.replace(f"<!--__SUMMARY_{key}__-->", escape(summaries[key]))
     for marker, source in [
         ("STYLE", "publication.css"),
         ("COVER", "cover.js"),

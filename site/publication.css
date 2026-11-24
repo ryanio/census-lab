@@ -694,6 +694,8 @@ nav .icon {
   opacity: 0.35;
 }
 .hover-card {
+  top: 0;
+  left: 0;
   pointer-events: none;
   position: absolute;
   z-index: 1;
@@ -763,4 +765,25 @@ nav .icon {
 }
 .holds-heading a {
   font-size: 14px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hover-card {
+    transition: transform 100ms ease-out;
+  }
+  .hover-card:not([hidden]) {
+    animation: atlas-appear 120ms ease-out;
+  }
+  #ribbons g:has(> [data-pair]),
+  #ribbons [data-slug] {
+    transition: opacity 120ms ease-out;
+  }
+  @keyframes atlas-appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }

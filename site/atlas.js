@@ -167,22 +167,10 @@ function initAtlas() {
       y = pointer ? pointer.y - box.top : box.height * 0.56;
     const w = card.offsetWidth,
       h = card.offsetHeight;
-    card.style.left =
-      Math.max(
-        pad,
-        Math.min(
-          box.width - w - pad,
-          x + w + 16 <= box.width ? x + 14 : x - w - 14,
-        ),
-      ) + "px";
-    card.style.top =
-      Math.max(
-        pad,
-        Math.min(
-          box.height - h - pad,
-          y + h + 16 <= box.height ? y + 14 : y - h - 14,
-        ),
-      ) + "px";
+    // Clamp continuously at the edges; flipping sides makes the card jump a full card width.
+    const left = Math.max(pad, Math.min(box.width - w - pad, x + 16));
+    const top = Math.max(pad, Math.min(box.height - h - pad, y + 16));
+    card.style.transform = `translate3d(${left}px, ${top}px, 0)`;
   }
   function person(slug, share) {
     const row = node("div");
@@ -256,31 +244,61 @@ function initAtlas() {
       last = focus;
     }
     const lead = pinned || filter.value || pairs.at(-1);
-    el("map-link").href = lead
-      ? "#overlap/" + (typeof lead === "string" ? lead : lead.a)
-      : "#overlap";
+    el("map-link").href = studyURL(
+      "overlap",
+      typeof lead === "string" ? lead : lead?.a,
+    );
     position();
   }
+  let pending, timer, frame;
+  function cancelHover() {
+    clearTimeout(timer);
+    cancelAnimationFrame(frame);
+    pending = undefined;
+    frame = 0;
+  }
+  function consider(next) {
+    if (next === pending) return;
+    clearTimeout(timer);
+    pending = next;
+    if (next === hover) return;
+    timer = setTimeout(
+      () => {
+        hover = next;
+        if (!next && !pinned) pointer = null;
+        refresh();
+      },
+      next ? 95 : 140,
+    );
+  }
   function reset() {
+    cancelHover();
     pinned = hover = pointer = null;
     filter.value = "";
     refresh();
   }
   filter.onchange = () => {
+    cancelHover();
     pinned = hover = pointer = null;
     refresh();
   };
   chart.onpointermove = (e) => {
     if (e.pointerType === "touch") return;
-    hover = target(e);
     pointer = { x: e.clientX, y: e.clientY };
-    refresh();
+    if (!frame)
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        consider(target({ clientX: pointer.x, clientY: pointer.y }));
+        position();
+      });
   };
   chart.onpointerleave = () => {
-    hover = pointer = null;
-    refresh();
+    cancelAnimationFrame(frame);
+    frame = 0;
+    consider(null);
   };
   chart.onclick = (e) => {
+    cancelHover();
     const hit = target(e);
     if (!hit || hit === pinned) {
       reset();
@@ -295,6 +313,7 @@ function initAtlas() {
   chart.onkeydown = (e) => {
     if (!["ArrowLeft", "ArrowRight", "Escape"].includes(e.key)) return;
     e.preventDefault();
+    cancelHover();
     if (e.key === "Escape") {
       reset();
       return;
