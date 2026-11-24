@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Census | NFT field studies</title>
+    <meta
+      name="description"
+      content="An illustrated census of Ethereum NFT communities, traits and holding histories."
+    />
+    <style>
+      /*__STYLE__*/
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#content">Skip to content</a>
+    <header>
+      <div class="mast">
+        <a class="brand" href="#home"><i aria-hidden="true">✳</i> Census</a>
+        <nav id="publication" aria-label="Editions"></nav>
+        <nav class="external" aria-label="Other Census sites">
+          <a href="https://ryanio.github.io/pfp-census/">PFP Census ↗</a
+          ><a href="https://ryanio.github.io/card-census/">Card Census ↗</a>
+        </nav>
+      </div>
+    </header>
+    <main id="content" tabindex="-1">
+      <section id="home">
+        <div class="front">
+          <div class="front-in">
+            <div class="intro">
+              <p class="kicker"><i></i> Ethereum field studies</p>
+              <h1>The NFT<br /><em>Census</em></h1>
+              <p class="dek">
+                Who holds what, which traits recur, and how long the art stays
+                in one wallet.
+              </p>
+              <a class="primary" id="map-link" href="#overlap"
+                >Explore the overlap map <b>↗</b></a
+              >
+              <div class="issue">
+                <span>Edition</span> <time id="date"></time>
+              </div>
+            </div>
+            <figure class="atlas">
+              <div class="plate">
+                <canvas
+                  id="ribbons"
+                  aria-label="Collection overlap diagram. Use the collection selector to inspect the same data."
+                ></canvas>
+              </div>
+              <figcaption>
+                <div>
+                  <span class="kicker">Holder overlap</span
+                  ><label
+                    ><span class="sr">Highlight collection</span
+                    ><select id="highlight">
+                      <option value="">All collections</option>
+                    </select></label
+                  >
+                </div>
+                <p id="readout" aria-live="polite"></p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+        <div class="library">
+          <div class="section-head">
+            <h2>Field editions</h2>
+            <span id="edition-count"></span>
+          </div>
+          <div id="editions"></div>
+        </div>
+      </section>
+      <section id="overlap" class="study" hidden>
+        <h1>Community overlap</h1>
+        <p>
+          Which collections share the most holder addresses? Choose a collection
+          to find its five closest neighbors across this Ethereum sample.
+        </p>
+        <div class="tools">
+          <label
+            >Collection
+            <select id="community"></select></label
+          ><button id="download">Save neighbor card</button>
+        </div>
+        <figure>
+          <div id="map"></div>
+          <figcaption class="note">
+            Thicker connections mean more shared addresses. Select a neighbor to
+            explore its community.
+          </figcaption>
+        </figure>
+        <h2>Shared addresses</h2>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Neighbor</th>
+                <th>Shared</th>
+                <th>Of selected</th>
+                <th>Of neighbor</th>
+                <th>Both top 100</th>
+              </tr>
+            </thead>
+            <tbody id="neighbors"></tbody>
+          </table>
+        </div>
+        <p class="footer">
+          Each set includes every distinct address returned before the final
+          cursor. Contracts, custody wallets and multiple wallets held by one
+          person can affect the count. Collections were read over a rolling
+          window. <a href="overlap.csv">Pair data</a> ·
+          <a href="coverage.csv">Crawl windows</a>
+        </p>
+      </section>
+      <section id="traits" class="study" hidden>
+        <h1>Background studies</h1>
+        <p>
+          Explore the background labels artists used. Each strip shows an
+          example NFT, with width proportional to the number carrying that label
+          within the selected collection.
+        </p>
+        <div class="tools">
+          <label
+            >Collection
+            <select id="art"></select
+          ></label>
+        </div>
+        <div id="strips" class="palette"></div>
+        <div id="focus" class="detail" aria-live="polite"></div>
+        <h2>Original labels</h2>
+        <div class="tablewrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Background</th>
+                <th>NFTs</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody id="labels"></tbody>
+          </table>
+        </div>
+        <p class="footer">
+          Includes text categories named Background, Background Color or
+          Backgrounds, ignoring case. Labels retain their original spelling.
+          Widths use the sum of matching trait counts.
+          <a href="backgrounds.csv">Background data</a>
+        </p>
+      </section>
+      <section id="hands" class="study" hidden>
+        <h1>Diamond hands</h1>
+        <p>
+          How long has each Autoglyph been in its current wallet? Tenure starts
+          at the most recent change of address. A self-transfer keeps the clock
+          running.
+        </p>
+        <div id="metrics" class="metrics"></div>
+        <h2>Time in current wallet</h2>
+        <div class="bars" id="hist"></div>
+        <h2>Longest current holds</h2>
+        <div class="scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Autoglyph</th>
+                <th>Held since (UTC)</th>
+                <th>History</th>
+              </tr>
+            </thead>
+            <tbody id="longest"></tbody>
+          </table>
+        </div>
+        <p class="footer" id="block"></p>
+      </section>
+    </main>
+    <footer>
+      <a class="brand" href="#home">✳ Census</a
+      ><a href="https://github.com/ryanio/census-lab">Source and datasets ↗</a>
+    </footer>
+    <script type="application/json" id="data">
+      "__EDITION_DATA__"
+    </script>
+    <script>
+      /*__COVER__*/
+    </script>
+    <script>
+      /*__EXPLORER__*/
+    </script>
+  </body>
+</html>

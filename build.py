@@ -7,6 +7,7 @@ import json
 from pathlib import Path
 
 from cohort import SLUGS
+from render import render
 
 
 def load(path):
@@ -23,7 +24,6 @@ def write_csv(path, rows):
 def build(edition):
     cache = Path(".cache") / edition
     output = Path("editions") / edition
-    names = load(Path("names.json"))
     holder_data = {slug: load(cache / "holders" / (slug + ".json")) for slug in SLUGS}
     holders = {slug: set(batch["addresses"]) for slug, batch in holder_data.items()}
     pairs = []
@@ -64,16 +64,7 @@ def build(edition):
     write_csv(output / "overlap.csv", pairs)
     write_csv(output / "backgrounds.csv", colors)
     write_csv(output / "holds.csv", diamond["rows"])
-    data = {
-        "edition": edition,
-        "names": names,
-        "pairs": pairs,
-        "colors": colors,
-        "diamond": diamond,
-    }
-    encoded = json.dumps(data, separators=(",", ":")).replace("<", r"\u003c")
-    page = Path("template.html").read_text().replace('"__EDITION_DATA__"', encoded)
-    (output / "index.html").write_text(page)
+    (output / "index.html").write_text(render(output))
     print(
         len(pairs),
         "pairs,",

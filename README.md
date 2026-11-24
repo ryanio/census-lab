@@ -16,6 +16,12 @@ The 25 Ethereum collections are a fixed editorial sample drawn from the PFP Cens
 
 The palette retains each artist's labels. Strip width follows count within the selected collection, and the imagery comes from an example NFT. Seven example links were checked against item metadata. The holding clock measures time at an address and resets after a transfer to another wallet, including an eventual return. Autoglyphs #1, #2 and #3 also matched OpenSea's current indexed owners and latest move dates. [Backgrounds](editions/2026-11-24/backgrounds.csv) · [Holding histories](editions/2026-11-24/holds.csv)
 
+## Site design and offline builds
+
+Edit the layout in `site/template.html`, the shared type, color and spacing rules in `site/publication.css`, and the edition interactions in `site/explorer.js`. The study registry in `site/cover.js` supplies each header link and cover card. Its overlap ribbons use pair counts, the background contact sheet shows sample NFTs, and each holding-history tile represents one token.
+
+Run `python3 render.py 2026-11-24` to rebuild the standalone HTML from the checked-in edition records. Use `--check` to detect a stale build. The output runs from disk and at a Pages project subpath.
+
 ## Refresh and preview
 
 Use Python 3.11 or later from the repo root. OpenSea reads use `OPENSEA_API_KEY`, the log replay also uses `ETHERSCAN_API_KEY` and `ALCHEMY_API_KEY`. Choose a fresh UTC date for a new crawl. Completed collections for a date are cached locally to resume interrupted runs.

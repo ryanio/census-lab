@@ -5,6 +5,8 @@ import shutil
 from datetime import date
 from pathlib import Path
 
+from render import render
+
 ASSETS = (
     "index.html",
     "backgrounds.csv",
@@ -20,6 +22,9 @@ def package(destination):
     editions = sorted(path.parent for path in Path("editions").glob("*/index.html"))
     if not editions:
         raise ValueError("No editions to publish")
+    latest = editions[-1]
+    if (latest / "index.html").read_text() != render(latest):
+        raise ValueError(f"Rebuild {latest} before packaging")
     destination.mkdir(parents=True, exist_ok=False)
     for edition in editions:
         date.fromisoformat(edition.name)
