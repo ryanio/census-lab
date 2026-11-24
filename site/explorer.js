@@ -51,7 +51,7 @@ const positions = [
   [24, 79],
   [18, 35],
 ];
-function map(s) {
+function drawNeighbors(s) {
   const list = getPairs(s),
     box = el("map");
   box.replaceChildren();
@@ -85,6 +85,13 @@ function map(s) {
     box.append(b);
   });
   box.append(center);
+}
+function map(s) {
+  drawNeighbors(s);
+  const list = getPairs(s);
+  const headings = [
+    ...el("neighbors").closest("table").querySelectorAll("th"),
+  ].slice(1);
   const more = el("more-neighbors");
   function neighbors(expanded) {
     const visible = expanded ? list : list.slice(0, 8);
@@ -102,9 +109,14 @@ function map(s) {
         cell.append(a);
         tr.append(
           cell,
-          ...[fmt(r.n), r.of + "%", r.back + "%", r.top].map((v) =>
-            node("td", v),
-          ),
+          ...[fmt(r.n), r.of + "%", r.back + "%", r.top].map((value, index) => {
+            const cell = node("td"),
+              label = node("small", headings[index].textContent);
+            label.className = "stat-label";
+            label.setAttribute("aria-hidden", "true");
+            cell.append(label, String(value));
+            return cell;
+          }),
         );
         return tr;
       }),
@@ -157,7 +169,12 @@ function traits(s) {
   detail.replaceChildren();
   palette.hidden = !rows.length;
   palette.style.display = rows.length ? "flex" : "none";
+  const choice = el("background-choice");
+  choice.closest("label").hidden = !rows.length;
+  choice.replaceChildren(...rows.map((r, i) => new Option(r.value, String(i))));
+  choice.onchange = () => pick(rows[choice.selectedIndex]);
   function pick(r) {
+    choice.selectedIndex = rows.indexOf(r);
     detail.replaceChildren();
     if (r.image) {
       const im = node("img");
@@ -394,9 +411,9 @@ window.addEventListener("hashchange", () => {
   }
   lastTab = active;
 });
-window.addEventListener("resize", () => {
-  if (!el("overlap").hidden) map(el("community").value);
-});
+new ResizeObserver(() => {
+  if (!el("overlap").hidden) drawNeighbors(el("community").value);
+}).observe(el("map"));
 document.querySelector(".skip").onclick = (event) => {
   event.preventDefault();
   el("content").focus();

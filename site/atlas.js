@@ -151,6 +151,15 @@ function initAtlas() {
     hover = null,
     last = null,
     pointer = null;
+  const touchLayout = matchMedia("(hover: none) and (pointer: coarse)");
+  const slot = el("touch-detail"),
+    clear = el("clear-pin");
+  function placeCard() {
+    slot.hidden = !touchLayout.matches;
+    (touchLayout.matches ? slot : chart.parentElement).append(card);
+    last = undefined;
+    refresh();
+  }
   const bestFor = (slug) => pairs.findLast((p) => p.a === slug || p.b === slug);
   function target(event) {
     const element = document
@@ -160,7 +169,7 @@ function initAtlas() {
     return element.dataset.slug || pairs[Number(element.dataset.pair)];
   }
   function position() {
-    if (card.hidden) return;
+    if (card.hidden || touchLayout.matches) return;
     const box = chart.getBoundingClientRect(),
       pad = 6;
     const x = pointer ? pointer.x - box.left : box.width * 0.5,
@@ -193,7 +202,9 @@ function initAtlas() {
     const focus = hover || pinned || filter.value || null;
     if (focus !== last) {
       const slug = typeof focus === "string" ? focus : null,
-        pair = slug ? bestFor(slug) : focus;
+        pair = slug
+          ? bestFor(slug)
+          : focus || (touchLayout.matches ? pairs.at(-1) : null);
       overlay.replaceChildren();
       chart.classList.toggle("inspecting", !!focus);
       for (const g of rim.children)
@@ -216,12 +227,17 @@ function initAtlas() {
             );
         });
       }
+      clear.hidden = !touchLayout.matches || !focus;
       card.hidden = !pair;
       card.replaceChildren();
       if (pair) {
         const label = node(
           "small",
-          slug ? "Closest neighbor" : "Shared addresses",
+          !focus
+            ? "Largest overlap"
+            : slug
+              ? "Closest neighbor"
+              : "Shared addresses",
         );
         const count = node("b", fmt(pair.shared));
         card.append(
@@ -230,13 +246,14 @@ function initAtlas() {
           person(pair.a, pair.pct_a),
           person(pair.b, pair.pct_b),
         );
-        el("readout").textContent =
-          names[pair.a] +
-          " × " +
-          names[pair.b] +
-          " · " +
-          fmt(pair.shared) +
-          " shared addresses.";
+        el("readout").textContent = !focus
+          ? "Tap a collection or ribbon to inspect its shared holders."
+          : names[pair.a] +
+            " × " +
+            names[pair.b] +
+            " · " +
+            fmt(pair.shared) +
+            " shared addresses.";
       } else {
         el("readout").textContent =
           "Hover or tap a ribbon to compare two collections.";
@@ -339,7 +356,8 @@ function initAtlas() {
     if (e.key === "Escape" && !el("home").hidden) reset();
   });
   new ResizeObserver(position).observe(chart);
-  last = undefined;
+  clear.onclick = reset;
+  touchLayout.addEventListener("change", placeCard);
   drawAtlas = refresh;
-  refresh();
+  placeCard();
 }
