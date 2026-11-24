@@ -1,0 +1,7760 @@
+{
+  "started_utc": "2026-11-24T20:33:11.460757+00:00",
+  "top_100_overlap": [
+    {
+      "a": "azuki",
+      "b": "doodles-official",
+      "addresses_a": 100,
+      "addresses_b": 100,
+      "shared": 2
+    },
+    {
+      "a": "azuki",
+      "b": "pudgypenguins",
+      "addresses_a": 100,
+      "addresses_b": 100,
+      "shared": 5
+    },
+    {
+      "a": "doodles-official",
+      "b": "pudgypenguins",
+      "addresses_a": 100,
+      "addresses_b": 100,
+      "shared": 3
+    }
+  ],
+  "traits": {
+    "azuki": [
+      {
+        "category": "Background",
+        "value": "Cool Gray",
+        "count": 483,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.619
+        }
+      },
+      {
+        "category": "Background",
+        "value": "Dark Blue",
+        "count": 524,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Background",
+        "value": "Dark Purple",
+        "count": 463,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.64998
+        }
+      },
+      {
+        "category": "Background",
+        "value": "Off White A",
+        "count": 1814,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4493
+        }
+      },
+      {
+        "category": "Background",
+        "value": "Off White B",
+        "count": 1758,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.449795
+        }
+      },
+      {
+        "category": "Background",
+        "value": "Off White C",
+        "count": 1962,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5096
+        }
+      },
+      {
+        "category": "Background",
+        "value": "Off White D",
+        "count": 1990,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4524
+        }
+      },
+      {
+        "category": "Background",
+        "value": "Red",
+        "count": 1006,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.476999
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Alpine Jacket",
+        "count": 115,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.84
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Archer",
+        "count": 88,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.90618965
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Azuki Sweater",
+        "count": 129,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.99
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Azuki Tech Jacket",
+        "count": 199,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.45999999
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Azuki Track Jacket",
+        "count": 157,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.46
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Bandage Top",
+        "count": 62,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.478
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Beige Poncho",
+        "count": 36,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.3332
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Black Blazer",
+        "count": 94,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Black Bomber",
+        "count": 134,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.475
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Black Hoodie",
+        "count": 137,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Black Kimono",
+        "count": 129,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.44
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Black Ninja Top",
+        "count": 122,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.542399
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Black Oversized Kimono",
+        "count": 32,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Black Perfecto Jacket",
+        "count": 35,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.5555
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Black Qipao",
+        "count": 126,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4496
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Black T-Shirt",
+        "count": 77,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.9898
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Black Tech Jacket",
+        "count": 69,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.84999
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Black Yukata",
+        "count": 207,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.63
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Bloody Bomber",
+        "count": 128,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.4
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Blue Bikini",
+        "count": 93,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.808
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Blue Bomber",
+        "count": 130,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.64998
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Blue Floral Kimono",
+        "count": 186,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.449795
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Blue Kimono",
+        "count": 212,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4495
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Blue Kimono with Bow",
+        "count": 156,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Blue Qipao",
+        "count": 117,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4524
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Brown Yukata",
+        "count": 107,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.19
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Bumblebee Jacket",
+        "count": 102,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 12.33
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Camo Hoodie",
+        "count": 80,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Camo Tech Jacket",
+        "count": 80,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Cat Hoodie",
+        "count": 46,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.5
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Cat Kigurumi",
+        "count": 25,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Cat Kimono",
+        "count": 68,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Cat T-Shirt",
+        "count": 87,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.99
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Cat Yukata",
+        "count": 36,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.99
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Cloud Poncho",
+        "count": 42,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.93
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Denim Jacket",
+        "count": 82,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.93
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Dress Shirt",
+        "count": 155,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.75
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Frog Hoodie",
+        "count": 51,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.55
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Frog Kigurumi",
+        "count": 35,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.99
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Frog Kimono",
+        "count": 59,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Frog T-Shirt",
+        "count": 94,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.78
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Frog Yukata",
+        "count": 42,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Fur Hoodie",
+        "count": 145,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.75
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Golden Cat Kigurumi",
+        "count": 5,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Golden Frog Kigurumi",
+        "count": 10,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Golden Red Panda Kigurumi",
+        "count": 6,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Golden Sloth Kigurumi",
+        "count": 6,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Green Yukata",
+        "count": 208,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Hawaiian Shirt",
+        "count": 85,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.95
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Hoodie",
+        "count": 148,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5376884422110553
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Hoodie with Bag",
+        "count": 134,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.96
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Hoshi Jacket",
+        "count": 122,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.78
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Kimono with Jacket",
+        "count": 116,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Kimono with Straw Hat",
+        "count": 114,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.42
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Kung Fu Shirt",
+        "count": 112,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Lavender Kimono with Bow",
+        "count": 177,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.944
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Light Armor",
+        "count": 142,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.46
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Light Kimono",
+        "count": 311,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Maroon Yukata",
+        "count": 221,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.477
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Matsuri Happi",
+        "count": 88,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.39
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Pink Oversized Kimono",
+        "count": 71,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.26
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Plated Samurai Armor",
+        "count": 45,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Rain Jacket",
+        "count": 116,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Red Floral Kimono",
+        "count": 182,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.51
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Red Hoodie",
+        "count": 168,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.85
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Red Kimono",
+        "count": 95,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.52999
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Red Ninja Top",
+        "count": 140,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Red Panda Hoodie",
+        "count": 51,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Red Panda Kigurumi",
+        "count": 25,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Red Panda Kimono",
+        "count": 55,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Red Panda T-Shirt",
+        "count": 75,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Red Panda Yukata",
+        "count": 37,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.2
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Red Perfecto Jacket",
+        "count": 83,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.99
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Red Qipao with Fur",
+        "count": 82,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.5
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Shinto Robe",
+        "count": 125,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Sloth Hoodie",
+        "count": 54,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88888
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Sloth Kigurumi",
+        "count": 30,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.89
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Sloth Kimono",
+        "count": 47,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.9898
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Sloth T-Shirt",
+        "count": 91,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5424
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Sloth Yukata",
+        "count": 42,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Stitched Samurai Armor",
+        "count": 36,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.95
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Straw Poncho",
+        "count": 41,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Clothing",
+        "value": "Suikan",
+        "count": 74,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.19
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Suit with Turtleneck",
+        "count": 136,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Tank Top",
+        "count": 137,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.48
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Tank Top with Jacket",
+        "count": 117,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.5858
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Turquoise Kimono",
+        "count": 208,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5376884422110553
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Turquoise Kimono with Bow",
+        "count": 178,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.48
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Vegan Mink Coat",
+        "count": 81,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.476999
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Vest",
+        "count": 160,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4493
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "White Blazer",
+        "count": 102,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.909
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "White Hoodie",
+        "count": 109,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.59
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "White Layered Yukata",
+        "count": 155,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.6844221105527638
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "White Qipao with Fur",
+        "count": 84,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.0
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "White T-Shirt",
+        "count": 167,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "White Yukata",
+        "count": 167,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.8181
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Yellow Bikini",
+        "count": 94,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.694
+        }
+      },
+      {
+        "category": "Clothing",
+        "value": "Yellow Jumpsuit",
+        "count": 24,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.0
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Blue Bean",
+        "count": 16,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Ear",
+        "value": "Blue Cylinder",
+        "count": 22,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.5
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Blue Fan",
+        "count": 69,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Blue Tassel",
+        "count": 26,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Ear",
+        "value": "Cat",
+        "count": 23,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Ear",
+        "value": "Chill",
+        "count": 82,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.1
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Chiyogami",
+        "count": 81,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.7
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Corded Earbuds",
+        "count": 164,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.97999
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Dragon",
+        "count": 76,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 69.0
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Ear Cuffs",
+        "count": 85,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.19
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Ethereum",
+        "count": 40,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.6161
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Frog",
+        "count": 25,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Ear",
+        "value": "Hoop",
+        "count": 27,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Ear",
+        "value": "Pearl",
+        "count": 35,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.6565
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Red Bean",
+        "count": 14,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Ear",
+        "value": "Red Cylinder",
+        "count": 27,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.554999
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Red Panda",
+        "count": 35,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Ear",
+        "value": "Red Spiked Ring",
+        "count": 80,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 9.0
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Red Tassel",
+        "count": 33,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Ear",
+        "value": "Sakura",
+        "count": 61,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.49
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Skull Ear Cuffs",
+        "count": 70,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.4241
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Sloth",
+        "count": 22,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.768
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Small Hoop",
+        "count": 81,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Spiked Ring",
+        "count": 82,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.808
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Square Stud",
+        "count": 55,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.5
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Stud",
+        "count": 82,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Ear",
+        "value": "Sunflower",
+        "count": 35,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.619
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Sword",
+        "count": 67,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.90618965
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Wireless Earbuds",
+        "count": 85,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.45999999
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Wu",
+        "count": 69,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.7474
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Yellow Fan",
+        "count": 80,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.998
+        }
+      },
+      {
+        "category": "Ear",
+        "value": "Yin Yang",
+        "count": 70,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.95
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Amethyst",
+        "count": 386,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.476999
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Bored",
+        "count": 330,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Calm",
+        "count": 376,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.449795
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Careless",
+        "count": 381,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4493
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Chill",
+        "count": 392,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4495
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Closed",
+        "count": 1551,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4496
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Concerned",
+        "count": 382,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.6
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Curious",
+        "count": 354,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.53
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Daydreaming",
+        "count": 387,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.542399
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Determined",
+        "count": 742,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4524
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Fire",
+        "count": 57,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Eyes",
+        "value": "Focused",
+        "count": 338,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.95
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Glowing",
+        "count": 78,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Hopeful",
+        "count": 368,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5376884422110553
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Indifferent",
+        "count": 355,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.477
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Joyful",
+        "count": 385,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.50969996
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Lightning",
+        "count": 46,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.2
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Meditating",
+        "count": 318,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.45999999
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Pensive",
+        "count": 322,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.63
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Pierced Eyebrow",
+        "count": 289,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.48
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Red",
+        "count": 154,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.90618965
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Relaxed",
+        "count": 339,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.642
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Ruby",
+        "count": 381,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Striking",
+        "count": 408,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.545
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Suspicious",
+        "count": 312,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "Tired",
+        "count": 371,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Eyes",
+        "value": "White",
+        "count": 198,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.49
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Bandaid",
+        "count": 252,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Black Glasses",
+        "count": 195,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.642
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Blue Sunglasses",
+        "count": 150,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Blush",
+        "count": 108,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Clear Glasses",
+        "count": 136,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.1514
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Eye Patch",
+        "count": 225,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.52999
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Eye Scar",
+        "count": 277,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.77
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Heart Eye Patch",
+        "count": 65,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.55
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Ji Eyeband",
+        "count": 95,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Kabuki Facepaint",
+        "count": 147,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.95
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Lipstick Kiss",
+        "count": 72,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Face",
+        "value": "Reading Glasses",
+        "count": 183,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.95
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Red Bandana",
+        "count": 87,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Face",
+        "value": "Red Fang Face Paint",
+        "count": 268,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.48
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Red Stripes Face Paint",
+        "count": 290,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Round Blue Sunglasses",
+        "count": 275,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.478
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Round Purple Sunglasses",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.95
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Seer Eyeband",
+        "count": 111,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.95
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Sleep Mask",
+        "count": 185,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5096
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Black Bangs",
+        "count": 75,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.0504
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Black Blonde Half Bun",
+        "count": 12,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Black Disheveled",
+        "count": 115,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.99
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Black Fluffy",
+        "count": 66,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Black Hairband",
+        "count": 77,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Black Orange Bangs",
+        "count": 23,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Black Pigtails",
+        "count": 99,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4496
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Black Pink Long",
+        "count": 40,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Black Swept Back",
+        "count": 68,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Black Teal Bangs",
+        "count": 25,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Blonde Bob",
+        "count": 80,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.283451
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blonde Bun",
+        "count": 110,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.84
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blonde Flowy",
+        "count": 114,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.545
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blonde Hairband",
+        "count": 88,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.99
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blonde Long",
+        "count": 120,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.19
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blonde Messy",
+        "count": 91,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blonde Pixie",
+        "count": 93,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.606
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blonde Short Spiky",
+        "count": 124,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.835
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blonde Swept Back",
+        "count": 98,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.83
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blue Bob",
+        "count": 91,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.4
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blue Bun",
+        "count": 107,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.77
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blue Hairband",
+        "count": 90,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.1
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blue Half Bun",
+        "count": 104,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.99
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blue Nightshade Flowy",
+        "count": 33,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.93
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blue Nightshade Half Bun",
+        "count": 36,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blue Pink Ombre Flowy",
+        "count": 44,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.55
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blue Samurai",
+        "count": 98,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.95
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Blue Short Spiky",
+        "count": 119,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Blue Spiky",
+        "count": 122,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.90618965
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Braids",
+        "count": 32,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 4.0403
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Brown Bangs",
+        "count": 71,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Brown Blonde Flowy",
+        "count": 34,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Brown Blonde Long",
+        "count": 34,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.475
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Brown Disheveled",
+        "count": 113,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.90688
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Brown Dreadlocks",
+        "count": 21,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.909
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Brown Flowy",
+        "count": 95,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.153536
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Brown Fluffy",
+        "count": 52,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Brown Half Bun",
+        "count": 92,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.0
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Brown Long",
+        "count": 134,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Brown Messy",
+        "count": 88,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.4544
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Brown Ponytail",
+        "count": 107,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5376884422110553
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Brown Samurai",
+        "count": 98,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.52999
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Brown Spiky",
+        "count": 142,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Buzzcut",
+        "count": 115,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Dreadlocks",
+        "count": 82,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.55
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Fire",
+        "count": 22,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Gray Samurai",
+        "count": 75,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.39
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Green Flowy",
+        "count": 102,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.3939
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Green Fluffy",
+        "count": 61,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.1817
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Green Half Bun",
+        "count": 82,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.5
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Green Ombre Bangs",
+        "count": 57,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.2
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Green Ombre Flowy",
+        "count": 30,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.808
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Green Pigtails",
+        "count": 94,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.51
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Green Ponytail",
+        "count": 114,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.449795
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Green Samurai",
+        "count": 100,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4493
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Green Spiky",
+        "count": 117,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Green Teal Long",
+        "count": 36,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.49
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Indigo Bangs",
+        "count": 84,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.6
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Indigo Disheveled",
+        "count": 108,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.6844221105527638
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Indigo Fluffy",
+        "count": 72,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Indigo Long",
+        "count": 129,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.53
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Indigo Messy",
+        "count": 87,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.75
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Indigo Pixie",
+        "count": 99,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.554999
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Indigo Ponytail",
+        "count": 114,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.4645
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Indigo Swept Back",
+        "count": 81,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4495
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Long Dreadlocks",
+        "count": 82,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.1
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Magenta Flowy",
+        "count": 110,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5376884422110553
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Magenta Long",
+        "count": 131,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Magenta Messy",
+        "count": 86,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.72
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Magenta Pigtails",
+        "count": 120,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.998
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Maroon Bob",
+        "count": 131,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.46
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Maroon Bun",
+        "count": 150,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.95
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Maroon Disheveled",
+        "count": 133,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.45999999
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Maroon Fluffy",
+        "count": 76,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.15
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Maroon Half Bun",
+        "count": 103,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4524
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Maroon Ponytail",
+        "count": 142,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.478
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Maroon Short Spiky",
+        "count": 128,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.63
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Orange Pixie",
+        "count": 100,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.2
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Orange Samurai",
+        "count": 98,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.7
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Orange Short Spiky",
+        "count": 117,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.9494
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Orange Swept Back",
+        "count": 90,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.46
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Pink Bangs",
+        "count": 51,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.5
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Pink Flowy",
+        "count": 87,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Pink Hairband",
+        "count": 77,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.8282
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Pink Pixie",
+        "count": 58,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.694
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Pink Samurai",
+        "count": 50,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.5454
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Powder Blue Disheveled",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Powder Blue Pigtails",
+        "count": 120,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Powder Blue Swept Back",
+        "count": 84,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Purple Bangs",
+        "count": 30,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Purple Bun",
+        "count": 108,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Purple Dreadlocks",
+        "count": 41,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.619
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Purple Half Bun",
+        "count": 28,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Purple Pigtails",
+        "count": 98,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Purple Spiky",
+        "count": 115,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.62
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Silver Bangs",
+        "count": 59,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.75
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Silver Bob",
+        "count": 70,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5424
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Silver Bun",
+        "count": 91,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.84
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Silver Disheveled",
+        "count": 88,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.768
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Silver Dreadlocks",
+        "count": 49,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5096
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Silver Flowy",
+        "count": 72,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.95
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Silver Hairband",
+        "count": 58,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.08
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Silver Half Bun",
+        "count": 56,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.75
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Silver Long",
+        "count": 81,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.477
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Silver Pixie",
+        "count": 82,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.542399
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Silver Ponytail",
+        "count": 96,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.808
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Silver Short Spiky",
+        "count": 90,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.96
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Silver Spiky",
+        "count": 73,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.15
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Silver Swept Back",
+        "count": 82,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Spirit Bob",
+        "count": 12,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 19.0
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Spirit Fluffy",
+        "count": 15,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Spirit Goddess",
+        "count": 20,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Spirit Long",
+        "count": 12,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 69.0
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Spirit Ponytail",
+        "count": 15,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Spirit Spiky",
+        "count": 22,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Hair",
+        "value": "Teal Bangs",
+        "count": 74,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Teal Bob",
+        "count": 78,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.48
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Teal Bun",
+        "count": 109,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.5049
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Teal Hairband",
+        "count": 107,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.50969996
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Teal Long",
+        "count": 103,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Teal Messy",
+        "count": 91,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Violet Flowy",
+        "count": 97,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.5
+        }
+      },
+      {
+        "category": "Hair",
+        "value": "Water",
+        "count": 21,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Headgear",
+        "value": "Ayaigasa",
+        "count": 108,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.46
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Azuki Cap",
+        "count": 67,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.75
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Backwards Cap",
+        "count": 151,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.50969996
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Beret",
+        "count": 98,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.944
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Black Bucket Hat",
+        "count": 133,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4495
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Broken Straw Hat",
+        "count": 124,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Cat Baseball Cap",
+        "count": 57,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.99
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Cat Beanie",
+        "count": 30,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.98
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Cat Ears",
+        "count": 58,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.0302
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Cat Headband",
+        "count": 83,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.62
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Cat Mask",
+        "count": 50,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.03
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Chef Headband",
+        "count": 157,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4493
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Cowboy Hat",
+        "count": 119,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.8181
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Distressed Beanie",
+        "count": 160,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.9494
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Frog Baseball Cap",
+        "count": 60,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.95
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Frog Beanie",
+        "count": 30,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Frog Headband",
+        "count": 94,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.769
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Frog Mask",
+        "count": 52,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.97999
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Full Bandana",
+        "count": 182,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Fur Bucket Hat",
+        "count": 70,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.6
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Horns",
+        "count": 124,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.51
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "IKZ Baseball Cap",
+        "count": 265,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.68
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Newsboy Cap",
+        "count": 106,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.97
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Pointy Straw Hat",
+        "count": 126,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.808
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Purple Kanzashi",
+        "count": 163,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.77
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Red Panda Baseball Cap",
+        "count": 74,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.7
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Red Panda Beanie",
+        "count": 28,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Headgear",
+        "value": "Red Panda Headband",
+        "count": 74,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.2
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Red Panda Mask",
+        "count": 44,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.95
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Sandogasa",
+        "count": 93,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.55
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Sloth Baseball Cap",
+        "count": 61,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Sloth Beanie",
+        "count": 31,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Headgear",
+        "value": "Sloth Headband",
+        "count": 78,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.998
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Sloth Mask",
+        "count": 53,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.89
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Straw Hat",
+        "count": 117,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.808
+        }
+      },
+      {
+        "category": "Headgear",
+        "value": "Yellow Kanzashi",
+        "count": 168,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.476999
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "420",
+        "count": 164,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Mouth",
+        "value": "Bubble Gum",
+        "count": 281,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.46
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Chewing",
+        "count": 351,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.50969996
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Chuckle",
+        "count": 411,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Closed",
+        "count": 812,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4524
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Face Mask",
+        "count": 193,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.84
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Frown",
+        "count": 363,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4496
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Gaiter",
+        "count": 109,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.46
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Grass",
+        "count": 390,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5897
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Grin",
+        "count": 352,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5424
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Growl",
+        "count": 391,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4493
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Laughing",
+        "count": 382,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.48
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Lipstick",
+        "count": 408,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5096
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Long Stubble",
+        "count": 95,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Mouth",
+        "value": "Meh",
+        "count": 380,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4495
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Not Bad",
+        "count": 416,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.45999999
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Pout",
+        "count": 403,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.475
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Relaxed",
+        "count": 834,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.449795
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Scroll",
+        "count": 173,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.6844221105527638
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Sleep Bubble",
+        "count": 88,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.2
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Smile",
+        "count": 371,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.51
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Smirk",
+        "count": 726,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Smoking",
+        "count": 413,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.68999
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Stubble",
+        "count": 91,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.1918
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Surprised",
+        "count": 74,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.478
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Tactical Knife",
+        "count": 147,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.642
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Tongue Out",
+        "count": 202,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.68
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Toothpick",
+        "count": 344,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.48
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Wheat Straw",
+        "count": 341,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.477
+        }
+      },
+      {
+        "category": "Mouth",
+        "value": "Whistling",
+        "count": 295,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Beads",
+        "count": 206,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.53
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Cat Headphones",
+        "count": 45,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Chain",
+        "count": 189,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.52999
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Chill Headphones",
+        "count": 400,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.477
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Choker",
+        "count": 148,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5376884422110553
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Contract Tattoo",
+        "count": 85,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.49
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Frog Headphones",
+        "count": 52,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.99
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Golden Headphones",
+        "count": 35,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.99
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Koi Tattoo",
+        "count": 248,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.799
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Red Panda Headphones",
+        "count": 50,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.88
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Sloth Headphones",
+        "count": 36,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.5
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Sneakers",
+        "count": 108,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.2726
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Towel",
+        "count": 235,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Tribal Tattoo",
+        "count": 202,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.49
+        }
+      },
+      {
+        "category": "Neck",
+        "value": "Zen Headphones",
+        "count": 215,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.99
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Banner",
+        "count": 436,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4495
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Bat",
+        "count": 392,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.63
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Bean Juice",
+        "count": 299,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.75
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Blue Bean",
+        "count": 53,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.99
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Bokken",
+        "count": 137,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.75
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Boombox",
+        "count": 142,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.449795
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Coin",
+        "count": 286,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.64998
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Earth",
+        "count": 58,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Offhand",
+        "value": "Fan",
+        "count": 236,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5424
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Fireball",
+        "count": 67,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.42
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Fishing Rod",
+        "count": 153,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.85
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Floorsweeper",
+        "count": 268,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Gloves",
+        "count": 111,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.46
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Bat",
+        "count": 13,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Bean",
+        "count": 19,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Boombox",
+        "count": 16,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.4
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Fan",
+        "count": 15,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.99
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Fishing Rod",
+        "count": 13,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.99
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Floorsweeper",
+        "count": 15,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.99
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Guitar",
+        "count": 16,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.0
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Hook Sword",
+        "count": 14,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.88
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Kanabo",
+        "count": 16,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 6.88
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Katana",
+        "count": 12,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Monk Staff",
+        "count": 14,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 22.22
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Monkey King Staff",
+        "count": 12,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 4.88
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Sheathed Katana",
+        "count": 12,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.99
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Shinai",
+        "count": 14,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.99
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Shuriken",
+        "count": 14,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Skateboard",
+        "count": 14,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Ticket",
+        "count": 13,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Umbrella",
+        "count": 13,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 30.0
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Golden Zanbato",
+        "count": 11,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Offhand",
+        "value": "Guitar",
+        "count": 125,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.53
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Hand Seal",
+        "count": 121,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.545
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Hand Wrap",
+        "count": 120,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.6
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Hook Sword",
+        "count": 117,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Kanabo",
+        "count": 144,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.478
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Katana",
+        "count": 439,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5897
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Lantern",
+        "count": 403,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5376884422110553
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Leather Katana",
+        "count": 414,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Lightning Orb",
+        "count": 69,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.19
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Monk Staff",
+        "count": 146,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5376884422110553
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Monkey King Staff",
+        "count": 145,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Red Bean",
+        "count": 64,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.6844221105527638
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Sake",
+        "count": 155,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Sakura Katana",
+        "count": 429,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.59
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Shinai",
+        "count": 163,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.4
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Shuriken",
+        "count": 153,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4496
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Skateboard",
+        "count": 92,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.45
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Talisman",
+        "count": 80,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Umbrella",
+        "count": 197,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.46
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Water Orb",
+        "count": 61,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.29
+        }
+      },
+      {
+        "category": "Offhand",
+        "value": "Zanbato",
+        "count": 294,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "Special",
+        "value": "Butterfly",
+        "count": 86,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.5
+        }
+      },
+      {
+        "category": "Special",
+        "value": "Earth",
+        "count": 53,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Special",
+        "value": "Fire",
+        "count": 58,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.98955
+        }
+      },
+      {
+        "category": "Special",
+        "value": "Fireflies",
+        "count": 88,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.99
+        }
+      },
+      {
+        "category": "Special",
+        "value": "Fox Fire",
+        "count": 86,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.99
+        }
+      },
+      {
+        "category": "Special",
+        "value": "Lightning",
+        "count": 48,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.98
+        }
+      },
+      {
+        "category": "Special",
+        "value": "Sakura",
+        "count": 80,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Special",
+        "value": "Smoke",
+        "count": 81,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.49
+        }
+      },
+      {
+        "category": "Special",
+        "value": "Water",
+        "count": 49,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 4.99
+        }
+      },
+      {
+        "category": "Type",
+        "value": "Blue",
+        "count": 444,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.68
+        }
+      },
+      {
+        "category": "Type",
+        "value": "Human",
+        "count": 9018,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4493
+        }
+      },
+      {
+        "category": "Type",
+        "value": "Red",
+        "count": 441,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.542399
+        }
+      },
+      {
+        "category": "Type",
+        "value": "Spirit",
+        "count": 97,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 19.0
+        }
+      }
+    ],
+    "doodles-official": [
+      {
+        "category": "background",
+        "value": "blue",
+        "count": 726,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2581
+        }
+      },
+      {
+        "category": "background",
+        "value": "blue space",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "background",
+        "value": "bubblegum",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "background",
+        "value": "dark grey",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "background",
+        "value": "dark purple",
+        "count": 2,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "background",
+        "value": "deep space",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "background",
+        "value": "deeper space",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "background",
+        "value": "fire",
+        "count": 312,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2995
+        }
+      },
+      {
+        "category": "background",
+        "value": "gold",
+        "count": 3,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "background",
+        "value": "gold space",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "background",
+        "value": "gradient 1",
+        "count": 659,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.29
+        }
+      },
+      {
+        "category": "background",
+        "value": "gradient 2",
+        "count": 664,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.259
+        }
+      },
+      {
+        "category": "background",
+        "value": "gradient 3",
+        "count": 653,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.34999999
+        }
+      },
+      {
+        "category": "background",
+        "value": "gradient 4",
+        "count": 691,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.29
+        }
+      },
+      {
+        "category": "background",
+        "value": "gradient space",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "background",
+        "value": "green",
+        "count": 748,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2568918
+        }
+      },
+      {
+        "category": "background",
+        "value": "green space",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "background",
+        "value": "grey",
+        "count": 742,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2872
+        }
+      },
+      {
+        "category": "background",
+        "value": "grey space",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "background",
+        "value": "holographic",
+        "count": 341,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.32
+        }
+      },
+      {
+        "category": "background",
+        "value": "holographic space",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 15.0
+        }
+      },
+      {
+        "category": "background",
+        "value": "iridescent",
+        "count": 436,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.494
+        }
+      },
+      {
+        "category": "background",
+        "value": "light blue",
+        "count": 703,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.26
+        }
+      },
+      {
+        "category": "background",
+        "value": "orange",
+        "count": 739,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.284
+        }
+      },
+      {
+        "category": "background",
+        "value": "pink",
+        "count": 690,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2621345032
+        }
+      },
+      {
+        "category": "background",
+        "value": "pink space",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "background",
+        "value": "purple",
+        "count": 692,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2517539768
+        }
+      },
+      {
+        "category": "background",
+        "value": "reverse gradient 1",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.49
+        }
+      },
+      {
+        "category": "background",
+        "value": "sky",
+        "count": 243,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.33
+        }
+      },
+      {
+        "category": "background",
+        "value": "space",
+        "count": 237,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.28
+        }
+      },
+      {
+        "category": "background",
+        "value": "starry blue",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "background",
+        "value": "starry purple",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "background",
+        "value": "yellow",
+        "count": 703,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2674841869
+        }
+      },
+      {
+        "category": "body",
+        "value": "alien",
+        "count": 8,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "blue and yellow jacket",
+        "count": 281,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.319
+        }
+      },
+      {
+        "category": "body",
+        "value": "blue backpack",
+        "count": 298,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2895
+        }
+      },
+      {
+        "category": "body",
+        "value": "blue blazer",
+        "count": 104,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4321
+        }
+      },
+      {
+        "category": "body",
+        "value": "blue fleece",
+        "count": 301,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.26
+        }
+      },
+      {
+        "category": "body",
+        "value": "blue turtleneck",
+        "count": 313,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.9
+        }
+      },
+      {
+        "category": "body",
+        "value": "brittle bones skelly",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "bubblegum sweater",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "cat",
+        "count": 9,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.98
+        }
+      },
+      {
+        "category": "body",
+        "value": "combo 1 puffer",
+        "count": 331,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2517539768
+        }
+      },
+      {
+        "category": "body",
+        "value": "combo 2 puffer",
+        "count": 300,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.29
+        }
+      },
+      {
+        "category": "body",
+        "value": "combo 3 puffer",
+        "count": 300,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.319
+        }
+      },
+      {
+        "category": "body",
+        "value": "devil cat",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "gold alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "gold ape",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "gold bone skelly",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "gold chain",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.49
+        }
+      },
+      {
+        "category": "body",
+        "value": "gold sweater",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "green blazer",
+        "count": 119,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.3939
+        }
+      },
+      {
+        "category": "body",
+        "value": "green cat",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "green hoodie",
+        "count": 305,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2568918131
+        }
+      },
+      {
+        "category": "body",
+        "value": "grey hoodie",
+        "count": 310,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.28
+        }
+      },
+      {
+        "category": "body",
+        "value": "holographic alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 15.0
+        }
+      },
+      {
+        "category": "body",
+        "value": "holographic bone skelly",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "holographic cat",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "holographic hoodie",
+        "count": 2,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "holographic sweater",
+        "count": 40,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.48040201005025124
+        }
+      },
+      {
+        "category": "body",
+        "value": "leopard hoodie",
+        "count": 67,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.57
+        }
+      },
+      {
+        "category": "body",
+        "value": "light blue puffer",
+        "count": 308,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.65
+        }
+      },
+      {
+        "category": "body",
+        "value": "navy sweater",
+        "count": 325,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.37
+        }
+      },
+      {
+        "category": "body",
+        "value": "orange collar",
+        "count": 323,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.35
+        }
+      },
+      {
+        "category": "body",
+        "value": "orange puffer",
+        "count": 322,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.29
+        }
+      },
+      {
+        "category": "body",
+        "value": "pink and green jacket",
+        "count": 297,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.29
+        }
+      },
+      {
+        "category": "body",
+        "value": "pink and white jacket",
+        "count": 337,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2581
+        }
+      },
+      {
+        "category": "body",
+        "value": "pink backpack",
+        "count": 333,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.55
+        }
+      },
+      {
+        "category": "body",
+        "value": "pink fleece",
+        "count": 317,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2674841869
+        }
+      },
+      {
+        "category": "body",
+        "value": "pink hoodie",
+        "count": 293,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2872
+        }
+      },
+      {
+        "category": "body",
+        "value": "pink puffer",
+        "count": 313,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2621345032
+        }
+      },
+      {
+        "category": "body",
+        "value": "pink sweater with satchel",
+        "count": 323,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.35
+        }
+      },
+      {
+        "category": "body",
+        "value": "purple backpack",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "purple chain",
+        "count": 112,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.304
+        }
+      },
+      {
+        "category": "body",
+        "value": "purple sweater with satchel",
+        "count": 307,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.31
+        }
+      },
+      {
+        "category": "body",
+        "value": "rainbow striped sweater",
+        "count": 55,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "skelly",
+        "count": 8,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "spotted hoodie",
+        "count": 54,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4183255342
+        }
+      },
+      {
+        "category": "body",
+        "value": "spotted sweater",
+        "count": 51,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.3542267010251256
+        }
+      },
+      {
+        "category": "body",
+        "value": "stellar sweater",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "body",
+        "value": "striped sweater",
+        "count": 298,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.32
+        }
+      },
+      {
+        "category": "body",
+        "value": "white collar",
+        "count": 289,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.333
+        }
+      },
+      {
+        "category": "body",
+        "value": "white puffer",
+        "count": 331,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.39
+        }
+      },
+      {
+        "category": "body",
+        "value": "white sweater",
+        "count": 354,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.69
+        }
+      },
+      {
+        "category": "body",
+        "value": "white turtleneck",
+        "count": 327,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.35
+        }
+      },
+      {
+        "category": "body",
+        "value": "yellow backpack",
+        "count": 316,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.389
+        }
+      },
+      {
+        "category": "body",
+        "value": "yellow puffer",
+        "count": 346,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2568918
+        }
+      },
+      {
+        "category": "body",
+        "value": "yellow turtleneck",
+        "count": 354,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.29
+        }
+      },
+      {
+        "category": "face",
+        "value": "3d glasses",
+        "count": 203,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.269
+        }
+      },
+      {
+        "category": "face",
+        "value": "3d glasses with cig",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "60s glasses",
+        "count": 22,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.666
+        }
+      },
+      {
+        "category": "face",
+        "value": "alien",
+        "count": 8,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "ape",
+        "count": 15,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.49
+        }
+      },
+      {
+        "category": "face",
+        "value": "aviators with cig",
+        "count": 201,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.37
+        }
+      },
+      {
+        "category": "face",
+        "value": "aviators with mustache",
+        "count": 153,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.75
+        }
+      },
+      {
+        "category": "face",
+        "value": "bandana",
+        "count": 378,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2517539768
+        }
+      },
+      {
+        "category": "face",
+        "value": "blue beard",
+        "count": 157,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.577
+        }
+      },
+      {
+        "category": "face",
+        "value": "blue check",
+        "count": 123,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.75
+        }
+      },
+      {
+        "category": "face",
+        "value": "bubblegum",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "cat",
+        "count": 7,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.98
+        }
+      },
+      {
+        "category": "face",
+        "value": "cat note",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "catnip",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "chill cig",
+        "count": 557,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.282
+        }
+      },
+      {
+        "category": "face",
+        "value": "cobain glasses",
+        "count": 389,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.284
+        }
+      },
+      {
+        "category": "face",
+        "value": "content",
+        "count": 646,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.333
+        }
+      },
+      {
+        "category": "face",
+        "value": "default",
+        "count": 709,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2674841869
+        }
+      },
+      {
+        "category": "face",
+        "value": "designer glasses",
+        "count": 662,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.259
+        }
+      },
+      {
+        "category": "face",
+        "value": "devil cat",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "dino",
+        "count": 8,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "duck",
+        "count": 11,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.5
+        }
+      },
+      {
+        "category": "face",
+        "value": "gold alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "gold ape",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "green beard",
+        "count": 174,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.35
+        }
+      },
+      {
+        "category": "face",
+        "value": "grumpy",
+        "count": 685,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2621345032
+        }
+      },
+      {
+        "category": "face",
+        "value": "happy",
+        "count": 744,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2581
+        }
+      },
+      {
+        "category": "face",
+        "value": "happy note",
+        "count": 164,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.57
+        }
+      },
+      {
+        "category": "face",
+        "value": "holographic",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "holographic alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 15.0
+        }
+      },
+      {
+        "category": "face",
+        "value": "holographic ape",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "holographic beard",
+        "count": 129,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.39
+        }
+      },
+      {
+        "category": "face",
+        "value": "holographic cat",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "holographic dino",
+        "count": 3,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "holographic visor",
+        "count": 6,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "in love",
+        "count": 647,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.32
+        }
+      },
+      {
+        "category": "face",
+        "value": "mad",
+        "count": 6,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.5
+        }
+      },
+      {
+        "category": "face",
+        "value": "mad note",
+        "count": 121,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.65
+        }
+      },
+      {
+        "category": "face",
+        "value": "mustache",
+        "count": 455,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.389
+        }
+      },
+      {
+        "category": "face",
+        "value": "neutral note",
+        "count": 172,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.698998
+        }
+      },
+      {
+        "category": "face",
+        "value": "pink beard",
+        "count": 137,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 69.0
+        }
+      },
+      {
+        "category": "face",
+        "value": "pirate skelly",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "puffer up",
+        "count": 22,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "puffer up visor",
+        "count": 5,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "rainbow puke",
+        "count": 117,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.998
+        }
+      },
+      {
+        "category": "face",
+        "value": "sad note",
+        "count": 170,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2872
+        }
+      },
+      {
+        "category": "face",
+        "value": "satisfied ape",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "shark",
+        "count": 12,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 7.99
+        }
+      },
+      {
+        "category": "face",
+        "value": "skeleton",
+        "count": 166,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.96899
+        }
+      },
+      {
+        "category": "face",
+        "value": "skelly",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "skelly cig",
+        "count": 11,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "stellar",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "face",
+        "value": "straw",
+        "count": 411,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.26
+        }
+      },
+      {
+        "category": "face",
+        "value": "sunglasses",
+        "count": 694,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.3599998
+        }
+      },
+      {
+        "category": "face",
+        "value": "surprised",
+        "count": 679,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2568918131
+        }
+      },
+      {
+        "category": "face",
+        "value": "whale",
+        "count": 4,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "ape",
+        "count": 10,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "bed head",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "beige bucket cap",
+        "count": 200,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.879
+        }
+      },
+      {
+        "category": "hair",
+        "value": "blue afro",
+        "count": 271,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.35
+        }
+      },
+      {
+        "category": "hair",
+        "value": "blue alfalfa",
+        "count": 283,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2929
+        }
+      },
+      {
+        "category": "hair",
+        "value": "blue alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "blue ape",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "blue brushcut",
+        "count": 324,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.282
+        }
+      },
+      {
+        "category": "hair",
+        "value": "blue bucket cap",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "blue messy",
+        "count": 250,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2674841869
+        }
+      },
+      {
+        "category": "hair",
+        "value": "blue mohawk",
+        "count": 296,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2568918
+        }
+      },
+      {
+        "category": "hair",
+        "value": "blue nerd",
+        "count": 275,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.57
+        }
+      },
+      {
+        "category": "hair",
+        "value": "blue puffballs",
+        "count": 263,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2517539768
+        }
+      },
+      {
+        "category": "hair",
+        "value": "blue toque",
+        "count": 170,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.03
+        }
+      },
+      {
+        "category": "hair",
+        "value": "brown brushcut",
+        "count": 267,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2895
+        }
+      },
+      {
+        "category": "hair",
+        "value": "brown mullet",
+        "count": 282,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2568918131
+        }
+      },
+      {
+        "category": "hair",
+        "value": "bubblegum bed head",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "cat",
+        "count": 5,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "cowboy",
+        "count": 172,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.3499999999000002
+        }
+      },
+      {
+        "category": "hair",
+        "value": "crown",
+        "count": 44,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.99
+        }
+      },
+      {
+        "category": "hair",
+        "value": "crown with holographic long",
+        "count": 17,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.77
+        }
+      },
+      {
+        "category": "hair",
+        "value": "devil cat",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "gold alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "gold bed head",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "green alien",
+        "count": 2,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "green ape",
+        "count": 2,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.49
+        }
+      },
+      {
+        "category": "hair",
+        "value": "green bowlcut",
+        "count": 302,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4
+        }
+      },
+      {
+        "category": "hair",
+        "value": "green brushcut",
+        "count": 264,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.29
+        }
+      },
+      {
+        "category": "hair",
+        "value": "green cat",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "green mullet",
+        "count": 300,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.26
+        }
+      },
+      {
+        "category": "hair",
+        "value": "green puffballs",
+        "count": 302,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.48040201005025124
+        }
+      },
+      {
+        "category": "hair",
+        "value": "grey alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "halo",
+        "count": 176,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.32
+        }
+      },
+      {
+        "category": "hair",
+        "value": "harley",
+        "count": 109,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.319
+        }
+      },
+      {
+        "category": "hair",
+        "value": "helmet",
+        "count": 104,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.0
+        }
+      },
+      {
+        "category": "hair",
+        "value": "holographic afro",
+        "count": 90,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "holographic alien",
+        "count": 2,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 15.0
+        }
+      },
+      {
+        "category": "hair",
+        "value": "holographic ape",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "holographic bed head",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "holographic bob",
+        "count": 39,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.5
+        }
+      },
+      {
+        "category": "hair",
+        "value": "holographic brushcut",
+        "count": 65,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.577
+        }
+      },
+      {
+        "category": "hair",
+        "value": "holographic cat",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "holographic crown",
+        "count": 33,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.55
+        }
+      },
+      {
+        "category": "hair",
+        "value": "holographic mohawk",
+        "count": 85,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.444
+        }
+      },
+      {
+        "category": "hair",
+        "value": "holographic poopie",
+        "count": 35,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "iridescent alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "pink",
+        "count": 250,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.259
+        }
+      },
+      {
+        "category": "hair",
+        "value": "pink alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "pink ape",
+        "count": 2,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "pink bucket cap",
+        "count": 211,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.35
+        }
+      },
+      {
+        "category": "hair",
+        "value": "pink headband",
+        "count": 263,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.35
+        }
+      },
+      {
+        "category": "hair",
+        "value": "pink long",
+        "count": 279,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.79
+        }
+      },
+      {
+        "category": "hair",
+        "value": "pink tidy",
+        "count": 256,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2995
+        }
+      },
+      {
+        "category": "hair",
+        "value": "pink toque",
+        "count": 200,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2621345032
+        }
+      },
+      {
+        "category": "hair",
+        "value": "poopie",
+        "count": 61,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "private skelly",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "purple alfalfa",
+        "count": 271,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.6814070351758794
+        }
+      },
+      {
+        "category": "hair",
+        "value": "purple alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "purple brushcut",
+        "count": 265,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.42
+        }
+      },
+      {
+        "category": "hair",
+        "value": "purple cap",
+        "count": 279,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.37
+        }
+      },
+      {
+        "category": "hair",
+        "value": "purple long",
+        "count": 280,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.75
+        }
+      },
+      {
+        "category": "hair",
+        "value": "purple puffballs",
+        "count": 284,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.4
+        }
+      },
+      {
+        "category": "hair",
+        "value": "rainbow mohawk",
+        "count": 2,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "sailor",
+        "count": 34,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.99
+        }
+      },
+      {
+        "category": "hair",
+        "value": "shaved",
+        "count": 306,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2581
+        }
+      },
+      {
+        "category": "hair",
+        "value": "stellar bed head",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "hair",
+        "value": "viking",
+        "count": 114,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.37
+        }
+      },
+      {
+        "category": "hair",
+        "value": "white bucket cap",
+        "count": 207,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.678391959798995
+        }
+      },
+      {
+        "category": "hair",
+        "value": "wizard",
+        "count": 74,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.65
+        }
+      },
+      {
+        "category": "hair",
+        "value": "yellow backwards cap",
+        "count": 186,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.35
+        }
+      },
+      {
+        "category": "hair",
+        "value": "yellow bowlcut",
+        "count": 303,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.28
+        }
+      },
+      {
+        "category": "hair",
+        "value": "yellow headband",
+        "count": 293,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.269
+        }
+      },
+      {
+        "category": "hair",
+        "value": "yellow toque",
+        "count": 187,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.5
+        }
+      },
+      {
+        "category": "head",
+        "value": "ape",
+        "count": 12,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "balloon",
+        "count": 31,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.5
+        }
+      },
+      {
+        "category": "head",
+        "value": "blue",
+        "count": 1042,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2568918
+        }
+      },
+      {
+        "category": "head",
+        "value": "blue alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "blue ape",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "brittle bones skelly",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "bubblegum",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "calico cat",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "cat",
+        "count": 8,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.98
+        }
+      },
+      {
+        "category": "head",
+        "value": "coffee",
+        "count": 32,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "devil",
+        "count": 43,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.369
+        }
+      },
+      {
+        "category": "head",
+        "value": "devil cat",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "flower",
+        "count": 34,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "gold",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "gold alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "gold ape",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "gradient 1",
+        "count": 458,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.259
+        }
+      },
+      {
+        "category": "head",
+        "value": "gradient 2",
+        "count": 492,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2872
+        }
+      },
+      {
+        "category": "head",
+        "value": "green",
+        "count": 983,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2621345032
+        }
+      },
+      {
+        "category": "head",
+        "value": "green alien",
+        "count": 2,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "green ape",
+        "count": 3,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.49
+        }
+      },
+      {
+        "category": "head",
+        "value": "green cat",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "grey alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "holographic",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "holographic alien",
+        "count": 2,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 15.0
+        }
+      },
+      {
+        "category": "head",
+        "value": "holographic ape",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "holographic cat",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "icecream",
+        "count": 17,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "iridescent alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "lit",
+        "count": 30,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "med",
+        "count": 952,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.32
+        }
+      },
+      {
+        "category": "head",
+        "value": "orange",
+        "count": 961,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2674841869
+        }
+      },
+      {
+        "category": "head",
+        "value": "pale",
+        "count": 936,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.282
+        }
+      },
+      {
+        "category": "head",
+        "value": "pickle",
+        "count": 35,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.69
+        }
+      },
+      {
+        "category": "head",
+        "value": "pink",
+        "count": 969,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2929
+        }
+      },
+      {
+        "category": "head",
+        "value": "pink alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "pink ape",
+        "count": 2,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "popsicle",
+        "count": 21,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.99
+        }
+      },
+      {
+        "category": "head",
+        "value": "purple",
+        "count": 934,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.28
+        }
+      },
+      {
+        "category": "head",
+        "value": "purple alien",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "rainbow",
+        "count": 26,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 1.69
+        }
+      },
+      {
+        "category": "head",
+        "value": "skelly",
+        "count": 14,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "stellar",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "head",
+        "value": "tan",
+        "count": 997,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2517539768
+        }
+      },
+      {
+        "category": "head",
+        "value": "yellow",
+        "count": 944,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2568918131
+        }
+      },
+      {
+        "category": "piercing",
+        "value": "airpod",
+        "count": 515,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.455
+        }
+      },
+      {
+        "category": "piercing",
+        "value": "hoop",
+        "count": 1043,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.2674841869
+        }
+      },
+      {
+        "category": "piercing",
+        "value": "pearl",
+        "count": 1078,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 0.29
+        }
+      }
+    ],
+    "pudgypenguins": [
+      {
+        "category": "Background",
+        "value": "Beige",
+        "count": 1152,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.13
+        }
+      },
+      {
+        "category": "Background",
+        "value": "Blue",
+        "count": 1587,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.09370468
+        }
+      },
+      {
+        "category": "Background",
+        "value": "Green",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Background",
+        "value": "Mint",
+        "count": 1389,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.1309
+        }
+      },
+      {
+        "category": "Background",
+        "value": "On The Beach",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 60.0
+        }
+      },
+      {
+        "category": "Background",
+        "value": "Pink",
+        "count": 710,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.129
+        }
+      },
+      {
+        "category": "Background",
+        "value": "Purple",
+        "count": 1282,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.131
+        }
+      },
+      {
+        "category": "Background",
+        "value": "Red",
+        "count": 755,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.3
+        }
+      },
+      {
+        "category": "Background",
+        "value": "Supermarket",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Background",
+        "value": "Tangerine",
+        "count": 1135,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.1458
+        }
+      },
+      {
+        "category": "Background",
+        "value": "Trick Or Treating",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Background",
+        "value": "Underwater",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Background",
+        "value": "Yellow",
+        "count": 873,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.1
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Apron",
+        "count": 199,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.29
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Banana Suit",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Body",
+        "value": "Bath Robe",
+        "count": 246,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.8
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Big P",
+        "count": 71,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.5
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Biker Jacket",
+        "count": 67,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.2
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Bow Tie Black",
+        "count": 193,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.0201
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Bow Tie Blue",
+        "count": 154,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.559
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Bow Tie Pink",
+        "count": 172,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.9
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Bronze Medal",
+        "count": 193,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.131
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Christmas Lights",
+        "count": 131,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.879
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Christmas Sweater Blue",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.7
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Christmas Sweater Red",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 9.9898
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Crop Top",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.19
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Fish Lover",
+        "count": 70,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Body",
+        "value": "Gold Medal",
+        "count": 58,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 33.0
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Hawaiian Shirt",
+        "count": 171,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.1
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Heart",
+        "count": 102,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.5
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Hoodie Black",
+        "count": 183,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.2322
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Hoodie Pink",
+        "count": 162,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.399
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Huddle Shirt",
+        "count": 228,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.198
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Ice Coat",
+        "count": 123,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.5
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Kimono Abstract",
+        "count": 53,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.555
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Kimono Blue",
+        "count": 108,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.0
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Kimono Brown",
+        "count": 268,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.13
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Kimono Gold",
+        "count": 44,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.55
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Kimono Ice",
+        "count": 22,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.29
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Kimono Orange",
+        "count": 115,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.39
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Kimono Pink",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.199
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Kimono Red",
+        "count": 169,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.499855
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Kimono White",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.55
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Lab Coat",
+        "count": 227,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.359
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Lei Assorted",
+        "count": 76,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.1309
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Lei Blue",
+        "count": 180,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.9
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Lei Pink",
+        "count": 168,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.156999
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Lei Purple",
+        "count": 186,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.39
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Mirrored",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Body",
+        "value": "Overalls",
+        "count": 171,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.0
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Pillow Case",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Body",
+        "value": "Pineapple Suit",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 60.0
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Poncho",
+        "count": 167,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.09370568
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Pudgy Man",
+        "count": 44,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 9.999
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Puffer Blue",
+        "count": 158,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.48
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Puffer Green",
+        "count": 167,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.559
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Puffer Orange",
+        "count": 158,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.8159
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Scarf Blue",
+        "count": 237,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.48
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Scarf Green",
+        "count": 250,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.24
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Scarf Pink",
+        "count": 177,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.289
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Shark Suit",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Body",
+        "value": "Shark Tooth Necklace",
+        "count": 88,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.69
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Shirt Blue",
+        "count": 290,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.2372
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Shirt Red",
+        "count": 259,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.149225
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Silver Medal",
+        "count": 141,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.157
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Suit Blue",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.989
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Suit Red",
+        "count": 78,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 13.0
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Surfboard Necklace",
+        "count": 166,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.129
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Swordman",
+        "count": 62,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.499
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Tank Top Blue",
+        "count": 202,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.5
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Tank Top Yellow",
+        "count": 193,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.559
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Tribal Necklace",
+        "count": 115,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 7.0706
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Turtleneck Blue",
+        "count": 238,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.389955
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Turtleneck Green",
+        "count": 254,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.398
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Turtleneck Grey",
+        "count": 210,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.09370468
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Turtleneck Pink",
+        "count": 182,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.4
+        }
+      },
+      {
+        "category": "Body",
+        "value": "Vote 4 Pudgy",
+        "count": 203,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.1458
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Agitated",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Face",
+        "value": "Aviator",
+        "count": 341,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.4
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Beard",
+        "count": 320,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.24
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Blushing",
+        "count": 932,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.09370568
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Circle Glasses",
+        "count": 768,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.29
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Clout Goggles",
+        "count": 342,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.1
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Cross Eyed",
+        "count": 417,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.2322
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Cucumbers",
+        "count": 269,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.988
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Cute",
+        "count": 588,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.156999
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Eyepatch",
+        "count": 426,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.1458
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Football",
+        "count": 238,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.19
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Goggles",
+        "count": 191,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.13
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Handlebar Bear",
+        "count": 259,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 4.0201005025125625
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Hero Mask Blue",
+        "count": 71,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.1
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Hero Mask Red",
+        "count": 71,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.88
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Mirrored",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Face",
+        "value": "Monocle",
+        "count": 496,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.09370468
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Mustache",
+        "count": 169,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.131
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Normal",
+        "count": 864,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.199
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Pillow Case",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Face",
+        "value": "Scar",
+        "count": 274,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.198
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Scouter",
+        "count": 67,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.587
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Squad",
+        "count": 445,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.39
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Star Glasses",
+        "count": 265,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.157
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Star Struck",
+        "count": 22,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 4.0
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Villain Mask",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 4.588
+        }
+      },
+      {
+        "category": "Face",
+        "value": "Winking",
+        "count": 961,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.1309
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Afro With Pick",
+        "count": 257,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.8
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Backwards Hat Blue",
+        "count": 173,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.29
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Backwards Hat Red",
+        "count": 294,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.5
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Banana Suit",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Head",
+        "value": "Beanie Gray",
+        "count": 271,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.1309
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Beanie Orange",
+        "count": 276,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 4.0
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Beanie Pink",
+        "count": 90,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 4.95
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Biker Helmet",
+        "count": 88,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.5
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Bowl Cut",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.899
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Bucket Hat Green",
+        "count": 349,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.131
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Bucket Hat Tan",
+        "count": 219,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.779
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Camo Helmet",
+        "count": 248,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.499
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Cowboy Hat",
+        "count": 252,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 4.0
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Crown",
+        "count": 58,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 7.0
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Durag Blue",
+        "count": 252,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.1
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Durag Red",
+        "count": 174,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.555
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Egg",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.399
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Egg Gold",
+        "count": 45,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Head",
+        "value": "Fish Blue",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 8.5858
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Fish Gold",
+        "count": 22,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Head",
+        "value": "Fish Green",
+        "count": 117,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.5
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Fish Orange",
+        "count": 44,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.88
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Flat Cap Black",
+        "count": 247,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 4.0403
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Flat Cap Blue",
+        "count": 355,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.13
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Flat Cap Tan",
+        "count": 274,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.1458
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Flower Crown",
+        "count": 66,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 4.49
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Grizzly Bear Hat",
+        "count": 209,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.19
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Hat Blue",
+        "count": 286,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.156999
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Hat Red",
+        "count": 279,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.09370468
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Hatched",
+        "count": 53,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 4.85
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Hatched Gold",
+        "count": 9,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Head",
+        "value": "Headband",
+        "count": 357,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.779
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Ice Crown",
+        "count": 14,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Head",
+        "value": "Jester's Hat",
+        "count": 176,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.157
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Macaroni",
+        "count": 249,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.129
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Mohawk Green",
+        "count": 255,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.149225
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Mohawk Purple",
+        "count": 269,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.65
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Ninja Headband",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.5
+        }
+      },
+      {
+        "category": "Head",
+        "value": "None",
+        "count": 250,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 4.69
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Normal",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Head",
+        "value": "Panda Hat",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.99
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Party Hat",
+        "count": 196,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.2372
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Pineapple Suit",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 60.0
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Pirate Hat",
+        "count": 182,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.25
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Polar Bear Hat",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.888
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Rice Hat",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.58
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Santa Hat",
+        "count": 208,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.35
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Shark Suit",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Head",
+        "value": "Sideways Blue",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Head",
+        "value": "Sideways Red",
+        "count": 90,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 100.0
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Sombrero",
+        "count": 255,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.39
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Top Hat",
+        "count": 282,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.1
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Viking Helmet",
+        "count": 196,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.38
+        }
+      },
+      {
+        "category": "Head",
+        "value": "Wizard Hat",
+        "count": 186,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 3.4706489699
+        }
+      },
+      {
+        "category": "Skin",
+        "value": "Baby Pink",
+        "count": 623,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.1458
+        }
+      },
+      {
+        "category": "Skin",
+        "value": "Black",
+        "count": 1,
+        "chain": "ethereum",
+        "floors": {}
+      },
+      {
+        "category": "Skin",
+        "value": "Cream",
+        "count": 646,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.149225
+        }
+      },
+      {
+        "category": "Skin",
+        "value": "Dark Gray",
+        "count": 1329,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.19
+        }
+      },
+      {
+        "category": "Skin",
+        "value": "Gold",
+        "count": 44,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 14.99
+        }
+      },
+      {
+        "category": "Skin",
+        "value": "Ice",
+        "count": 22,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 27.99
+        }
+      },
+      {
+        "category": "Skin",
+        "value": "Leopard Gray",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.65
+        }
+      },
+      {
+        "category": "Skin",
+        "value": "Leopard Pink",
+        "count": 89,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 5.0
+        }
+      },
+      {
+        "category": "Skin",
+        "value": "Light Gray",
+        "count": 1189,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.131
+        }
+      },
+      {
+        "category": "Skin",
+        "value": "Maroon",
+        "count": 731,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.198
+        }
+      },
+      {
+        "category": "Skin",
+        "value": "Mint",
+        "count": 423,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.199
+        }
+      },
+      {
+        "category": "Skin",
+        "value": "Navy Blue",
+        "count": 4,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 60.0
+        }
+      },
+      {
+        "category": "Skin",
+        "value": "Normal",
+        "count": 2649,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.09370468
+        }
+      },
+      {
+        "category": "Skin",
+        "value": "Olive Green",
+        "count": 705,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.35
+        }
+      },
+      {
+        "category": "Skin",
+        "value": "Red",
+        "count": 344,
+        "chain": "ethereum",
+        "floors": {
+          "ETH": 2.09370568
+        }
+      }
+    ]
+  },
+  "holds": {
+    "azuki": [
+      {
+        "token": 1,
+        "url": "https://opensea.io/assets/ethereum/0xed5af388653567af2f388e6224dc7c4b3241c544/1",
+        "status": "owner matches latest indexed move",
+        "since_utc": "2022-12-03",
+        "mint_at_latest": false
+      },
+      {
+        "token": 2,
+        "url": "https://opensea.io/assets/ethereum/0xed5af388653567af2f388e6224dc7c4b3241c544/2",
+        "status": "owner matches latest indexed move",
+        "since_utc": "2023-04-19",
+        "mint_at_latest": false
+      },
+      {
+        "token": 3,
+        "url": "https://opensea.io/assets/ethereum/0xed5af388653567af2f388e6224dc7c4b3241c544/3",
+        "status": "owner matches latest indexed move",
+        "since_utc": "2023-01-03",
+        "mint_at_latest": false
+      }
+    ],
+    "doodles-official": [
+      {
+        "token": 1,
+        "url": "https://opensea.io/assets/ethereum/0x8a90cab2b38dba80c64b7734e58ee1db38b8992e/1",
+        "status": "owner matches latest indexed move",
+        "since_utc": "2026-09-02",
+        "mint_at_latest": false
+      },
+      {
+        "token": 2,
+        "url": "https://opensea.io/assets/ethereum/0x8a90cab2b38dba80c64b7734e58ee1db38b8992e/2",
+        "status": "owner matches latest indexed move",
+        "since_utc": "2022-06-24",
+        "mint_at_latest": false
+      },
+      {
+        "token": 3,
+        "url": "https://opensea.io/assets/ethereum/0x8a90cab2b38dba80c64b7734e58ee1db38b8992e/3",
+        "status": "owner matches latest indexed move",
+        "since_utc": "2023-01-04",
+        "mint_at_latest": false
+      }
+    ],
+    "pudgypenguins": [
+      {
+        "token": 1,
+        "url": "https://opensea.io/assets/ethereum/0xbd3531da5cf5857e7cfaa92426877b022e612cf8/1",
+        "status": "owner matches latest indexed move",
+        "since_utc": "2023-01-06",
+        "mint_at_latest": false
+      },
+      {
+        "token": 2,
+        "url": "https://opensea.io/assets/ethereum/0xbd3531da5cf5857e7cfaa92426877b022e612cf8/2",
+        "status": "owner matches latest indexed move",
+        "since_utc": "2024-12-22",
+        "mint_at_latest": false
+      },
+      {
+        "token": 3,
+        "url": "https://opensea.io/assets/ethereum/0xbd3531da5cf5857e7cfaa92426877b022e612cf8/3",
+        "status": "owner matches latest indexed move",
+        "since_utc": "2026-02-12",
+        "mint_at_latest": false
+      }
+    ]
+  },
+  "finished_utc": "2026-11-24T20:33:22.017882+00:00"
+}
