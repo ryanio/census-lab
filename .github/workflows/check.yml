@@ -1,0 +1,11 @@
+name: Check editions
+on: [pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m unittest -v
+      - run: python3 pages.py "$RUNNER_TEMP/census-site"

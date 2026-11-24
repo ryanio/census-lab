@@ -1,0 +1,32 @@
+{
+  "block": 26487430,
+  "pairs": [
+    {
+      "a": "azuki",
+      "b": "doodles-official",
+      "counts": {
+        "empty_code": 427,
+        "delegated": 72,
+        "contract_code": 13
+      }
+    },
+    {
+      "a": "azuki",
+      "b": "pudgypenguins",
+      "counts": {
+        "empty_code": 284,
+        "delegated": 44,
+        "contract_code": 7
+      }
+    },
+    {
+      "a": "doodles-official",
+      "b": "pudgypenguins",
+      "counts": {
+        "delegated": 48,
+        "empty_code": 235,
+        "contract_code": 7
+      }
+    }
+  ]
+}
