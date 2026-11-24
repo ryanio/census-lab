@@ -7,6 +7,8 @@ import json
 from html import escape
 from pathlib import Path
 
+HOLD_COLLECTIONS = {"autoglyphs": "Autoglyphs", "deafbeef": "DEAFBEEF"}
+
 SITE = Path(__file__).parent / "site"
 
 
@@ -35,13 +37,24 @@ def render(directory):
             portraits[slug] = "data:image/webp;base64," + base64.b64encode(
                 path.read_bytes()
             ).decode("ascii")
+    trait_index = {}
+    for row in read_csv(directory / "traits.csv"):
+        category = trait_index.setdefault(row["slug"], {}).setdefault(
+            row["category"], []
+        )
+        category.append([row["value"], int(row["count"]), json.loads(row["floors"])])
+    holdings = {}
+    for slug, name in HOLD_COLLECTIONS.items():
+        series = json.loads((directory / f"{slug}.json").read_text())
+        holdings[slug] = {"name": name, **series}
     snapshot = {
         "portraits": portraits,
         "edition": directory.name,
         "names": {slug: names[slug] for slug in cohort},
         "pairs": pairs,
         "colors": colors,
-        "diamond": json.loads((directory / "autoglyphs.json").read_text()),
+        "holdings": holdings,
+        "traits": trait_index,
     }
     page = (SITE / "template.html").read_text()
     for marker, source in [

@@ -74,12 +74,13 @@
               <figcaption>
                 <div>
                   <span class="kicker">Holder overlap</span
-                  ><label
+                  ><label class="collection-picker"
                     ><span class="sr">Highlight collection</span
                     ><select id="highlight">
-                      <option value="">All collections</option>
-                    </select></label
-                  >
+                      <option value="">All collections</option></select
+                    ><svg class="icon" aria-hidden="true">
+                      <use href="#icon-chevron-down" /></svg
+                  ></label>
                 </div>
                 <p id="readout" aria-live="polite"></p>
               </figcaption>
@@ -129,19 +130,20 @@
           </table>
         </div>
         <p class="footer">
-          Each set includes every distinct address returned before the final
-          cursor. Contracts, custody wallets and multiple wallets held by one
-          person can affect the count. Collections were read over a rolling
+          <button class="linkbtn" id="more-neighbors" type="button"></button
+          ><br />Each set includes every distinct address returned before the
+          final cursor. Contracts, custody wallets and multiple wallets held by
+          one person can affect the count. Collections were read over a rolling
           window. <a href="overlap.csv">Pair data</a> ·
           <a href="coverage.csv">Crawl windows</a>
         </p>
       </section>
       <section id="traits" class="study" hidden>
-        <h1>Background studies</h1>
+        <h1>Trait studies</h1>
         <p>
-          Explore the background labels artists used. Each strip shows an
-          example NFT, with width proportional to the number carrying that label
-          within the selected collection.
+          Explore the rarest and most common text traits in each collection. In
+          the background strip, each example occupies a share proportional to
+          its trait count.
         </p>
         <div class="tools">
           <label
@@ -151,42 +153,64 @@
         </div>
         <div id="strips" class="palette"></div>
         <div id="focus" class="detail" aria-live="polite"></div>
-        <h2>Original labels</h2>
+        <h2>Trait rankings</h2>
+        <div class="tools trait-tools">
+          <label
+            >Category
+            <select id="category"></select></label
+          ><label
+            >Rank by
+            <select id="trait-order">
+              <option value="rare">Rarest</option>
+              <option value="common">Most common</option>
+              <option value="floor">Highest ETH floor</option>
+            </select></label
+          >
+        </div>
         <div class="tablewrap">
           <table>
             <thead>
               <tr>
-                <th>Background</th>
+                <th>Trait value</th>
                 <th>NFTs</th>
-                <th>Example</th>
+                <th>Listed floor</th>
               </tr>
             </thead>
             <tbody id="labels"></tbody>
           </table>
         </div>
         <p class="footer">
-          Includes text categories named Background, Background Color or
-          Backgrounds, ignoring case. Labels retain their original spelling.
-          Widths use the sum of matching trait counts.
-          <a href="backgrounds.csv">Background data</a>
+          Showing up to eight values per ranking. Floors are the cheapest active
+          listings observed in each currency. The ETH ranking compares ETH
+          listings only. <a href="traits.csv">All text traits and floors</a> ·
+          <a href="backgrounds.csv">Illustrated backgrounds</a>
         </p>
       </section>
       <section id="hands" class="study" hidden>
         <h1>Diamond hands</h1>
         <p>
-          How long has each Autoglyph been in its current wallet? Tenure starts
-          at the most recent change of address. A self-transfer keeps the clock
+          How long has each NFT been in its current wallet? Tenure starts at the
+          most recent change of address. A self-transfer keeps the clock
           running.
         </p>
+        <div class="tools">
+          <label
+            >Collection
+            <select id="hold-series"></select
+          ></label>
+        </div>
         <div id="metrics" class="metrics"></div>
         <h2>Time in current wallet</h2>
         <div class="bars" id="hist"></div>
-        <h2>Longest current holds</h2>
-        <div class="scroll">
+        <div class="holds-heading">
+          <h2>Five longest current holds</h2>
+          <a id="holds-download" href="holds.csv">Download all holds (CSV)</a>
+        </div>
+        <div class="tablewrap">
           <table>
             <thead>
               <tr>
-                <th>Autoglyph</th>
+                <th>Token</th>
                 <th>Held since (UTC)</th>
                 <th>History</th>
               </tr>

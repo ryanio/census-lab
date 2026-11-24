@@ -8,11 +8,11 @@ Open [the local edition](editions/2026-11-24/index.html) in a browser. Its homep
 
 | Edition | Result |
 | --- | --- |
-| Community overlap | Of 300 pairs, Mutant Ape Yacht Club and Bored Ape Kennel Club shared the most addresses (2,872). These were 23.50% of Mutant Ape holders and 55.76% of Kennel Club holders. Among the original three, Azuki and Doodles went from last in the top-100 pilot (2) to first across the full lists (512). Azuki and Pudgy Penguins shared 335, Doodles and Pudgy Penguins 290. |
-| Trait census | 392 collection-specific background labels from 23 of 25 collections. Every label links to an example NFT. Cool Cats and MekaVerse returned no explicit background category. Azuki Elementals' Off White B appeared on 3,281 NFTs, the largest count for one original label in this sample. |
-| Diamond hands | Replayed 3,220 Autoglyphs Transfer logs. All 512 owners and the supply matched Ethereum at finalized block 26,487,430. Of these, 54 (10.55%) stayed at their original mint-recipient address continuously. The longest current hold was [Autoglyph #133](https://etherscan.io/tx/0x90fd1a3ece8550cb16c6cc0234d1d4d31522dac4aa480392d44ad905c72f1b63), since April 8, 2019. |
+| Community overlap | Of 1,225 pairs, Mutant Ape Yacht Club and Bored Ape Kennel Club shared the most addresses (2,872). These were 23.50% of Mutant Ape holders and 55.76% of Kennel Club holders. Among the original three, Azuki and Doodles went from last in the top-100 pilot (2) to first across the full lists (512). Azuki and Pudgy Penguins shared 335, Doodles and Pudgy Penguins 290. |
+| Trait census | 38,900 collection-specific text trait values across 50 collections. Explore rare and common values or rank listed ETH floors within each category. The background palette illustrates 759 original labels from 39 collections. |
+| Diamond hands | Replayed 3,220 Autoglyphs and 1,004 DEAFBEEF Transfer logs. Both supplies and all 736 current owners matched Ethereum at finalized block 26,487,430. Continuous mint holds totaled 54 of 512 Autoglyphs and 13 of 224 DEAFBEEF tokens. The longest current hold was [Autoglyph #133](https://etherscan.io/tx/0x90fd1a3ece8550cb16c6cc0234d1d4d31522dac4aa480392d44ad905c72f1b63), since April 8, 2019. |
 
-The 25 Ethereum collections are a fixed editorial sample drawn from the PFP Census collection list. The holder crawl exhausted 1,239 pages over about two minutes. Holder quantities can change during pagination. The map reports addresses, including staking and custody contracts. Of the 512 shared Azuki and Doodles addresses, 427 had empty bytecode, 72 had EIP-7702 delegation code and 13 had other contract code at the pinned block. Wallet operators and beneficial ownership remain unidentified. [Coverage](editions/2026-11-24/coverage.csv) · [All pairs](editions/2026-11-24/overlap.csv) · [Account types](editions/2026-11-24/account-types.json)
+The 50 Ethereum collections are a fixed editorial sample drawn from the PFP Census collection list. The holder crawl exhausted 2,155 pages across two collection batches from 20:47 to 21:45 UTC. Holder quantities can change during pagination. The map reports addresses, including staking and custody contracts. Of the 512 shared Azuki and Doodles addresses, 427 had empty bytecode, 72 had EIP-7702 delegation code and 13 had other contract code at the pinned block. Wallet operators and beneficial ownership remain unidentified. [Coverage](editions/2026-11-24/coverage.csv) · [All pairs](editions/2026-11-24/overlap.csv) · [Account types](editions/2026-11-24/account-types.json)
 
 The palette retains each artist's labels. Strip width follows count within the selected collection, and the imagery comes from an example NFT. Seven example links were checked against item metadata. The holding clock measures time at an address and resets after a transfer to another wallet, including an eventual return. Autoglyphs #1, #2 and #3 also matched OpenSea's current indexed owners and latest move dates. [Backgrounds](editions/2026-11-24/backgrounds.csv) · [Holding histories](editions/2026-11-24/holds.csv)
 
@@ -30,7 +30,10 @@ Use Python 3.11 or later from the repo root. OpenSea reads use `OPENSEA_API_KEY`
 edition=$(date -u +%F)
 python3 cohort.py "$edition" holders
 python3 cohort.py "$edition" palette
+python3 cohort.py "$edition" traits
 python3 diamond.py "editions/$edition/autoglyphs.json"
+block=$(python3 -c 'import json,sys; print(json.load(open(sys.argv[1]))["block"])' "editions/$edition/autoglyphs.json")
+python3 diamond.py "editions/$edition/deafbeef.json" --contract 0xd754937672300ae6708a51229112de4017810934 --block "$block"
 python3 account_types.py "$edition"
 python3 build.py "$edition"
 python3 -m unittest -v
@@ -42,7 +45,7 @@ The Pages package puts the newest edition at the project root and retains dated 
 
 When ready to launch, select GitHub Actions as the repository's Pages source and dispatch **Publish Census** on main. Pull requests run offline checks. Crawls and publication are manual.
 
-## November 24 pilot
+## Original three-collection pilot
 
 The sample covers Azuki, Doodles and Pudgy Penguins on Ethereum. Run `python3 pilot.py` with `OPENSEA_API_KEY` in the environment to replace the snapshot. Python's standard library is sufficient. The run makes 27 requests before retries and records its UTC start and finish times.
 

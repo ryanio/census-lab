@@ -44,13 +44,39 @@ class EditionTests(unittest.TestCase):
                     )
                     self.assertLessEqual(pair["top100_shared"], pair["shared"])
                 d = json.loads((page.parent / "autoglyphs.json").read_text())
-                self.assertEqual(data["diamond"], d)
+                self.assertEqual(
+                    {
+                        k: v
+                        for k, v in data["holdings"]["autoglyphs"].items()
+                        if k != "name"
+                    },
+                    d,
+                )
+                for slug, series in data["holdings"].items():
+                    self.assertEqual(
+                        len({r["token"] for r in series["rows"]}), series["supply"]
+                    )
+                    self.assertEqual(
+                        series["rows"],
+                        json.loads((page.parent / (slug + ".json")).read_text())[
+                            "rows"
+                        ],
+                    )
                 self.assertEqual(len({row["token"] for row in d["rows"]}), d["supply"])
                 for filename, expected in [
                     ("coverage", n),
                     ("overlap", len(data["pairs"])),
                     ("backgrounds", len(data["colors"])),
                     ("holds", d["supply"]),
+                    ("deafbeef-holds", data["holdings"]["deafbeef"]["supply"]),
+                    (
+                        "traits",
+                        sum(
+                            len(values)
+                            for categories in data["traits"].values()
+                            for values in categories.values()
+                        ),
+                    ),
                 ]:
                     with (page.parent / (filename + ".csv")).open() as file:
                         self.assertEqual(len(list(csv.DictReader(file))), expected)

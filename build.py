@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 
 from cohort import SLUGS
-from render import render
+from render import HOLD_COLLECTIONS, render
 
 
 def load(path):
@@ -47,7 +47,19 @@ def build(edition):
     colors = [
         dict(slug=s, **row) for s, batch in palette.items() for row in batch["rows"]
     ]
-    diamond = load(output / "autoglyphs.json")
+    traits = {s: load(cache / "traits" / (s + ".json")) for s in SLUGS}
+    trait_rows = [
+        {"slug": s, **row, "floors": json.dumps(row["floors"], separators=(",", ":"))}
+        for s, batch in traits.items()
+        for row in batch["rows"]
+    ]
+    write_csv(output / "traits.csv", trait_rows)
+    verified = 0
+    for slug in HOLD_COLLECTIONS:
+        series = load(output / f"{slug}.json")
+        verified += series["supply"]
+        filename = "holds.csv" if slug == "autoglyphs" else f"{slug}-holds.csv"
+        write_csv(output / filename, series["rows"])
     windows = [
         {
             "slug": s,
@@ -55,6 +67,8 @@ def build(edition):
             "holder_finish": b["finish"],
             "pages": b["pages"],
             "holders": len(holders[s]),
+            "traits_start": traits[s]["start"],
+            "traits_finish": traits[s]["finish"],
             "palette_start": palette[s]["start"],
             "palette_finish": palette[s]["finish"],
         }
@@ -63,14 +77,13 @@ def build(edition):
     write_csv(output / "coverage.csv", windows)
     write_csv(output / "overlap.csv", pairs)
     write_csv(output / "backgrounds.csv", colors)
-    write_csv(output / "holds.csv", diamond["rows"])
     (output / "index.html").write_text(render(output))
     print(
         len(pairs),
         "pairs,",
         len(colors),
         "labels,",
-        len(diamond["rows"]),
+        verified,
         "verified tokens",
     )
 

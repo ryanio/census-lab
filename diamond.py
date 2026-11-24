@@ -1,4 +1,4 @@
-"""Reconstruct Autoglyphs ERC-721 address tenures at a finalized block."""
+"""Reconstruct ERC-721 address tenures at a finalized block."""
 
 import argparse
 import json
@@ -51,14 +51,14 @@ def rpc(calls):
     return [by_id[i]["result"] for i in range(len(calls))]
 
 
-def logs(end):
+def logs(end, contract):
     page = 1
     while True:
         query = {
             "chainid": 1,
             "module": "logs",
             "action": "getLogs",
-            "address": CONTRACT,
+            "address": contract,
             "topic0": TRANSFER,
             "fromBlock": 0,
             "toBlock": end,
@@ -83,7 +83,7 @@ def logs(end):
         time.sleep(0.5)
 
 
-def replay(rows):
+def replay(rows, contract=CONTRACT):
     state = {}
     seen = set()
     for row in sorted(
@@ -93,7 +93,7 @@ def replay(rows):
         key = row["blockNumber"], row["logIndex"]
         if (
             key in seen
-            or row["address"].lower() != CONTRACT
+            or row["address"].lower() != contract
             or row["topics"][0] != TRANSFER
         ):
             raise ValueError("Duplicate or unexpected log")
@@ -119,16 +119,23 @@ def replay(rows):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("output", type=Path)
+    parser.add_argument("--contract", default=CONTRACT, type=str.lower)
+    parser.add_argument("--block", type=int)
     args = parser.parse_args()
+    contract = args.contract
     if rpc([("eth_chainId", [])])[0] != "0x1":
         raise ValueError("Ethereum mainnet required")
     block = rpc([("eth_getBlockByNumber", ["finalized", False])])[0]
+    if args.block is not None:
+        if not 0 <= args.block <= int(block["number"], 16):
+            raise ValueError("Block must be finalized")
+        block = rpc([("eth_getBlockByNumber", [hex(args.block), False])])[0]
     height = block["number"]
-    events = list(logs(int(height, 16)))
-    state = replay(events)
+    events = list(logs(int(height, 16), contract))
+    state = replay(events, contract)
 
     def call(data):
-        return "eth_call", [{"to": CONTRACT, "data": data}, height]
+        return "eth_call", [{"to": contract, "data": data}, height]
 
     supply = int(rpc([call("0x18160ddd")])[0], 16)
     tokens = sorted(state)
@@ -156,14 +163,14 @@ def main():
         )
     sample = {}
     for token in tokens[:3]:
-        owners = get(f"chain/ethereum/contract/{CONTRACT}/nfts/{token}")["nft"][
+        owners = get(f"chain/ethereum/contract/{contract}/nfts/{token}")["nft"][
             "owners"
         ]
         sample[token] = (
             len(owners) == 1 and owners[0]["address"].lower() == state[token]["owner"]
         )
     result = {
-        "contract": CONTRACT,
+        "contract": contract,
         "block": int(height, 16),
         "hash": block["hash"],
         "timestamp": int(block["timestamp"], 16),

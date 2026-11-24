@@ -80,21 +80,32 @@ function map(s) {
     box.append(b);
   });
   box.append(center);
-  el("neighbors").replaceChildren(
-    ...list.map((r) => {
-      const tr = node("tr"),
-        cell = node("td"),
-        a = link(names[r.other], "#overlap/" + r.other);
-      cell.append(a);
-      tr.append(
-        cell,
-        ...[fmt(r.n), r.of + "%", r.back + "%", r.top].map((v) =>
-          node("td", v),
-        ),
-      );
-      return tr;
-    }),
-  );
+  const more = el("more-neighbors");
+  function neighbors(expanded) {
+    const visible = expanded ? list : list.slice(0, 8);
+    more.hidden = list.length <= 8;
+    more.textContent = expanded
+      ? "Show closest eight"
+      : "Show all " + list.length + " neighbors";
+    more.setAttribute("aria-expanded", String(expanded));
+    more.onclick = () => neighbors(!expanded);
+    el("neighbors").replaceChildren(
+      ...visible.map((r) => {
+        const tr = node("tr"),
+          cell = node("td"),
+          a = link(names[r.other], "#overlap/" + r.other);
+        cell.append(a);
+        tr.append(
+          cell,
+          ...[fmt(r.n), r.of + "%", r.back + "%", r.top].map((v) =>
+            node("td", v),
+          ),
+        );
+        return tr;
+      }),
+    );
+  }
+  neighbors(false);
 }
 el("download").onclick = () => {
   const s = el("community").value,
@@ -159,35 +170,81 @@ function traits(s) {
   else
     detail.textContent =
       "No matching text background category was returned for this collection.";
-  el("labels").replaceChildren(
-    ...rows.map((r) => {
-      const b = node("button");
-      b.className = "swatch";
-      b.title = r.value + " · " + fmt(r.count);
-      b.setAttribute("aria-label", b.title);
-      b.style.flex = r.count + " 1 0";
-      if (r.image)
-        b.style.backgroundImage = "url(" + JSON.stringify(r.image) + ")";
-      b.onclick = () => pick(r);
-      palette.append(b);
-      const tr = node("tr"),
-        label = node("td"),
-        select = node("button", r.value);
-      select.className = "linkbtn";
-      select.onclick = () => pick(r);
-      label.append(select);
-      const ex = node("td");
-      if (r.url) ex.append(link("View NFT", r.url));
-      tr.append(label, node("td", fmt(r.count)), ex);
-      return tr;
-    }),
+  rows.forEach((r) => {
+    const b = node("button");
+    b.className = "swatch";
+    b.title = r.value + " · " + fmt(r.count);
+    b.setAttribute("aria-label", b.title);
+    b.style.flex = r.count + " 1 0";
+    if (r.image)
+      b.style.backgroundImage = "url(" + JSON.stringify(r.image) + ")";
+    b.onclick = () => pick(r);
+    palette.append(b);
+  });
+  const categories = data.traits[s] || {},
+    category = el("category"),
+    order = el("trait-order");
+  category.replaceChildren(
+    ...Object.keys(categories)
+      .sort()
+      .map((k) => new Option(k, k)),
   );
+  if (rows.length && Object.hasOwn(categories, rows[0].category))
+    category.value = rows[0].category;
+  function rank() {
+    const values = [...(categories[category.value] || [])],
+      mode = order.value;
+    const eligible =
+      mode === "floor" ? values.filter((v) => v[2].ETH !== undefined) : values;
+    eligible.sort(
+      (a, b) =>
+        (mode === "floor"
+          ? b[2].ETH - a[2].ETH
+          : mode === "common"
+            ? b[1] - a[1]
+            : a[1] - b[1]) || a[0].localeCompare(b[0]),
+    );
+    const body = el("labels");
+    body.replaceChildren();
+    for (const [value, count, floors] of eligible.slice(0, 8)) {
+      const row = node("tr");
+      const prices = Object.entries(floors)
+        .sort(([a], [b]) => a.localeCompare(b))
+        .map(([currency, price]) => price + " " + currency);
+      row.append(
+        node("td", value),
+        node("td", fmt(count)),
+        node("td", prices.join(" · ") || "Unlisted"),
+      );
+      body.append(row);
+    }
+    if (!eligible.length) {
+      const row = node("tr"),
+        cell = node(
+          "td",
+          mode === "floor"
+            ? "No ETH listings for this category."
+            : "No text traits reported.",
+        );
+      cell.colSpan = 3;
+      row.append(cell);
+      body.append(row);
+    }
+  }
+  category.onchange = order.onchange = rank;
+  rank();
 }
-function hands() {
-  const d = data.diamond,
+function hands(slug) {
+  const d = data.holdings[slug],
     rows = [...d.rows].sort(
       (a, b) => a.since.localeCompare(b.since) || a.token - b.token,
     );
+  for (const id of ["metrics", "hist", "longest", "block"])
+    el(id).replaceChildren();
+  el("holds-download").href =
+    slug === "autoglyphs" ? "holds.csv" : slug + "-holds.csv";
+  el("holds-download").textContent =
+    "Download all " + fmt(d.supply) + " holds (CSV)";
   const continuous = rows.filter((r) => r.continuous).length;
   for (const [n, title] of [
     [d.supply, "tokens verified"],
@@ -226,7 +283,7 @@ function hands() {
     );
     el("hist").append(bar);
   });
-  for (const r of rows) {
+  for (const r of rows.slice(0, 5)) {
     const tr = node("tr"),
       a = node("td"),
       b = node("td");
@@ -260,15 +317,16 @@ function hands() {
       d.supply +
       " owners at ",
     link("block " + fmt(d.block), "https://etherscan.io/block/" + d.hash),
-    ". ",
-    link("Holding histories", "holds.csv"),
+    ".",
   );
 }
 function render() {
   let [tab, s] = location.hash.slice(1).split("/");
   if (tab !== "home" && !studies.some((study) => study.id === tab))
     tab = "home";
-  if (!Object.hasOwn(names, s)) s = "azuki";
+  if (tab === "hands") {
+    if (!Object.hasOwn(data.holdings, s)) s = "autoglyphs";
+  } else if (!Object.hasOwn(names, s)) s = "azuki";
   for (const id of ["home", ...studies.map((study) => study.id)])
     el(id).hidden = id !== tab;
   for (const b of document.querySelectorAll("nav [data-tab]"))
@@ -279,6 +337,10 @@ function render() {
     el("community").value = s;
     map(s);
   }
+  if (tab === "hands") {
+    el("hold-series").value = s;
+    hands(s);
+  }
   if (tab === "traits") {
     el("art").value = s;
     traits(s);
@@ -286,11 +348,44 @@ function render() {
 }
 el("community").onchange = (e) => navigate("overlap", e.target.value);
 el("art").onchange = (e) => navigate("traits", e.target.value);
+// Use the same GA4 stream as PFP Census and Card Census on the published site.
+function startAnalytics() {
+  if (location.origin !== "https://ryanio.github.io") return () => {};
+  const id = "G-Y2NGRYCS3V";
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    window.dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", id, { send_page_view: false });
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+  document.head.append(script);
+  let referrer = document.referrer;
+  return (tab) => {
+    const url = new URL(location.href);
+    url.hash = tab === "home" ? "" : tab;
+    gtag("event", "page_view", {
+      page_title: el(tab)
+        .querySelector("h1")
+        .innerText.replace(/\s+/g, " ")
+        .trim(),
+      page_location: url.href,
+      page_referrer: referrer,
+    });
+    referrer = url.href;
+  };
+}
+const trackEdition = startAnalytics();
 let lastTab = "";
 window.addEventListener("hashchange", () => {
   render();
   const active = document.body.dataset.edition;
-  if (lastTab !== active) window.scrollTo(0, 0);
+  if (lastTab !== active) {
+    window.scrollTo(0, 0);
+    trackEdition(active);
+  }
   lastTab = active;
 });
 window.addEventListener("resize", () => {
@@ -301,7 +396,11 @@ document.querySelector(".skip").onclick = (event) => {
   el("content").focus();
   el("content").scrollIntoView();
 };
+for (const [slug, series] of Object.entries(data.holdings))
+  el("hold-series").add(new Option(series.name, slug));
+el("hold-series").onchange = (e) => navigate("hands", e.target.value);
 initCover();
-hands();
 render();
 lastTab = document.body.dataset.edition;
+
+trackEdition(lastTab);

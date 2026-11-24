@@ -8,7 +8,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from urllib.error import URLError
 
-from pilot import get
+from pilot import get, traits
 
 SLUGS = list(json.loads(Path(__file__).with_name("names.json").read_text()))
 
@@ -18,6 +18,8 @@ def now():
 
 
 def collect(slug, kind):
+    if kind == "traits":
+        return {"rows": traits(slug)}
     if kind == "holders":
         addresses, cursors, top = set(), set(), []
         params = {"limit": 100}
@@ -69,7 +71,7 @@ def collect(slug, kind):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("edition")
-    parser.add_argument("kind", choices=["holders", "palette"])
+    parser.add_argument("kind", choices=["holders", "palette", "traits"])
     args = parser.parse_args()
     directory = Path(".cache") / args.edition / args.kind
     directory.mkdir(parents=True, exist_ok=True)

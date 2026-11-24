@@ -238,12 +238,26 @@ th {
   justify-content: space-between;
   gap: 10px;
 }
+.collection-picker {
+  position: relative;
+  display: inline-flex;
+}
+.collection-picker .icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 15px;
+  height: 15px;
+  pointer-events: none;
+}
 .atlas select {
+  appearance: none;
   background: var(--night);
   color: white;
   border-color: #655b6c;
   border-radius: 20px;
-  padding: 4px 9px;
+  padding: 4px 30px 4px 9px;
   max-width: 190px;
   font-size: 13px;
 }
@@ -734,4 +748,19 @@ nav .icon {
   .mast nav .icon {
     margin-right: 0.2em;
   }
+}
+
+.holds-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin: 38px 0 12px;
+}
+.study .holds-heading h2 {
+  margin: 0;
+}
+.holds-heading a {
+  font-size: 14px;
 }

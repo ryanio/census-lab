@@ -13,13 +13,22 @@ const studies = [
   },
   {
     id: "traits",
-    title: "Background studies",
+    title: "Trait studies",
     nav: "Traits",
     icon: "swatch-book",
     theme: "peach",
     description: (d) =>
-      fmt(d.colors.length) +
-      " background labels, illustrated with NFTs that carry them.",
+      fmt(
+        Object.values(d.traits).reduce(
+          (n, categories) =>
+            n +
+            Object.values(categories).reduce(
+              (sum, rows) => sum + rows.length,
+              0,
+            ),
+          0,
+        ),
+      ) + " text trait values, ranked by frequency and listed floor.",
     art: palettePrint,
   },
   {
@@ -29,10 +38,9 @@ const studies = [
     icon: "gem",
     theme: "mint",
     description: (d) =>
-      fmt(d.diamond.rows.filter((r) => r.continuous).length) +
-      " of " +
-      fmt(d.diamond.supply) +
-      " Autoglyphs have stayed at their mint address.",
+      fmt(
+        Object.values(d.holdings).reduce((n, series) => n + series.supply, 0),
+      ) + " verified holding histories across Autoglyphs and DEAFBEEF.",
     art: tenurePrint,
   },
 ];
@@ -100,7 +108,9 @@ function palettePrint(parent, d) {
 }
 function tenurePrint(parent, d) {
   const ctx = thumbnail(parent, 520, 234),
-    rows = [...d.diamond.rows].sort((a, b) => a.token - b.token);
+    rows = Object.values(d.holdings)
+      .flatMap((series) => series.rows)
+      .sort((a, b) => a.token - b.token);
   const cols = Math.ceil(Math.sqrt(rows.length * 2)),
     size = Math.min(460 / cols, 195 / Math.ceil(rows.length / cols));
   ctx.translate(

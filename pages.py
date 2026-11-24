@@ -15,6 +15,9 @@ ASSETS = (
     "overlap.csv",
     "account-types.json",
     "autoglyphs.json",
+    "deafbeef.json",
+    "deafbeef-holds.csv",
+    "traits.csv",
 )
 
 
