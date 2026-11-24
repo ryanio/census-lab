@@ -229,6 +229,7 @@ th {
   overflow: visible;
 }
 .atlas figcaption {
+  container-type: inline-size;
   max-width: 470px;
   margin: -4px auto 0;
   padding-top: 10px;
@@ -264,7 +265,12 @@ th {
 .atlas figcaption p {
   color: #d5ccd9;
   margin-top: 5px;
-  min-height: 2.8em;
+  min-block-size: 2lh;
+}
+@container (max-width: 380px) {
+  .atlas figcaption p {
+    min-block-size: 3lh;
+  }
 }
 .library,
 .study {
