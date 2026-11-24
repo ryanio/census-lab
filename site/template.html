@@ -13,14 +13,24 @@
     </style>
   </head>
   <body>
+    <!--__ICONS__-->
     <a class="skip" href="#content">Skip to content</a>
     <header>
       <div class="mast">
         <a class="brand" href="#home"><i aria-hidden="true">✳</i> Census</a>
         <nav id="publication" aria-label="Editions"></nav>
         <nav class="external" aria-label="Other Census sites">
-          <a href="https://ryanio.github.io/pfp-census/">PFP Census ↗</a
-          ><a href="https://ryanio.github.io/card-census/">Card Census ↗</a>
+          <a href="https://ryanio.github.io/pfp-census/"
+            ><svg class="icon" aria-hidden="true">
+              <use href="#icon-images" />
+            </svg>
+            PFPs</a
+          ><a href="https://ryanio.github.io/card-census/"
+            ><svg class="icon" aria-hidden="true">
+              <use href="#icon-layers" />
+            </svg>
+            Cards</a
+          >
         </nav>
       </div>
     </header>
@@ -30,13 +40,16 @@
           <div class="front-in">
             <div class="intro">
               <p class="kicker"><i></i> Ethereum field studies</p>
-              <h1>The NFT<br /><em>Census</em></h1>
+              <h1>Who holds<br /><em>what?</em></h1>
               <p class="dek">
-                Who holds what, which traits recur, and how long the art stays
-                in one wallet.
+                Explore the wallets, artwork and holding histories of Ethereum
+                NFT collections.
               </p>
               <a class="primary" id="map-link" href="#overlap"
-                >Explore the overlap map <b>↗</b></a
+                ><svg class="icon" aria-hidden="true">
+                  <use href="#icon-network" />
+                </svg>
+                Explore the overlap map</a
               >
               <div class="issue">
                 <span>Edition</span> <time id="date"></time>
@@ -44,10 +57,19 @@
             </div>
             <figure class="atlas">
               <div class="plate">
-                <canvas
+                <svg
                   id="ribbons"
-                  aria-label="Collection overlap diagram. Use the collection selector to inspect the same data."
-                ></canvas>
+                  viewBox="-300 -300 600 600"
+                  tabindex="0"
+                  role="group"
+                  aria-label="Collection holder overlap. Use left and right arrow keys to explore pairs, or Escape to clear."
+                ></svg>
+                <div
+                  id="hover-card"
+                  class="hover-card"
+                  hidden
+                  aria-hidden="true"
+                ></div>
               </div>
               <figcaption>
                 <div>
@@ -176,14 +198,25 @@
       </section>
     </main>
     <footer>
-      <a class="brand" href="#home">✳ Census</a
-      ><a href="https://github.com/ryanio/census-lab">Source and datasets ↗</a>
+      <span class="byline"
+        >Made by <a href="https://x.com/r_alx_z">Ryan</a> ·
+        <a href="https://ryanio.com/">ryanio.com</a></span
+      >
+      <a href="https://github.com/ryanio/census-lab"
+        ><svg class="icon" aria-hidden="true">
+          <use href="#icon-code-xml" />
+        </svg>
+        Source and datasets</a
+      >
     </footer>
     <script type="application/json" id="data">
       "__EDITION_DATA__"
     </script>
     <script>
       /*__COVER__*/
+    </script>
+    <script>
+      /*__ATLAS__*/
     </script>
     <script>
       /*__EXPLORER__*/

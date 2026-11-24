@@ -1,8 +1,10 @@
 """Render a standalone Census edition from its checked-in CSV and JSON records."""
 
 import argparse
+import base64
 import csv
 import json
+from html import escape
 from pathlib import Path
 
 SITE = Path(__file__).parent / "site"
@@ -26,7 +28,15 @@ def render(directory):
     names = json.loads((SITE.parent / "names.json").read_text())
     # An edition's coverage fixes its cohort even when later issues add collections.
     cohort = [row["slug"] for row in read_csv(directory / "coverage.csv")]
+    portraits = {}
+    for slug in cohort:
+        path = SITE / "portraits" / f"{slug}.webp"
+        if path.exists():
+            portraits[slug] = "data:image/webp;base64," + base64.b64encode(
+                path.read_bytes()
+            ).decode("ascii")
     snapshot = {
+        "portraits": portraits,
         "edition": directory.name,
         "names": {slug: names[slug] for slug in cohort},
         "pairs": pairs,
@@ -37,9 +47,25 @@ def render(directory):
     for marker, source in [
         ("STYLE", "publication.css"),
         ("COVER", "cover.js"),
+        ("ATLAS", "atlas.js"),
         ("EXPLORER", "explorer.js"),
     ]:
         page = page.replace(f"/*__{marker}__*/", (SITE / source).read_text())
+    symbols = []
+    for asset in sorted((SITE / "icons").glob("*.svg")):
+        drawing = asset.read_text().split(">", 1)[1].rsplit("</svg>", 1)[0]
+        symbols.append(
+            f'<symbol id="icon-{asset.stem}" viewBox="0 0 24 24">{drawing}</symbol>'
+        )
+    license_text = (SITE / "icons" / "LICENSE").read_text()
+    sprite = (
+        '<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" aria-hidden="true" style="position:absolute"><desc>'
+        + escape(license_text)
+        + "</desc>"
+        + "".join(symbols)
+        + "</svg>"
+    )
+    page = page.replace("<!--__ICONS__-->", sprite)
     encoded = json.dumps(snapshot, separators=(",", ":")).replace("<", r"\u003c")
     return page.replace('"__EDITION_DATA__"', encoded)
 

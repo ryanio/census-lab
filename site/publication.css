@@ -221,12 +221,12 @@ th {
   margin: auto;
   position: relative;
 }
-.plate canvas {
+.plate > svg {
   display: block;
   width: 100%;
   aspect-ratio: 1;
   height: auto;
-  cursor: crosshair;
+  overflow: visible;
 }
 .atlas figcaption {
   max-width: 470px;
@@ -632,5 +632,106 @@ footer .brand {
   }
   .section-head span {
     font-size: 11px;
+  }
+}
+
+.icon {
+  width: 1.12em;
+  height: 1.12em;
+  flex: none;
+  display: inline-block;
+  vertical-align: -0.16em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+nav .icon {
+  margin-right: 0.32em;
+  color: #c6b8d7;
+}
+.edition-card h3 .icon {
+  font-size: 20px;
+  color: var(--muted);
+}
+.primary {
+  gap: 8px;
+}
+.byline {
+  font-size: 14px;
+}
+.byline a {
+  text-decoration: underline;
+}
+.atlas [data-slug],
+.atlas [data-pair] {
+  cursor: pointer;
+}
+#ribbons:focus-visible {
+  outline: 2px solid var(--accent);
+  border-radius: 50%;
+  outline-offset: -4px;
+}
+#ribbons.inspecting g:has(> [data-pair]) {
+  opacity: 0.105;
+}
+#ribbons.inspecting [data-slug]:not(.lit) {
+  opacity: 0.35;
+}
+.hover-card {
+  pointer-events: none;
+  position: absolute;
+  z-index: 1;
+  width: min(238px, 90%);
+  padding: 12px 14px;
+  border: 1px solid #766786;
+  background: #28222ff7;
+  color: #fff9f2;
+  border-radius: 8px;
+  box-shadow: 0 8px 26px #100e1660;
+}
+.hover-card > small,
+.portrait-line small {
+  display: block;
+  color: #d3c5dd;
+  font: 11px/1.35 var(--mono);
+}
+.hover-card > b {
+  display: block;
+  font: 34px/1.08 var(--display);
+  margin: 2px 0 9px;
+}
+.portrait-line {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 5px 0;
+}
+.portrait-line img {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.portrait-line strong {
+  display: block;
+  font-size: 13px;
+  line-height: 1.18;
+}
+@media (max-width: 640px) {
+  .hover-card {
+    width: 195px;
+    padding: 9px 11px;
+  }
+  .portrait-line img {
+    width: 33px;
+    height: 33px;
+  }
+  .hover-card > b {
+    font-size: 25px;
+  }
+  .mast nav .icon {
+    margin-right: 0.2em;
   }
 }

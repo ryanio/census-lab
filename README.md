@@ -18,7 +18,7 @@ The palette retains each artist's labels. Strip width follows count within the s
 
 ## Site design and offline builds
 
-Edit the layout in `site/template.html`, the shared type, color and spacing rules in `site/publication.css`, and the edition interactions in `site/explorer.js`. The study registry in `site/cover.js` supplies each header link and cover card. Its overlap ribbons use pair counts, the background contact sheet shows sample NFTs, and each holding-history tile represents one token.
+Edit the layout in `site/template.html`, the shared type, color and spacing rules in `site/publication.css`, and the edition interactions in `site/explorer.js`. The study registry in `site/cover.js` supplies each header link and cover card. The hero in `site/atlas.js` uses the actual ribbon paths as hover and tap targets. Hover cards show the collections, their shared address count and the percentage of each holder list. Portraits are bundled from the URLs in `site/portraits/sources.json`; Lucide icons and their license are in `site/icons/`. The overlap ribbons use pair counts, the background contact sheet shows sample NFTs, and each holding-history tile represents one token.
 
 Run `python3 render.py 2026-11-24` to rebuild the standalone HTML from the checked-in edition records. Use `--check` to detect a stale build. The output runs from disk and at a Pages project subpath.
 

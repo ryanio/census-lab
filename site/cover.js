@@ -4,6 +4,7 @@ const studies = [
     id: "overlap",
     title: "Community overlap",
     nav: "Overlap map",
+    icon: "network",
     theme: "lilac",
     description: (d) =>
       fmt(d.pairs.length) +
@@ -13,7 +14,8 @@ const studies = [
   {
     id: "traits",
     title: "Background studies",
-    nav: "Trait census",
+    nav: "Traits",
+    icon: "swatch-book",
     theme: "peach",
     description: (d) =>
       fmt(d.colors.length) +
@@ -24,6 +26,7 @@ const studies = [
     id: "hands",
     title: "Diamond hands",
     nav: "Diamond hands",
+    icon: "gem",
     theme: "mint",
     description: (d) =>
       fmt(d.diamond.rows.filter((r) => r.continuous).length) +
@@ -42,9 +45,6 @@ const hues = [
   "#f4ab84",
   "#efa5d2",
 ];
-let sectors = [],
-  ribbons = [],
-  hovered = "";
 function thumbnail(parent, w, h) {
   const cv = node("canvas");
   cv.width = w;
@@ -119,6 +119,7 @@ function initCover() {
   for (const study of studies) {
     const url = "#" + study.id,
       nav = link(study.nav, url);
+    nav.prepend(icon(study.icon));
     nav.dataset.tab = study.id;
     el("publication").append(nav);
     const card = link("", url);
@@ -126,161 +127,11 @@ function initCover() {
     const print = node("div");
     print.className = "print";
     study.art(print, data);
-    const title = node("h3", study.title),
-      arrow = node("b", "↗");
-    arrow.setAttribute("aria-hidden", "true");
-    title.append(arrow);
+    const title = node("h3", study.title);
+    title.append(icon(study.icon));
     card.append(print, title, node("p", study.description(data)));
     el("editions").append(card);
   }
   selector("highlight");
-  el("highlight").onchange = () => {
-    hovered = "";
-    drawAtlas();
-  };
-  const keys = Object.keys(names),
-    weights = new Map(keys.map((s) => [s, 0]));
-  for (const p of data.pairs) {
-    weights.set(p.a, weights.get(p.a) + p.shared);
-    weights.set(p.b, weights.get(p.b) + p.shared);
-  }
-  const total = [...weights.values()].reduce((a, b) => a + b, 0),
-    gap = 0.018,
-    unit = total ? (2 * Math.PI - gap * keys.length) / total : 0;
-  let angle = -Math.PI / 2;
-  sectors = keys.map((slug, i) => {
-    const start = angle,
-      end = start + weights.get(slug) * unit;
-    angle = end + gap;
-    return { slug, start, end, color: hues[i % hues.length], cursor: start };
-  });
-  const bySlug = new Map(sectors.map((a) => [a.slug, a]));
-  function segment(s, width) {
-    const start = s.cursor;
-    s.cursor += width;
-    return [start, s.cursor];
-  }
-  ribbons = data.pairs.map((p) => {
-    const a = bySlug.get(p.a),
-      b = bySlug.get(p.b);
-    return {
-      a,
-      b,
-      amount: p.shared,
-      left: segment(a, p.shared * unit),
-      right: segment(b, p.shared * unit),
-    };
-  });
-  ribbons.sort((left, right) => left.amount - right.amount);
-  const cv = el("ribbons");
-  function hit(event) {
-    const box = cv.getBoundingClientRect(),
-      x = (event.clientX - box.left) / box.width - 0.5,
-      y = (event.clientY - box.top) / box.height - 0.5;
-    if (Math.hypot(x, y) < 0.32 || Math.hypot(x, y) > 0.49) return "";
-    let t = Math.atan2(y, x);
-    if (t < -Math.PI / 2) t += 2 * Math.PI;
-    return sectors.find((s) => t >= s.start && t <= s.end)?.slug || "";
-  }
-  cv.onpointermove = (e) => {
-    if (e.pointerType === "touch") return;
-    const slug = hit(e);
-    if (slug !== hovered) {
-      hovered = slug;
-      drawAtlas();
-    }
-  };
-  cv.onpointerleave = () => {
-    if (hovered) {
-      hovered = "";
-      drawAtlas();
-    }
-  };
-  cv.onclick = (e) => {
-    const slug = hit(e);
-    if (slug) {
-      el("highlight").value = slug;
-      hovered = "";
-      drawAtlas();
-    }
-  };
-  new ResizeObserver(() => {
-    if (!el("home").hidden) drawAtlas();
-  }).observe(cv);
-}
-function drawAtlas() {
-  const cv = el("ribbons"),
-    size = cv.clientWidth;
-  if (!size) return;
-  const scale = Math.min(window.devicePixelRatio || 1, 2),
-    pixels = Math.round(size * scale);
-  if (cv.width !== pixels || cv.height !== pixels) {
-    cv.width = pixels;
-    cv.height = pixels;
-  }
-  const c = cv.getContext("2d");
-  c.setTransform(pixels / 600, 0, 0, pixels / 600, pixels / 2, pixels / 2);
-  c.clearRect(-300, -300, 600, 600);
-  const r = 216,
-    selection = hovered || el("highlight").value;
-  const point = (t, radius) => [Math.cos(t) * radius, Math.sin(t) * radius];
-  for (const rad of [239, 251, 279]) {
-    c.strokeStyle = "#39353e";
-    c.lineWidth = 0.7;
-    c.beginPath();
-    c.arc(0, 0, rad, 0, 2 * Math.PI);
-    c.stroke();
-  }
-  for (let i = 0; i < 120; i++) {
-    const t = (i * Math.PI) / 60;
-    c.beginPath();
-    c.moveTo(...point(t, 247));
-    c.lineTo(...point(t, i % 5 ? 250 : 255));
-    c.stroke();
-  }
-  const active = (e) => selection === e.a.slug || selection === e.b.slug;
-  for (const e of [...ribbons].sort(
-    (a, b) => Number(active(a)) - Number(active(b)) || a.amount - b.amount,
-  )) {
-    const [a, b] = e.left,
-      [f, g] = e.right;
-    c.beginPath();
-    c.arc(0, 0, r, a, b);
-    c.quadraticCurveTo(0, 0, ...point(f, r));
-    c.arc(0, 0, r, f, g);
-    c.quadraticCurveTo(0, 0, ...point(a, r));
-    c.closePath();
-    const gradient = c.createLinearGradient(...point(a, r), ...point(f, r));
-    gradient.addColorStop(0, e.a.color);
-    gradient.addColorStop(1, e.b.color);
-    c.fillStyle = gradient;
-    c.globalAlpha = selection ? (active(e) ? 0.95 : 0.055) : 0.68;
-    c.fill();
-  }
-  c.globalAlpha = 1;
-  for (const s of sectors) {
-    c.beginPath();
-    c.arc(0, 0, r + 8, s.start, s.end);
-    c.strokeStyle = s.color;
-    c.lineWidth = selection === s.slug ? 13 : 8;
-    c.stroke();
-  }
-  const strongest = ribbons.at(-1);
-  el("map-link").href =
-    "#overlap/" + (el("highlight").value || strongest.a.slug);
-  const o = el("readout");
-  if (selection) {
-    const top = getPairs(selection)[0];
-    o.textContent =
-      names[selection] +
-      " × " +
-      names[top.other] +
-      " · " +
-      fmt(top.n) +
-      " shared addresses";
-  } else {
-    o.textContent =
-      Object.keys(names).length +
-      " collections · Ribbon width shows shared addresses.";
-  }
+  initAtlas();
 }
