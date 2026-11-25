@@ -152,11 +152,17 @@
         <p><!--__SUMMARY_traits__--></p>
         <article id="shared-study" class="finding">
           <h2>Same label, different worlds</h2>
-          <p>A blue background can sit behind a pixel portrait or a hand-drawn character. Start with blue, then try a mouth or a pair of eyes to see which collections share the same vocabulary.</p>
-          <div id="trait-picks" aria-label="Featured comparisons"></div>
+          <p>What do a smirk, a halo and a pair of 3D glasses have in common? Each turns up in the trait lists of several collections. Pick a label to see who shares it.</p>
+          <div id="trait-picks" role="group" aria-label="Featured comparisons">
+            <button id="trait-shuffle" type="button">Surprise me</button>
+          </div>
           <div class="tools trait-pickers">
             <label>Category <select id="shared-category"></select></label>
             <label>Shared trait <select id="shared-label"></select></label>
+            <div class="trait-step" role="group" aria-label="Browse traits in this category">
+              <button type="button" id="trait-prev" aria-label="Previous trait in category">Previous</button>
+              <button type="button" id="trait-next" aria-label="Next trait in category">Next</button>
+            </div>
           </div>
           <h3 id="shared-head" aria-live="polite"></h3>
           <p id="shared-finding"></p>

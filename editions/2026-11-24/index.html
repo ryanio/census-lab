@@ -817,20 +817,9 @@ nav .icon {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hover-card:not([hidden]) {
-    animation: atlas-appear 120ms ease-out;
-  }
   #ribbons g:has(> [data-pair]),
   #ribbons [data-slug] {
     transition: opacity 120ms ease-out;
-  }
-  @keyframes atlas-appear {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
 }
 
@@ -1096,9 +1085,15 @@ nav .icon {
 @media (max-width: 480px) { #trait-wall { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 #trait-picks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 #trait-picks button { border-radius: 2em; border-color: var(--deep); background: transparent; color: var(--deep); }
-#trait-picks button:hover, #trait-picks button:focus-visible { color: white; background: var(--deep); }
+#trait-picks button[aria-pressed="true"], #trait-picks button:hover, #trait-picks button:focus-visible { color: white; background: var(--deep); }
 .finding .story-end { margin-top: 20px; }
 #shared-finding:not(:empty) { margin-bottom: 16px; }
+
+#trait-picks #trait-shuffle { border-style: dashed; }
+.trait-step { display: inline-flex; gap: 5px; }
+.trait-step button { background: transparent; color: var(--deep); }
+.trait-step button:disabled { opacity: .45; }
+@media (pointer: coarse) { #trait-picks button, .trait-step button { min-height: 44px; } }
 
     </style>
   </head>
@@ -1309,11 +1304,17 @@ SOFTWARE.
         <p>Explore 38,900 text trait values across 50 Ethereum NFT collections. Find the background colors, expressions and accessories that turn up in more than one collection.</p>
         <article id="shared-study" class="finding">
           <h2>Same label, different worlds</h2>
-          <p>A blue background can sit behind a pixel portrait or a hand-drawn character. Start with blue, then try a mouth or a pair of eyes to see which collections share the same vocabulary.</p>
-          <div id="trait-picks" aria-label="Featured comparisons"></div>
+          <p>What do a smirk, a halo and a pair of 3D glasses have in common? Each turns up in the trait lists of several collections. Pick a label to see who shares it.</p>
+          <div id="trait-picks" role="group" aria-label="Featured comparisons">
+            <button id="trait-shuffle" type="button">Surprise me</button>
+          </div>
           <div class="tools trait-pickers">
             <label>Category <select id="shared-category"></select></label>
             <label>Shared trait <select id="shared-label"></select></label>
+            <div class="trait-step" role="group" aria-label="Browse traits in this category">
+              <button type="button" id="trait-prev" aria-label="Previous trait in category">Previous</button>
+              <button type="button" id="trait-next" aria-label="Next trait in category">Next</button>
+            </div>
           </div>
           <h3 id="shared-head" aria-live="polite"></h3>
           <p id="shared-finding"></p>
@@ -1847,6 +1848,11 @@ function initAtlas() {
     clearTimeout(timer);
     pending = next;
     if (next === hover) return;
+    if (next && card.hidden) {
+      hover = next;
+      refresh();
+      return;
+    }
     timer = setTimeout(
       () => {
         hover = next;
@@ -1957,10 +1963,13 @@ function initSharedTraits() {
   if (!shared.length) { el("shared-study").hidden = true; return; }
   const families = [...new Set(shared.map(g => normalize(g.category)))].sort();
   family.replaceChildren(...families.map(c => new Option(c, c)));
-  family.value = normalize(shared[0].category);
+  const shortcuts = new Map();
   let choices = [], expanded = false;
   function draw() {
     const group = choices[picker.selectedIndex];
+    for (const [trait, button] of shortcuts) {
+      button.setAttribute("aria-pressed", String(trait === group));
+    }
     const members = [...group.members].sort(([a],[b]) => names[a].localeCompare(names[b]));
     el("shared-head").textContent = group.label + " in " + members.length + " collections";
     const comparable = members.filter(([, counts]) => counts.length === 1)
@@ -1992,28 +2001,42 @@ function initSharedTraits() {
     more.textContent = expanded ? "Show first six" : "Show all " + members.length + " collections";
     more.setAttribute("aria-expanded", String(expanded));
   }
-  function chooseFamily() {
-    choices = shared.filter(g => normalize(g.category) === family.value);
-    picker.replaceChildren(...choices.map(g => new Option(g.label + " (" + g.members.size + ")")));
-    expanded = false; draw();
-  }
-  for (const category of ["background", "mouth", "eyes"]) {
-    const pick = shared.find(g => normalize(g.category) === category);
-    if (!pick) continue;
-    const button = node("button", pick.label + " · " + pick.members.size + " collections");
-    button.type = "button";
-    button.onclick = () => {
+  function selectGroup(group) {
+    const category = normalize(group.category);
+    if (!choices.includes(group)) {
       family.value = category;
-      chooseFamily();
-      picker.selectedIndex = choices.indexOf(pick);
-      draw();
-    };
-    el("trait-picks").append(button);
+      choices = shared.filter(g => normalize(g.category) === category);
+      picker.replaceChildren(...choices.map(g => new Option(g.label + " (" + g.members.size + ")")));
+      el("trait-prev").disabled = el("trait-next").disabled = choices.length < 2;
+    }
+    picker.selectedIndex = choices.indexOf(group);
+    expanded = false;
+    draw();
   }
-  family.onchange = chooseFamily;
-  picker.onchange = () => { expanded = false; draw(); };
+  for (const [category, label] of [["mouth", "tongue out"], ["eyes", "3d glasses"], ["head", "halo"]]) {
+    const pick = groups.get(JSON.stringify([category, label]));
+    if (!pick || pick.members.size < 2) continue;
+    const button = node("button", pick.label);
+    button.type = "button";
+    button.onclick = () => selectGroup(pick);
+    shortcuts.set(pick, button);
+    el("trait-shuffle").before(button);
+  }
+  function step(offset) {
+    selectGroup(choices[(picker.selectedIndex + offset + choices.length) % choices.length]);
+  }
+  el("trait-prev").onclick = () => step(-1);
+  el("trait-next").onclick = () => step(1);
+  el("trait-shuffle").disabled = shared.length < 2;
+  el("trait-shuffle").onclick = () => {
+    const current = shared.indexOf(choices[picker.selectedIndex]);
+    const offset = 1 + Math.floor(Math.random() * (shared.length - 1));
+    selectGroup(shared[(current + offset) % shared.length]);
+  };
+  family.onchange = () => selectGroup(shared.find(g => normalize(g.category) === family.value));
+  picker.onchange = () => selectGroup(choices[picker.selectedIndex]);
   el("shared-more").onclick = () => { expanded = !expanded; draw(); };
-  chooseFamily();
+  selectGroup(shortcuts.keys().next().value || shared.find(g => normalize(g.category) !== "background") || shared[0]);
 }
 
       const data = JSON.parse(document.getElementById("data").textContent),

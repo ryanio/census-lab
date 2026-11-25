@@ -775,20 +775,9 @@ nav .icon {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hover-card:not([hidden]) {
-    animation: atlas-appear 120ms ease-out;
-  }
   #ribbons g:has(> [data-pair]),
   #ribbons [data-slug] {
     transition: opacity 120ms ease-out;
-  }
-  @keyframes atlas-appear {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
   }
 }
 
@@ -1054,6 +1043,12 @@ nav .icon {
 @media (max-width: 480px) { #trait-wall { grid-template-columns: repeat(2,minmax(0,1fr)); } }
 #trait-picks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 #trait-picks button { border-radius: 2em; border-color: var(--deep); background: transparent; color: var(--deep); }
-#trait-picks button:hover, #trait-picks button:focus-visible { color: white; background: var(--deep); }
+#trait-picks button[aria-pressed="true"], #trait-picks button:hover, #trait-picks button:focus-visible { color: white; background: var(--deep); }
 .finding .story-end { margin-top: 20px; }
 #shared-finding:not(:empty) { margin-bottom: 16px; }
+
+#trait-picks #trait-shuffle { border-style: dashed; }
+.trait-step { display: inline-flex; gap: 5px; }
+.trait-step button { background: transparent; color: var(--deep); }
+.trait-step button:disabled { opacity: .45; }
+@media (pointer: coarse) { #trait-picks button, .trait-step button { min-height: 44px; } }

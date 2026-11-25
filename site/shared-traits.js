@@ -22,10 +22,13 @@ function initSharedTraits() {
   if (!shared.length) { el("shared-study").hidden = true; return; }
   const families = [...new Set(shared.map(g => normalize(g.category)))].sort();
   family.replaceChildren(...families.map(c => new Option(c, c)));
-  family.value = normalize(shared[0].category);
+  const shortcuts = new Map();
   let choices = [], expanded = false;
   function draw() {
     const group = choices[picker.selectedIndex];
+    for (const [trait, button] of shortcuts) {
+      button.setAttribute("aria-pressed", String(trait === group));
+    }
     const members = [...group.members].sort(([a],[b]) => names[a].localeCompare(names[b]));
     el("shared-head").textContent = group.label + " in " + members.length + " collections";
     const comparable = members.filter(([, counts]) => counts.length === 1)
@@ -57,26 +60,40 @@ function initSharedTraits() {
     more.textContent = expanded ? "Show first six" : "Show all " + members.length + " collections";
     more.setAttribute("aria-expanded", String(expanded));
   }
-  function chooseFamily() {
-    choices = shared.filter(g => normalize(g.category) === family.value);
-    picker.replaceChildren(...choices.map(g => new Option(g.label + " (" + g.members.size + ")")));
-    expanded = false; draw();
-  }
-  for (const category of ["background", "mouth", "eyes"]) {
-    const pick = shared.find(g => normalize(g.category) === category);
-    if (!pick) continue;
-    const button = node("button", pick.label + " · " + pick.members.size + " collections");
-    button.type = "button";
-    button.onclick = () => {
+  function selectGroup(group) {
+    const category = normalize(group.category);
+    if (!choices.includes(group)) {
       family.value = category;
-      chooseFamily();
-      picker.selectedIndex = choices.indexOf(pick);
-      draw();
-    };
-    el("trait-picks").append(button);
+      choices = shared.filter(g => normalize(g.category) === category);
+      picker.replaceChildren(...choices.map(g => new Option(g.label + " (" + g.members.size + ")")));
+      el("trait-prev").disabled = el("trait-next").disabled = choices.length < 2;
+    }
+    picker.selectedIndex = choices.indexOf(group);
+    expanded = false;
+    draw();
   }
-  family.onchange = chooseFamily;
-  picker.onchange = () => { expanded = false; draw(); };
+  for (const [category, label] of [["mouth", "tongue out"], ["eyes", "3d glasses"], ["head", "halo"]]) {
+    const pick = groups.get(JSON.stringify([category, label]));
+    if (!pick || pick.members.size < 2) continue;
+    const button = node("button", pick.label);
+    button.type = "button";
+    button.onclick = () => selectGroup(pick);
+    shortcuts.set(pick, button);
+    el("trait-shuffle").before(button);
+  }
+  function step(offset) {
+    selectGroup(choices[(picker.selectedIndex + offset + choices.length) % choices.length]);
+  }
+  el("trait-prev").onclick = () => step(-1);
+  el("trait-next").onclick = () => step(1);
+  el("trait-shuffle").disabled = shared.length < 2;
+  el("trait-shuffle").onclick = () => {
+    const current = shared.indexOf(choices[picker.selectedIndex]);
+    const offset = 1 + Math.floor(Math.random() * (shared.length - 1));
+    selectGroup(shared[(current + offset) % shared.length]);
+  };
+  family.onchange = () => selectGroup(shared.find(g => normalize(g.category) === family.value));
+  picker.onchange = () => selectGroup(choices[picker.selectedIndex]);
   el("shared-more").onclick = () => { expanded = !expanded; draw(); };
-  chooseFamily();
+  selectGroup(shortcuts.keys().next().value || shared.find(g => normalize(g.category) !== "background") || shared[0]);
 }

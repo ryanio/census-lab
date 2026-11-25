@@ -279,6 +279,11 @@ function initAtlas() {
     clearTimeout(timer);
     pending = next;
     if (next === hover) return;
+    if (next && card.hidden) {
+      hover = next;
+      refresh();
+      return;
+    }
     timer = setTimeout(
       () => {
         hover = next;
