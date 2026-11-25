@@ -55,6 +55,12 @@ python3 render.py "$edition"
 python3 -m unittest -v
 ```
 
+## Study analytics
+
+In GA4 Explorations, break down total users by **Content group** (`overlap`, `traits`, or `hands`) and event name. For each study, divide users who triggered `study_explore` or `share` by users who triggered `page_view` for that study during the same period. Each ratio measures a different behavior.
+
+`study_explore` records a collection switch, browsing a shared trait, shuffling a lineup, or clicking the holding-history CSV. Register `study_action` as an event-scoped custom dimension for the action breakdown. `share` records a successful clipboard copy with `method=copy_link`. Opening a copied link records a page view. These events use the existing GA4 stream on the published site.
+
 ## License
 
 Ryan Ghods licenses the original Census Lab code under the [MIT License](LICENSE). Third-party NFT artwork remains subject to its respective rights holders' terms. The bundled icons carry their own [license notices](site/icons/LICENSE).
