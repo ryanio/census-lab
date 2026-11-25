@@ -54,3 +54,7 @@ python3 lineup_art.py "editions/$edition"  # uses ffmpeg for video and rsvg-conv
 python3 render.py "$edition"
 python3 -m unittest -v
 ```
+
+## License
+
+Ryan Ghods licenses the original Census Lab code under the [MIT License](LICENSE). Third-party NFT artwork remains subject to its respective rights holders' terms. The bundled icons carry their own [license notices](site/icons/LICENSE).
