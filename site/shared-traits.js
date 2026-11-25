@@ -42,7 +42,7 @@ function initSharedTraits() {
     for (const [trait, button] of shortcuts) {
       button.setAttribute("aria-pressed", String(trait === group));
     }
-    const members = [...group.members].sort(([a],[b]) => names[a].localeCompare(names[b]));
+    const members = [...group.members].sort(([a],[b]) => names[a].toLowerCase() < names[b].toLowerCase() ? -1 : names[a].toLowerCase() > names[b].toLowerCase() ? 1 : a.localeCompare(b));
     el("shared-head").textContent = group.label + " in " + members.length + " collections";
     const comparable = members.filter(([, counts]) => counts.length === 1)
       .sort((a, b) => b[1][0] - a[1][0]);
@@ -61,7 +61,9 @@ function initSharedTraits() {
         img.alt = tokenName + " (" + group.category + ": " + group.label + ")";
         img.loading = "lazy";
         img.onerror = () => asset.replaceChildren(node("span", "View artwork on OpenSea"));
-        img.src = example.image;
+        img.src = Object.keys(data.lineupCards).length && /\.(mp4|webm)(\?|$)/i.test(example.image)
+          ? new URL("stills/" + slug + "/" + example.token + ".webp", editionURL("traits")).href
+          : example.image;
         asset.append(img);
         tile.append(asset);
         caption.append(node("strong", names[slug]), link("#" + example.token, example.url));
@@ -122,9 +124,20 @@ function initSharedTraits() {
   el("shared-more").onclick = () => { expanded = !expanded; draw(); };
   el("shuffle-pfps").onclick = () => {
     const group = choices[picker.selectedIndex];
-    for (const [slug, current] of lineup) {
-      const others = pool(group, slug).filter(token => token !== current);
-      if (others.length) lineup.set(slug, others[Math.floor(Math.random() * others.length)]);
+    const card = data.lineupCards[JSON.stringify([normalize(group.category), normalize(group.label)])];
+    if (card) {
+      const score = round => round.ids.reduce((n, id, i) => n + (id !== lineup.get(card.slugs[i])?.token), 0);
+      const best = Math.max(...card.rounds.map(score));
+      const choices = card.rounds.filter(round => score(round) === best);
+      const next = choices[Math.floor(Math.random() * choices.length)];
+      const wasExpanded = expanded;
+      selectGroup(group, next.ids);
+      expanded = wasExpanded;
+    } else {
+      for (const [slug, current] of lineup) {
+        const others = pool(group, slug).filter(token => token !== current);
+        if (others.length) lineup.set(slug, others[Math.floor(Math.random() * others.length)]);
+      }
     }
     draw();
     el("lineup-status").textContent = "PFPs shuffled";
@@ -186,7 +199,10 @@ function initSharedTraits() {
     url.searchParams.set("tokens", [...lineup.keys()].sort().map(slug => lineup.get(slug)?.token || "").join("."));
     if (expanded) url.searchParams.set("all", "1");
 
-    copyStudyLink(url, el("lineup-status"));
+    const card = data.lineupCards[JSON.stringify([normalize(group.category), normalize(group.label)])];
+    const matching = card?.rounds.find(round => round.ids.every((id, i) => id === lineup.get(card.slugs[i])?.token));
+    const preview = matching && new URL("lineups/" + matching.path + (expanded && card.slugs.length > 6 ? "/all/" : "/"), url);
+    copyStudyLink(preview || url, el("lineup-status"));
   };
   const query = new URLSearchParams(location.search);
   const requested = groups.get(JSON.stringify([query.get("category"), query.get("trait")]));

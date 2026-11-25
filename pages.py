@@ -6,6 +6,7 @@ from datetime import date
 from pathlib import Path
 
 from discovery import PAGES, ROOT, page_path
+from lineup_cards import build as build_cards
 from render import SITE, render
 
 ASSETS = (
@@ -40,6 +41,8 @@ def package(destination):
             shutil.copyfile(edition / name, archive / name)
             if edition == editions[-1]:
                 shutil.copyfile(edition / name, destination / name)
+        if (edition / "lineup-art").exists():
+            build_cards(edition, destination)
         base = ROOT if edition == latest else ROOT + edition.as_posix() + "/"
         for entry in PAGES:
             name = page_path(entry) or "index.html"

@@ -16,7 +16,7 @@ Related publications include [PFP Census](https://ryanio.github.io/pfp-census/) 
 
 Overlap counts distinct wallet addresses. An address can hold tokens in custody for many people, and one person can use multiple wallets. The November holder crawl read 2,155 pages between 20:47 and 21:45 UTC, so ownership could change between reads. Using both collections' top 100 holders gave Azuki and Doodles just two shared addresses. Their full lists shared 512. [Address classifications](editions/2026-11-24/account-types.json) · [Original pilot snapshot](pilot-results.json)
 
-The gallery matches category and value across collections after trimming spaces and ignoring case. The shared-trait gallery checks each example against the individual NFT's metadata and links its token ID to OpenSea. Shuffle PFPs rotates verified examples within each collection. Copy a dated lineup link to preserve the token choices, or save the visible gallery as a PNG. Exports keep the original spellings. The pictured NFT is one example of a background, and its strip width follows the count within that collection. A floor is the cheapest active listing observed in its payment currency. The ETH ranking compares ETH listings only.
+The gallery matches category and value across collections after trimming spaces and ignoring case. The shared-trait gallery checks each example against the individual NFT's metadata and links its token ID to OpenSea. Shuffle PFPs rotates between prebuilt lineups of verified examples. Each share page serves its own JPEG and X card metadata directly from GitHub Pages. Copy a dated lineup link to preserve the token choices, or save the visible gallery as a PNG. Exports keep the original spellings. The pictured NFT is one example of a background, and its strip width follows the count within that collection. A floor is the cheapest active listing observed in its payment currency. The ETH ranking compares ETH listings only.
 
 A hold starts when a token changes address. Self-transfers preserve its tenure, while a transfer away and back resets it. The November replay checked the supply and every current owner against Ethereum at block 26,487,430 after processing 3,220 Autoglyphs and 1,004 DEAFBEEF transfer logs. Autoglyph #133 has stayed at its mint address since April 8, 2019. [Mint transaction](https://etherscan.io/tx/0x90fd1a3ece8550cb16c6cc0234d1d4d31522dac4aa480392d44ad905c72f1b63)
 
@@ -26,6 +26,7 @@ With Python 3.11 or later, run these commands from the repo root. The checked-in
 
 ```sh
 python3 render.py 2026-11-24
+python3 -m pip install -r requirements.txt
 python3 -m unittest -v
 preview_dir=$(mktemp -d)/site
 python3 pages.py "$preview_dir"
@@ -49,6 +50,7 @@ python3 diamond.py "editions/$edition/deafbeef.json" --contract 0xd754937672300a
 python3 account_types.py "$edition"
 python3 build.py "$edition"
 python3 trait_examples.py "editions/$edition"
+python3 lineup_art.py "editions/$edition"  # uses ffmpeg for video and rsvg-convert for SVG
 python3 render.py "$edition"
 python3 -m unittest -v
 ```

@@ -8,6 +8,7 @@ from html import escape
 from pathlib import Path
 
 from stories import holds_story, overlap_story
+from lineup_cards import variants
 from discovery import PAGES, ROOT, descriptions, metadata, page_path
 
 HOLD_COLLECTIONS = {"autoglyphs": "Autoglyphs", "deafbeef": "DEAFBEEF"}
@@ -51,8 +52,10 @@ def render(directory, entry="home", base=ROOT, *, standalone=True):
         series = json.loads((directory / f"{slug}.json").read_text())
         holdings[slug] = {"name": name, **series}
     examples = directory / "trait-examples.json"
+    tokens = json.loads(examples.read_text()) if (standalone or entry == "traits") and examples.exists() else {}
     snapshot = {
-        "traitExamples": json.loads(examples.read_text()) if (standalone or entry == "traits") and examples.exists() else {},
+        "traitExamples": tokens,
+        "lineupCards": variants(directory.name, tokens) if (directory / "lineup-art").exists() else {},
         "portraits": portraits,
         "edition": directory.name,
         "names": {slug: names[slug] for slug in cohort},
