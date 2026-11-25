@@ -6,7 +6,9 @@ function initSharedTraits() {
   for (const [slug, tokens] of Object.entries(data.traitExamples)) {
     for (const token of tokens) {
       for (const [category, value] of token.traits) {
-        examples.set(JSON.stringify([slug, category, value]), token);
+        const key = JSON.stringify([slug, category, value]);
+        if (!examples.has(key)) examples.set(key, []);
+        examples.get(key).push(token);
       }
     }
   }
@@ -30,8 +32,13 @@ function initSharedTraits() {
   family.replaceChildren(...families.map(c => new Option(c, c)));
   const shortcuts = new Map();
   let choices = [], expanded = false;
+  const lineup = new Map();
+  function pool(group, slug) {
+    return examples.get(JSON.stringify([slug, normalize(group.category), normalize(group.label)])) || [];
+  }
   function draw() {
     const group = choices[picker.selectedIndex];
+    el("lineup-status").replaceChildren();
     for (const [trait, button] of shortcuts) {
       button.setAttribute("aria-pressed", String(trait === group));
     }
@@ -46,7 +53,7 @@ function initSharedTraits() {
       : "";
     wall.replaceChildren();
     for (const [slug, counts] of expanded ? members : members.slice(0,6)) {
-      const example = examples.get(JSON.stringify([slug, normalize(group.category), normalize(group.label)]));
+      const example = lineup.get(slug);
       const tile = node("figure"), caption = node("figcaption");
       if (example) {
         const tokenName = names[slug] + " #" + example.token;
@@ -69,7 +76,7 @@ function initSharedTraits() {
     more.textContent = expanded ? "Show first six" : "Show all " + members.length + " collections";
     more.setAttribute("aria-expanded", String(expanded));
   }
-  function selectGroup(group) {
+  function selectGroup(group, saved = null) {
     const category = normalize(group.category);
     if (!choices.includes(group)) {
       family.value = category;
@@ -78,6 +85,15 @@ function initSharedTraits() {
       el("trait-prev").disabled = el("trait-next").disabled = choices.length < 2;
     }
     picker.selectedIndex = choices.indexOf(group);
+    lineup.clear();
+    let canShuffle = false;
+    for (const [i, slug] of [...group.members.keys()].sort().entries()) {
+      const tokens = pool(group, slug);
+      const selected = saved && tokens.find(t => t.token === saved[i]);
+      lineup.set(slug, selected || tokens[0]);
+      canShuffle ||= tokens.length > 1;
+    }
+    el("shuffle-pfps").disabled = !canShuffle;
     expanded = false;
     draw();
   }
@@ -104,5 +120,79 @@ function initSharedTraits() {
   family.onchange = () => selectGroup(shared.find(g => normalize(g.category) === family.value));
   picker.onchange = () => selectGroup(choices[picker.selectedIndex]);
   el("shared-more").onclick = () => { expanded = !expanded; draw(); };
-  selectGroup(shortcuts.keys().next().value || shared.find(g => normalize(g.category) !== "background") || shared[0]);
+  el("shuffle-pfps").onclick = () => {
+    const group = choices[picker.selectedIndex];
+    for (const [slug, current] of lineup) {
+      const others = pool(group, slug).filter(token => token !== current);
+      if (others.length) lineup.set(slug, others[Math.floor(Math.random() * others.length)]);
+    }
+    draw();
+    el("lineup-status").textContent = "PFPs shuffled";
+  };
+  el("save-lineup").onclick = async () => {
+    const save = el("save-lineup");
+    save.disabled = true;
+    const group = choices[picker.selectedIndex];
+    const visible = [...wall.querySelectorAll("figure")];
+    try {
+      const tiles = await Promise.all(visible.map(async figure => {
+        const source = figure.querySelector("img");
+        if (!source) throw new Error("Missing artwork");
+        const image = new Image();
+        image.crossOrigin = "anonymous";
+        image.src = source.src;
+        await image.decode();
+        return {image, name: figure.querySelector("strong").textContent, token: figure.querySelector("figcaption a").textContent};
+      }));
+      const canvas = node("canvas"), columns = Math.min(3, tiles.length);
+      const side = 300, gap = 20, margin = 36, rowHeight = 380;
+      canvas.width = 2 * margin + columns * side + (columns - 1) * gap;
+      canvas.height = 174 + Math.ceil(tiles.length / columns) * rowHeight;
+      const ctx = canvas.getContext("2d");
+      ctx.fillStyle = "#f4e6d7";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#412b20";
+      ctx.font = "20px monospace";
+      ctx.fillText("Census  /  " + group.category, margin, 40);
+      ctx.font = "56px Georgia";
+      ctx.fillText(group.label, margin, 108, canvas.width - margin * 2);
+      tiles.forEach(({image, name, token}, i) => {
+        const x = margin + (i % columns) * (side + gap), y = 138 + Math.floor(i / columns) * rowHeight;
+        const scale = side / Math.max(image.width, image.height);
+        const w = image.width * scale, h = image.height * scale;
+        ctx.drawImage(image, x + (side - w) / 2, y + (side - h) / 2, w, h);
+        ctx.font = "bold 22px sans-serif";
+        ctx.fillText(name, x, y + side + 29, side);
+        ctx.font = "18px monospace";
+        ctx.fillText(token, x, y + side + 54, side);
+      });
+      ctx.font = "17px monospace";
+      ctx.fillText("ryanio.github.io/census-lab  /  " + data.edition, margin, canvas.height - 20, canvas.width - margin * 2);
+      const url = canvas.toDataURL("image/png");
+      const download = link("", url);
+      download.download = "census-" + group.label.toLowerCase().replace(/[^a-z0-9]+/g, "-") + ".png";
+      download.click();
+    } catch {
+      el("lineup-status").textContent = "Artwork could not be exported. You can still copy the lineup link.";
+    } finally {
+      save.disabled = false;
+    }
+  };
+  el("share-lineup").onclick = () => {
+    const group = choices[picker.selectedIndex];
+    const url = editionURL("traits");
+    url.searchParams.set("category", normalize(group.category));
+    url.searchParams.set("trait", normalize(group.label));
+    url.searchParams.set("tokens", [...lineup.keys()].sort().map(slug => lineup.get(slug)?.token || "").join("."));
+    if (expanded) url.searchParams.set("all", "1");
+
+    copyStudyLink(url, el("lineup-status"));
+  };
+  const query = new URLSearchParams(location.search);
+  const requested = groups.get(JSON.stringify([query.get("category"), query.get("trait")]));
+  if (requested && requested.members.size > 1) {
+    selectGroup(requested, (query.get("tokens") || "").split("."));
+    expanded = query.get("all") === "1";
+    draw();
+  } else selectGroup(shortcuts.keys().next().value || shared.find(g => normalize(g.category) !== "background") || shared[0]);
 }

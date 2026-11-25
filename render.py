@@ -20,7 +20,7 @@ def read_csv(path):
         return list(csv.DictReader(file))
 
 
-def render(directory, entry="home", base=ROOT):
+def render(directory, entry="home", base=ROOT, *, standalone=True):
     pairs = read_csv(directory / "overlap.csv")
     for pair in pairs:
         for key in ("shared", "holders_a", "holders_b", "top100_shared"):
@@ -52,7 +52,7 @@ def render(directory, entry="home", base=ROOT):
         holdings[slug] = {"name": name, **series}
     examples = directory / "trait-examples.json"
     snapshot = {
-        "traitExamples": json.loads(examples.read_text()) if examples.exists() else {},
+        "traitExamples": json.loads(examples.read_text()) if (standalone or entry == "traits") and examples.exists() else {},
         "portraits": portraits,
         "edition": directory.name,
         "names": {slug: names[slug] for slug in cohort},

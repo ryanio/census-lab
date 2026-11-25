@@ -113,6 +113,7 @@
             >Collection
             <select id="community"></select></label
           ><button id="download">Save neighbor card</button>
+          <button data-share-study="overlap" type="button">Copy map link</button><span role="status"></span>
         </div>
         <figure>
           <div id="map"></div>
@@ -166,6 +167,12 @@
           </div>
           <h3 id="shared-head" aria-live="polite"></h3>
           <p id="shared-finding"></p>
+          <div class="lineup-actions">
+            <button id="shuffle-pfps" type="button">Shuffle PFPs</button>
+            <button id="save-lineup" type="button">Save lineup image</button>
+            <button id="share-lineup" type="button">Copy lineup link</button>
+            <span id="lineup-status" role="status"></span>
+          </div>
           <div id="trait-wall"></div>
           <button id="shared-more" aria-controls="trait-wall" type="button" hidden></button>
           <p class="note">Matches use the same category and value, ignoring case and surrounding spaces. Counts come from each collection. Each pictured token has the selected trait in its metadata. Select the artwork to see the token on OpenSea.</p>
@@ -226,6 +233,7 @@
             >Collection
             <select id="hold-series"></select
           ></label>
+          <button data-share-study="hands" type="button">Copy study link</button><span role="status"></span>
         </div>
         <!--__HOLDS_STORY__-->
         <div id="metrics" class="metrics"></div>

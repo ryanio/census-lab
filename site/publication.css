@@ -1053,3 +1053,10 @@ nav .icon {
 .trait-step button { background: transparent; color: var(--deep); }
 .trait-step button:disabled { opacity: .45; }
 @media (pointer: coarse) { #trait-picks button, .trait-step button { min-height: 44px; } }
+
+.lineup-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin: 16px 0; }
+.lineup-actions button { min-height: 44px; border-color: var(--deep); }
+#shuffle-pfps { background: var(--deep); color: white; }
+#shuffle-pfps:disabled { opacity: .5; }
+.lineup-actions [role=status], .tools [role=status] { font-size: 14px; max-width: 100%; }
+.tools [role=status]:empty { display: none; }

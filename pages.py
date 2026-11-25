@@ -43,7 +43,7 @@ def package(destination):
         base = ROOT if edition == latest else ROOT + edition.as_posix() + "/"
         for entry in PAGES:
             name = page_path(entry) or "index.html"
-            html = render(edition, entry, base)
+            html = render(edition, entry, base, standalone=False)
             (archive / name).write_text(html)
             if edition == latest:
                 (destination / name).write_text(html)

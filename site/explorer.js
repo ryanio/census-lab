@@ -29,6 +29,30 @@ function studyURL(tab, slug) {
   if (location.protocol === "file:") return fragment;
   return (tab === "home" ? "./" : tab + ".html") + (slug ? fragment : "");
 }
+function editionURL(tab) {
+  return new URL("https://ryanio.github.io/census-lab/editions/" + data.edition + "/" + tab + ".html");
+}
+async function copyStudyLink(url, status) {
+  try {
+    await navigator.clipboard.writeText(url.href);
+    status.textContent = "Link copied";
+  } catch {
+    const field = node("input");
+    field.readOnly = true;
+    field.setAttribute("aria-label", "Share link");
+    field.value = url.href;
+    status.replaceChildren(field);
+    field.select();
+  }
+}
+for (const button of document.querySelectorAll("[data-share-study]")) {
+  button.onclick = () => {
+    const tab = button.dataset.shareStudy;
+    const url = editionURL(tab);
+    url.hash = tab + "/" + el(tab === "overlap" ? "community" : "hold-series").value;
+    copyStudyLink(url, button.nextElementSibling);
+  };
+}
 function navigate(tab, slug) {
   location.href = studyURL(tab, slug);
 }
