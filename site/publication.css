@@ -1055,3 +1055,5 @@ nav .icon {
 #trait-picks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
 #trait-picks button { border-radius: 2em; border-color: var(--deep); background: transparent; color: var(--deep); }
 #trait-picks button:hover, #trait-picks button:focus-visible { color: white; background: var(--deep); }
+.finding .story-end { margin-top: 20px; }
+#shared-finding:not(:empty) { margin-bottom: 16px; }

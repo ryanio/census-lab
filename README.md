@@ -7,7 +7,7 @@
 | Study | November 24, 2026 edition | Download |
 | --- | --- | --- |
 | [Community overlap](https://ryanio.github.io/census-lab/overlap.html) | 50 collections and 1,225 pairs. Mutant Ape Yacht Club and Bored Ape Kennel Club shared 2,872 addresses, or 23.50% and 55.76% of their respective holder lists. | [Pairs](editions/2026-11-24/overlap.csv) · [Crawl windows](editions/2026-11-24/coverage.csv) |
-| [Trait studies](https://ryanio.github.io/census-lab/traits.html) | 38,900 text trait values ranked by count or listed ETH floor. The background palette links 759 labels across 39 collections to example NFTs. | [Traits and floors](editions/2026-11-24/traits.csv) · [Backgrounds](editions/2026-11-24/backgrounds.csv) |
+| [Trait studies](https://ryanio.github.io/census-lab/traits.html) | Across 38,900 reported text values, 22 collections use a blue background and ten use the mouth label "Tongue Out". The background palette links 759 labels across 39 collections to example NFTs. | [Traits and floors](editions/2026-11-24/traits.csv) · [Backgrounds](editions/2026-11-24/backgrounds.csv) |
 | [Diamond hands](https://ryanio.github.io/census-lab/hands.html) | 54 of 512 Autoglyphs and 13 of 224 DEAFBEEF tokens stayed at their mint-recipient address continuously. | [Autoglyphs](editions/2026-11-24/holds.csv) · [DEAFBEEF](editions/2026-11-24/deafbeef-holds.csv) |
 
 Related publications include [PFP Census](https://ryanio.github.io/pfp-census/) and [Card Census](https://ryanio.github.io/card-census/).
@@ -16,7 +16,7 @@ Related publications include [PFP Census](https://ryanio.github.io/pfp-census/) 
 
 Overlap counts distinct wallet addresses. An address can hold tokens in custody for many people, and one person can use multiple wallets. The November holder crawl read 2,155 pages between 20:47 and 21:45 UTC, so ownership could change between reads. Using both collections' top 100 holders gave Azuki and Doodles just two shared addresses. Their full lists shared 512. [Address classifications](editions/2026-11-24/account-types.json) · [Original pilot snapshot](pilot-results.json)
 
-Trait labels keep the spelling from each collection. The pictured NFT is one example of a background, and its strip width follows the count within that collection. A floor is the cheapest active listing observed in its payment currency. The ETH ranking compares ETH listings only.
+The gallery matches category and value across collections after trimming spaces and ignoring case. Exports keep the original spellings. The pictured NFT is one example of a background, and its strip width follows the count within that collection. A floor is the cheapest active listing observed in its payment currency. The ETH ranking compares ETH listings only.
 
 A hold starts when a token changes address. Self-transfers preserve its tenure, while a transfer away and back resets it. The November replay checked the supply and every current owner against Ethereum at block 26,487,430 after processing 3,220 Autoglyphs and 1,004 DEAFBEEF transfer logs. Autoglyph #133 has stayed at its mint address since April 8, 2019. [Mint transaction](https://etherscan.io/tx/0x90fd1a3ece8550cb16c6cc0234d1d4d31522dac4aa480392d44ad905c72f1b63)
 

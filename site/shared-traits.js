@@ -28,6 +28,13 @@ function initSharedTraits() {
     const group = choices[picker.selectedIndex];
     const members = [...group.members].sort(([a],[b]) => names[a].localeCompare(names[b]));
     el("shared-head").textContent = group.label + " in " + members.length + " collections";
+    const comparable = members.filter(([, counts]) => counts.length === 1)
+      .sort((a, b) => b[1][0] - a[1][0]);
+    const first = comparable[0], last = comparable.at(-1);
+    el("shared-finding").textContent = comparable.length > 1 && first[1][0] !== last[1][0]
+      ? names[first[0]] + " reports " + fmt(first[1][0]) + " NFTs with this label. " +
+        names[last[0]] + " reports " + fmt(last[1][0]) + ". These counts reflect collection size as well as trait frequency."
+      : "";
     wall.replaceChildren();
     for (const [slug, counts] of expanded ? members : members.slice(0,6)) {
       const example = examples.get(JSON.stringify([slug, normalize(group.category), normalize(group.label)]));
