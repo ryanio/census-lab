@@ -120,8 +120,11 @@
             explore its community.
           </figcaption>
         </figure>
-        <h2>Shared addresses</h2>
-        <div class="tablewrap">
+        <div class="table-heading">
+          <h2 id="neighbors-heading">Shared addresses</h2>
+          <button class="linkbtn" id="more-neighbors" aria-controls="neighbor-ranking" type="button"></button>
+        </div>
+        <div class="tablewrap" id="neighbor-ranking" role="region" aria-labelledby="neighbors-heading">
           <table>
             <thead>
               <tr>
@@ -136,8 +139,7 @@
           </table>
         </div>
         <p class="footer">
-          <button class="linkbtn" id="more-neighbors" type="button"></button
-          ><br />Each set includes every distinct address returned before the
+          Each set includes every distinct address returned before the
           final cursor. Contracts, custody wallets and multiple wallets held by
           one person can affect the count. Collections were read over a rolling
           window. <a href="overlap.csv">Pair data</a> ·
@@ -209,7 +211,7 @@
         <div id="metrics" class="metrics"></div>
         <h2>Time in current wallet</h2>
         <div class="bars" id="hist"></div>
-        <div class="holds-heading">
+        <div class="table-heading">
           <h2>Five longest current holds</h2>
           <a id="holds-download" href="holds.csv">Download all holds (CSV)</a>
         </div>

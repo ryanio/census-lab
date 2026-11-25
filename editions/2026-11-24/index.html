@@ -800,7 +800,7 @@ nav .icon {
   }
 }
 
-.holds-heading {
+.table-heading {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
@@ -808,17 +808,15 @@ nav .icon {
   gap: 6px 20px;
   margin: 38px 0 12px;
 }
-.study .holds-heading h2 {
+.study .table-heading h2 {
   margin: 0;
 }
-.holds-heading a {
+.table-heading a,
+.table-heading button {
   font-size: 14px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hover-card {
-    transition: transform 100ms ease-out;
-  }
   .hover-card:not([hidden]) {
     animation: atlas-appear 120ms ease-out;
   }
@@ -1057,6 +1055,23 @@ nav .icon {
   }
 }
 
+@media (min-width: 641px) {
+  /* Keep column headings visible while exploring the full ranking. */
+  .table-heading:has([aria-expanded="true"]) + #neighbor-ranking {
+    max-height: min(60vh, 570px);
+    scroll-padding-top: 3rem;
+  }
+  .study th:first-child,
+  .study td:first-child,
+  #labels td:last-child {
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .study tbody tr:focus-within td {
+    background: var(--tint);
+  }
+}
+
     </style>
   </head>
   <body data-entry="home">
@@ -1234,8 +1249,11 @@ SOFTWARE.
             explore its community.
           </figcaption>
         </figure>
-        <h2>Shared addresses</h2>
-        <div class="tablewrap">
+        <div class="table-heading">
+          <h2 id="neighbors-heading">Shared addresses</h2>
+          <button class="linkbtn" id="more-neighbors" aria-controls="neighbor-ranking" type="button"></button>
+        </div>
+        <div class="tablewrap" id="neighbor-ranking" role="region" aria-labelledby="neighbors-heading">
           <table>
             <thead>
               <tr>
@@ -1250,8 +1268,7 @@ SOFTWARE.
           </table>
         </div>
         <p class="footer">
-          <button class="linkbtn" id="more-neighbors" type="button"></button
-          ><br />Each set includes every distinct address returned before the
+          Each set includes every distinct address returned before the
           final cursor. Contracts, custody wallets and multiple wallets held by
           one person can affect the count. Collections were read over a rolling
           window. <a href="overlap.csv">Pair data</a> ·
@@ -1323,7 +1340,7 @@ SOFTWARE.
         <div id="metrics" class="metrics"></div>
         <h2>Time in current wallet</h2>
         <div class="bars" id="hist"></div>
-        <div class="holds-heading">
+        <div class="table-heading">
           <h2>Five longest current holds</h2>
           <a id="holds-download" href="holds.csv">Download all holds (CSV)</a>
         </div>
@@ -1809,7 +1826,7 @@ function initAtlas() {
     refresh();
   };
   chart.onpointermove = (e) => {
-    if (e.pointerType === "touch") return;
+    if (pinned || e.pointerType === "touch") return;
     pointer = { x: e.clientX, y: e.clientY };
     if (!frame)
       frame = requestAnimationFrame(() => {
@@ -1819,6 +1836,7 @@ function initAtlas() {
       });
   };
   chart.onpointerleave = () => {
+    if (pinned) return;
     cancelAnimationFrame(frame);
     frame = 0;
     consider(null);

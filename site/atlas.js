@@ -300,7 +300,7 @@ function initAtlas() {
     refresh();
   };
   chart.onpointermove = (e) => {
-    if (e.pointerType === "touch") return;
+    if (pinned || e.pointerType === "touch") return;
     pointer = { x: e.clientX, y: e.clientY };
     if (!frame)
       frame = requestAnimationFrame(() => {
@@ -310,6 +310,7 @@ function initAtlas() {
       });
   };
   chart.onpointerleave = () => {
+    if (pinned) return;
     cancelAnimationFrame(frame);
     frame = 0;
     consider(null);
