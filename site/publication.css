@@ -1029,3 +1029,29 @@ nav .icon {
     background: var(--tint);
   }
 }
+
+.finding { margin: 2rem 0; padding: clamp(16px, 3vw, 36px); background: var(--tint); border-top: 2px solid var(--deep); }
+.study .finding h2 { margin: 0 0 12px; }
+.finding p { max-width: 68ch; }
+.share-line { display: grid; grid-template-columns: 44px 1fr auto; gap: 0 12px; align-items: center; max-width: 640px; margin-top: 18px; }
+.share-line img { width: 44px; height: 44px; border-radius: 5px; grid-row: span 2; }
+.share-line small, #trait-wall figcaption > * { display: block; }
+.share-line meter { grid-column: 2/-1; width: 100%; accent-color: var(--deep); }
+.hold-fields { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,270px),1fr)); gap: 24px; margin-top: 22px; }
+.token-field { display: grid; grid-template-columns: repeat(32,1fr); gap: 2px; margin-top: 8px; }
+.token-field i { aspect-ratio: 1; background: #b0c7ae; }
+.token-field .kept { background: var(--deep); }
+.trait-pickers { justify-content: start; }
+.trait-pickers label, .trait-pickers select { max-width: 100%; }
+#shared-head { font: 400 clamp(24px,3vw,38px)/1.1 var(--display); margin-block: 22px 14px; }
+#trait-wall { display: grid; grid-template-columns: repeat(auto-fill,minmax(min(100%,145px),1fr)); gap: 18px 12px; }
+#trait-wall figure { min-width: 0; }
+#trait-wall img { width: 100%; display: block; aspect-ratio: 1; object-fit: cover; border-radius: 3px; background: #dfbc9e; }
+#trait-wall figcaption { margin-top: 6px; line-height: 1.35; overflow-wrap: anywhere; }
+#trait-wall small { color: var(--muted); }
+#shared-more { margin-top: 18px; }
+#collection-traits summary { cursor: pointer; font: 28px var(--display); }
+@media (max-width: 480px) { #trait-wall { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+#trait-picks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+#trait-picks button { border-radius: 2em; border-color: var(--deep); background: transparent; color: var(--deep); }
+#trait-picks button:hover, #trait-picks button:focus-visible { color: white; background: var(--deep); }

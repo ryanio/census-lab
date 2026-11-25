@@ -107,6 +107,7 @@
           Which collections share the most holder addresses? Choose a collection
           to find its five closest neighbors across this Ethereum sample.
         </p>
+        <!--__OVERLAP_STORY__-->
         <div class="tools">
           <label
             >Collection
@@ -148,11 +149,21 @@
       </section>
       <section id="traits" class="study" __VISIBLE_traits__>
         <h1>Trait studies</h1>
-        <p><!--__SUMMARY_traits__-->
-          Explore the rarest and most common text traits in each collection. In
-          the background strip, each example occupies a share proportional to
-          its trait count.
-        </p>
+        <p><!--__SUMMARY_traits__--></p>
+        <article id="shared-study" class="finding">
+          <h2>Same label, different worlds</h2>
+          <p>A blue background can sit behind a pixel portrait or a hand-drawn character. Start with blue, then try a mouth or a pair of eyes to see which collections share the same vocabulary.</p>
+          <div id="trait-picks" aria-label="Featured comparisons"></div>
+          <div class="tools trait-pickers">
+            <label>Category <select id="shared-category"></select></label>
+            <label>Shared trait <select id="shared-label"></select></label>
+          </div>
+          <h3 id="shared-head" aria-live="polite"></h3>
+          <div id="trait-wall"></div>
+          <button id="shared-more" aria-controls="trait-wall" type="button" hidden></button>
+          <p class="note">Matches use the same category and value, ignoring case and surrounding spaces. Counts come from each collection. A linked image shows a token with the trait. Other images identify the collection.</p>
+        </article>
+        <details id="collection-traits"><summary>Explore one collection</summary>
         <div class="tools">
           <label
             >Collection
@@ -194,6 +205,7 @@
           listings only. <a href="traits.csv">All text traits and floors</a> ·
           <a href="backgrounds.csv">Illustrated backgrounds</a>
         </p>
+        </details>
       </section>
       <section id="hands" class="study" __VISIBLE_hands__>
         <h1>Diamond hands</h1>
@@ -208,6 +220,7 @@
             <select id="hold-series"></select
           ></label>
         </div>
+        <!--__HOLDS_STORY__-->
         <div id="metrics" class="metrics"></div>
         <h2>Time in current wallet</h2>
         <div class="bars" id="hist"></div>
@@ -252,6 +265,7 @@
       /*__ATLAS__*/
     </script>
     <script>
+      /*__SHARED_TRAITS__*/
       /*__EXPLORER__*/
     </script>
   </body>

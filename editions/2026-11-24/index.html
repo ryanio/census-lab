@@ -30,7 +30,7 @@
 <meta name="twitter:description" content="Explore holder overlap across 50 Ethereum NFT collections, trait frequencies and listing floors, and onchain holding histories. Field studies by Ryan Ghods.">
 <meta name="twitter:image" content="https://ryanio.github.io/census-lab/assets/home.png">
 <meta name="twitter:image:alt" content="Census | Ethereum NFT field studies">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://ryanio.github.io/census-lab/#website", "url": "https://ryanio.github.io/census-lab/", "name": "Census", "creator": {"@type": "Person", "name": "Ryan Ghods", "url": "https://ryanio.com/", "sameAs": ["https://x.com/r_alx_z", "https://github.com/ryanio"]}}, {"@type": "CollectionPage", "@id": "https://ryanio.github.io/census-lab/#page", "url": "https://ryanio.github.io/census-lab/", "name": "Census | Ethereum NFT field studies", "description": "Explore holder overlap across 50 Ethereum NFT collections, trait frequencies and listing floors, and onchain holding histories. Field studies by Ryan Ghods.", "inLanguage": "en", "isPartOf": {"@id": "https://ryanio.github.io/census-lab/#website"}, "image": "https://ryanio.github.io/census-lab/assets/home.png", "author": {"@type": "Person", "name": "Ryan Ghods", "url": "https://ryanio.com/", "sameAs": ["https://x.com/r_alx_z", "https://github.com/ryanio"]}, "hasPart": [{"@type": "WebPage", "url": "https://ryanio.github.io/census-lab/overlap.html", "name": "NFT holder overlap map | Census"}, {"@type": "WebPage", "url": "https://ryanio.github.io/census-lab/traits.html", "name": "NFT trait frequencies and listing floors | Census"}, {"@type": "WebPage", "url": "https://ryanio.github.io/census-lab/hands.html", "name": "Diamond hands: NFT holding histories | Census"}]}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "WebSite", "@id": "https://ryanio.github.io/census-lab/#website", "url": "https://ryanio.github.io/census-lab/", "name": "Census", "creator": {"@type": "Person", "name": "Ryan Ghods", "url": "https://ryanio.com/", "sameAs": ["https://x.com/r_alx_z", "https://github.com/ryanio"]}}, {"@type": "CollectionPage", "@id": "https://ryanio.github.io/census-lab/#page", "url": "https://ryanio.github.io/census-lab/", "name": "Census | Ethereum NFT field studies", "description": "Explore holder overlap across 50 Ethereum NFT collections, trait frequencies and listing floors, and onchain holding histories. Field studies by Ryan Ghods.", "inLanguage": "en", "isPartOf": {"@id": "https://ryanio.github.io/census-lab/#website"}, "image": "https://ryanio.github.io/census-lab/assets/home.png", "author": {"@type": "Person", "name": "Ryan Ghods", "url": "https://ryanio.com/", "sameAs": ["https://x.com/r_alx_z", "https://github.com/ryanio"]}, "hasPart": [{"@type": "WebPage", "url": "https://ryanio.github.io/census-lab/overlap.html", "name": "NFT holder overlap map | Census"}, {"@type": "WebPage", "url": "https://ryanio.github.io/census-lab/traits.html", "name": "Shared NFT traits across collections | Census"}, {"@type": "WebPage", "url": "https://ryanio.github.io/census-lab/hands.html", "name": "Diamond hands: NFT holding histories | Census"}]}]}</script>
     <script>
       // Preserve shared fragment links when opening the former single-page site.
       const legacyStudy = location.hash.slice(1).split("/")[0];
@@ -1072,6 +1072,32 @@ nav .icon {
   }
 }
 
+.finding { margin: 2rem 0; padding: clamp(16px, 3vw, 36px); background: var(--tint); border-top: 2px solid var(--deep); }
+.study .finding h2 { margin: 0 0 12px; }
+.finding p { max-width: 68ch; }
+.share-line { display: grid; grid-template-columns: 44px 1fr auto; gap: 0 12px; align-items: center; max-width: 640px; margin-top: 18px; }
+.share-line img { width: 44px; height: 44px; border-radius: 5px; grid-row: span 2; }
+.share-line small, #trait-wall figcaption > * { display: block; }
+.share-line meter { grid-column: 2/-1; width: 100%; accent-color: var(--deep); }
+.hold-fields { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,270px),1fr)); gap: 24px; margin-top: 22px; }
+.token-field { display: grid; grid-template-columns: repeat(32,1fr); gap: 2px; margin-top: 8px; }
+.token-field i { aspect-ratio: 1; background: #b0c7ae; }
+.token-field .kept { background: var(--deep); }
+.trait-pickers { justify-content: start; }
+.trait-pickers label, .trait-pickers select { max-width: 100%; }
+#shared-head { font: 400 clamp(24px,3vw,38px)/1.1 var(--display); margin-block: 22px 14px; }
+#trait-wall { display: grid; grid-template-columns: repeat(auto-fill,minmax(min(100%,145px),1fr)); gap: 18px 12px; }
+#trait-wall figure { min-width: 0; }
+#trait-wall img { width: 100%; display: block; aspect-ratio: 1; object-fit: cover; border-radius: 3px; background: #dfbc9e; }
+#trait-wall figcaption { margin-top: 6px; line-height: 1.35; overflow-wrap: anywhere; }
+#trait-wall small { color: var(--muted); }
+#shared-more { margin-top: 18px; }
+#collection-traits summary { cursor: pointer; font: 28px var(--display); }
+@media (max-width: 480px) { #trait-wall { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+#trait-picks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+#trait-picks button { border-radius: 2em; border-color: var(--deep); background: transparent; color: var(--deep); }
+#trait-picks button:hover, #trait-picks button:focus-visible { color: white; background: var(--deep); }
+
     </style>
   </head>
   <body data-entry="home">
@@ -1236,6 +1262,7 @@ SOFTWARE.
           Which collections share the most holder addresses? Choose a collection
           to find its five closest neighbors across this Ethereum sample.
         </p>
+        <article class="finding"><h2>One pair, two percentages</h2><p>Mutant Ape Yacht Club and Bored Ape Kennel Club share 2,872 addresses, the largest raw overlap in this edition. Start from either side and the count stays the same. The percentage changes because each collection has a different holder population.</p><div class="share-line"><img alt="" src="data:image/webp;base64,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"><span>Mutant Ape Yacht Club<small>12,219 holder addresses</small></span><b>23.5%</b><meter min="0" max="100" value="23.5" aria-label="Mutant Ape Yacht Club overlap"></meter></div><div class="share-line"><img alt="" src="data:image/webp;base64,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"><span>Bored Ape Kennel Club<small>5,151 holder addresses</small></span><b>55.76%</b><meter min="0" max="100" value="55.76" aria-label="Bored Ape Kennel Club overlap"></meter></div><p class="note">Read the bars as shares of each holder population. A shared address can be a person, a vault or a custodian.</p></article>
         <div class="tools">
           <label
             >Collection
@@ -1277,11 +1304,21 @@ SOFTWARE.
       </section>
       <section id="traits" class="study" hidden>
         <h1>Trait studies</h1>
-        <p>Explore 38,900 text trait values across 50 Ethereum NFT collections. Compare rare and common traits, listed ETH floors, and illustrated backgrounds.
-          Explore the rarest and most common text traits in each collection. In
-          the background strip, each example occupies a share proportional to
-          its trait count.
-        </p>
+        <p>Explore 38,900 text trait values across 50 Ethereum NFT collections. Find the background colors, expressions and accessories that turn up in more than one collection.</p>
+        <article id="shared-study" class="finding">
+          <h2>Same label, different worlds</h2>
+          <p>A blue background can sit behind a pixel portrait or a hand-drawn character. Start with blue, then try a mouth or a pair of eyes to see which collections share the same vocabulary.</p>
+          <div id="trait-picks" aria-label="Featured comparisons"></div>
+          <div class="tools trait-pickers">
+            <label>Category <select id="shared-category"></select></label>
+            <label>Shared trait <select id="shared-label"></select></label>
+          </div>
+          <h3 id="shared-head" aria-live="polite"></h3>
+          <div id="trait-wall"></div>
+          <button id="shared-more" aria-controls="trait-wall" type="button" hidden></button>
+          <p class="note">Matches use the same category and value, ignoring case and surrounding spaces. Counts come from each collection. A linked image shows a token with the trait. Other images identify the collection.</p>
+        </article>
+        <details id="collection-traits"><summary>Explore one collection</summary>
         <div class="tools">
           <label
             >Collection
@@ -1323,6 +1360,7 @@ SOFTWARE.
           listings only. <a href="traits.csv">All text traits and floors</a> ·
           <a href="backgrounds.csv">Illustrated backgrounds</a>
         </p>
+        </details>
       </section>
       <section id="hands" class="study" hidden>
         <h1>Diamond hands</h1>
@@ -1337,6 +1375,7 @@ SOFTWARE.
             <select id="hold-series"></select
           ></label>
         </div>
+        <article class="finding"><h2>Who kept the original?</h2><p>Each square is one artwork, ordered by token number. Dark squares stayed at their mint-recipient address through the snapshot. Pale squares changed addresses at least once, even if the work eventually came back.</p><div class="hold-fields"><figure><figcaption><b>Autoglyphs</b> 54 of 512 stayed</figcaption><div class="token-field" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i class="kept"></i><i class="kept"></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i class="kept"></i><i></i><i></i><i class="kept"></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i class="kept"></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i class="kept"></i><i></i><i></i><i class="kept"></i><i></i><i></i><i class="kept"></i><i></i><i></i><i class="kept"></i><i></i><i class="kept"></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i class="kept"></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i class="kept"></i><i class="kept"></i><i></i><i></i><i class="kept"></i><i></i><i></i><i class="kept"></i><i class="kept"></i><i class="kept"></i><i></i><i></i><i class="kept"></i><i></i><i></i><i class="kept"></i><i class="kept"></i><i></i><i class="kept"></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i class="kept"></i><i></i><i></i><i class="kept"></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></figure><figure><figcaption><b>DEAFBEEF</b> 13 of 224 stayed</figcaption><div class="token-field" aria-hidden="true"><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i class="kept"></i><i class="kept"></i><i></i><i></i><i></i><i></i><i></i><i class="kept"></i><i></i><i></i></div></figure></div><p class="note">One work returned to its mint recipient after leaving. The transfer history distinguishes a homecoming from an unbroken hold.</p></article>
         <div id="metrics" class="metrics"></div>
         <h2>Time in current wallet</h2>
         <div class="bars" id="hist"></div>
@@ -1405,7 +1444,7 @@ const studies = [
             ),
           0,
         ),
-      ) + " text trait values, ranked by frequency and listed floor.",
+      ) + " text trait values. Find the colors and expressions collections share.",
     art: palettePrint,
   },
   {
@@ -1891,6 +1930,82 @@ function initAtlas() {
 
     </script>
     <script>
+      // Compare identical category/value pairs across collections. Count each collection once.
+function initSharedTraits() {
+  const groups = new Map();
+  const normalize = (text) => text.trim().toLowerCase();
+  const examples = new Map(data.colors.filter((r) => r.image && r.url).map((r) =>
+    [JSON.stringify([r.slug, normalize(r.category), normalize(r.value)]), r]));
+  for (const [slug, categories] of Object.entries(data.traits)) {
+    for (const [category, values] of Object.entries(categories)) {
+      for (const [label, count] of values) {
+        const key = JSON.stringify([normalize(category), normalize(label)]);
+        if (!groups.has(key)) groups.set(key, {category, label, members: new Map()});
+        const members = groups.get(key).members;
+        // Case variants may describe the same NFTs. Keep their reported counts separate.
+        if (!members.has(slug)) members.set(slug, []);
+        members.get(slug).push(count);
+      }
+    }
+  }
+  const shared = [...groups.values()].filter(g => g.members.size > 1).sort((a,b) =>
+    b.members.size - a.members.size || a.label.localeCompare(b.label));
+  const picker = el("shared-label"), family = el("shared-category"), wall = el("trait-wall");
+  if (!shared.length) { el("shared-study").hidden = true; return; }
+  const families = [...new Set(shared.map(g => normalize(g.category)))].sort();
+  family.replaceChildren(...families.map(c => new Option(c, c)));
+  family.value = normalize(shared[0].category);
+  let choices = [], expanded = false;
+  function draw() {
+    const group = choices[picker.selectedIndex];
+    const members = [...group.members].sort(([a],[b]) => names[a].localeCompare(names[b]));
+    el("shared-head").textContent = group.label + " in " + members.length + " collections";
+    wall.replaceChildren();
+    for (const [slug, counts] of expanded ? members : members.slice(0,6)) {
+      const example = examples.get(JSON.stringify([slug, normalize(group.category), normalize(group.label)]));
+      const tile = node("figure"), caption = node("figcaption"), img = node("img");
+      img.alt = ""; img.loading = "lazy";
+      if (example) {
+        const asset = link("", example.url);
+        asset.setAttribute("aria-label", "View " + names[slug] + " example on OpenSea");
+        img.src = example.image;
+        asset.append(img); tile.append(asset);
+      } else if (data.portraits[slug]) {
+        img.src = data.portraits[slug]; tile.append(img);
+      }
+      caption.append(node("strong", names[slug]), node("span", counts.map(fmt).join(" / ") + " NFTs"),
+        node("small", example ? "Trait example" : "Collection portrait"));
+      tile.append(caption); wall.append(tile);
+    }
+    const more = el("shared-more");
+    more.hidden = members.length <= 6;
+    more.textContent = expanded ? "Show first six" : "Show all " + members.length + " collections";
+    more.setAttribute("aria-expanded", String(expanded));
+  }
+  function chooseFamily() {
+    choices = shared.filter(g => normalize(g.category) === family.value);
+    picker.replaceChildren(...choices.map(g => new Option(g.label + " (" + g.members.size + ")")));
+    expanded = false; draw();
+  }
+  for (const category of ["background", "mouth", "eyes"]) {
+    const pick = shared.find(g => normalize(g.category) === category);
+    if (!pick) continue;
+    const button = node("button", pick.label + " · " + pick.members.size + " collections");
+    button.type = "button";
+    button.onclick = () => {
+      family.value = category;
+      chooseFamily();
+      picker.selectedIndex = choices.indexOf(pick);
+      draw();
+    };
+    el("trait-picks").append(button);
+  }
+  family.onchange = chooseFamily;
+  picker.onchange = () => { expanded = false; draw(); };
+  el("shared-more").onclick = () => { expanded = !expanded; draw(); };
+  chooseFamily();
+}
+
       const data = JSON.parse(document.getElementById("data").textContent),
   names = data.names;
 const el = (id) => document.getElementById(id),
@@ -2259,6 +2374,8 @@ function render() {
   }
   if (tab === "traits") {
     el("art").value = s;
+    if (!el("shared-category").options.length) initSharedTraits();
+    if (location.hash.startsWith("#traits/")) el("collection-traits").open = true;
     traits(s);
   }
 }

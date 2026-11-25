@@ -12,7 +12,7 @@ PAGES = {
         ("overlap.csv", "coverage.csv"),
     ),
     "traits": (
-        "NFT trait frequencies and listing floors | Census",
+        "Shared NFT traits across collections | Census",
         "Traits",
         ("traits.csv", "backgrounds.csv"),
     ),
@@ -44,7 +44,7 @@ def descriptions(data):
     return {
         "home": f"Explore holder overlap across {len(names)} Ethereum NFT collections, trait frequencies and listing floors, and onchain holding histories. Field studies by Ryan Ghods.",
         "overlap": f"Across {len(data['pairs']):,} NFT collection pairs, {names[strongest['a']]} and {names[strongest['b']]} share the most holder addresses ({strongest['shared']:,}).",
-        "traits": f"Explore {traits:,} text trait values across {len(names)} Ethereum NFT collections. Compare rare and common traits, listed ETH floors, and illustrated backgrounds.",
+        "traits": f"Explore {traits:,} text trait values across {len(names)} Ethereum NFT collections. Find the background colors, expressions and accessories that turn up in more than one collection.",
         "hands": f"Of {sum(series['supply'] for series in holds):,} verified tokens across {' and '.join(series['name'] for series in holds)}, {sum(r['continuous'] for series in holds for r in series['rows'])} have stayed at their mint-recipient address continuously.",
     }
 

@@ -28,7 +28,7 @@ const studies = [
             ),
           0,
         ),
-      ) + " text trait values, ranked by frequency and listed floor.",
+      ) + " text trait values. Find the colors and expressions collections share.",
     art: palettePrint,
   },
   {

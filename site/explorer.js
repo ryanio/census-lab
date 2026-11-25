@@ -366,6 +366,8 @@ function render() {
   }
   if (tab === "traits") {
     el("art").value = s;
+    if (!el("shared-category").options.length) initSharedTraits();
+    if (location.hash.startsWith("#traits/")) el("collection-traits").open = true;
     traits(s);
   }
 }

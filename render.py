@@ -7,6 +7,7 @@ import json
 from html import escape
 from pathlib import Path
 
+from stories import holds_story, overlap_story
 from discovery import PAGES, ROOT, descriptions, metadata, page_path
 
 HOLD_COLLECTIONS = {"autoglyphs": "Autoglyphs", "deafbeef": "DEAFBEEF"}
@@ -59,6 +60,8 @@ def render(directory, entry="home", base=ROOT):
         "traits": trait_index,
     }
     page = (SITE / "template.html").read_text()
+    page = page.replace("<!--__OVERLAP_STORY__-->", overlap_story(snapshot))
+    page = page.replace("<!--__HOLDS_STORY__-->", holds_story(snapshot))
     summaries = descriptions(snapshot)
     page = page.replace(
         "<!--__METADATA__-->", metadata(entry, snapshot, base, summaries[entry])
@@ -77,6 +80,7 @@ def render(directory, entry="home", base=ROOT):
         ("STYLE", "publication.css"),
         ("COVER", "cover.js"),
         ("ATLAS", "atlas.js"),
+        ("SHARED_TRAITS", "shared-traits.js"),
         ("EXPLORER", "explorer.js"),
     ]:
         page = page.replace(f"/*__{marker}__*/", (SITE / source).read_text())
