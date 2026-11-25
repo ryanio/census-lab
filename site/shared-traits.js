@@ -2,8 +2,14 @@
 function initSharedTraits() {
   const groups = new Map();
   const normalize = (text) => text.trim().toLowerCase();
-  const examples = new Map(data.colors.filter((r) => r.image && r.url).map((r) =>
-    [JSON.stringify([r.slug, normalize(r.category), normalize(r.value)]), r]));
+  const examples = new Map();
+  for (const [slug, tokens] of Object.entries(data.traitExamples)) {
+    for (const token of tokens) {
+      for (const [category, value] of token.traits) {
+        examples.set(JSON.stringify([slug, category, value]), token);
+      }
+    }
+  }
   for (const [slug, categories] of Object.entries(data.traits)) {
     for (const [category, values] of Object.entries(categories)) {
       for (const [label, count] of values) {
@@ -41,18 +47,21 @@ function initSharedTraits() {
     wall.replaceChildren();
     for (const [slug, counts] of expanded ? members : members.slice(0,6)) {
       const example = examples.get(JSON.stringify([slug, normalize(group.category), normalize(group.label)]));
-      const tile = node("figure"), caption = node("figcaption"), img = node("img");
-      img.alt = ""; img.loading = "lazy";
+      const tile = node("figure"), caption = node("figcaption");
       if (example) {
-        const asset = link("", example.url);
-        asset.setAttribute("aria-label", "View " + names[slug] + " example on OpenSea");
+        const tokenName = names[slug] + " #" + example.token;
+        const asset = link("", example.url), img = node("img");
+        img.alt = tokenName + " (" + group.category + ": " + group.label + ")";
+        img.loading = "lazy";
+        img.onerror = () => asset.replaceChildren(node("span", "View artwork on OpenSea"));
         img.src = example.image;
-        asset.append(img); tile.append(asset);
-      } else if (data.portraits[slug]) {
-        img.src = data.portraits[slug]; tile.append(img);
+        asset.append(img);
+        tile.append(asset);
+        caption.append(node("strong", names[slug]), link("#" + example.token, example.url));
+      } else {
+        caption.append(node("strong", names[slug]), node("small", "Example unavailable"));
       }
-      caption.append(node("strong", names[slug]), node("span", counts.map(fmt).join(" / ") + " NFTs"),
-        node("small", example ? "Trait example" : "Collection portrait"));
+      caption.append(node("span", counts.map(fmt).join(" / ") + " NFTs"));
       tile.append(caption); wall.append(tile);
     }
     const more = el("shared-more");

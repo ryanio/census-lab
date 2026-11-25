@@ -50,7 +50,9 @@ def render(directory, entry="home", base=ROOT):
     for slug, name in HOLD_COLLECTIONS.items():
         series = json.loads((directory / f"{slug}.json").read_text())
         holdings[slug] = {"name": name, **series}
+    examples = directory / "trait-examples.json"
     snapshot = {
+        "traitExamples": json.loads(examples.read_text()) if examples.exists() else {},
         "portraits": portraits,
         "edition": directory.name,
         "names": {slug: names[slug] for slug in cohort},

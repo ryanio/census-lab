@@ -1035,7 +1035,8 @@ nav .icon {
 #shared-head { font: 400 clamp(24px,3vw,38px)/1.1 var(--display); margin-block: 22px 14px; }
 #trait-wall { display: grid; grid-template-columns: repeat(auto-fill,minmax(min(100%,145px),1fr)); gap: 18px 12px; }
 #trait-wall figure { min-width: 0; }
-#trait-wall img { width: 100%; display: block; aspect-ratio: 1; object-fit: cover; border-radius: 3px; background: #dfbc9e; }
+#trait-wall figure > a { display: grid; place-items: center; aspect-ratio: 1; background: #dfbc9e; border-radius: 3px; }
+#trait-wall img { width: 100%; display: block; aspect-ratio: 1; object-fit: contain; border-radius: 3px; background: #dfbc9e; }
 #trait-wall figcaption { margin-top: 6px; line-height: 1.35; overflow-wrap: anywhere; }
 #trait-wall small { color: var(--muted); }
 #shared-more { margin-top: 18px; }
