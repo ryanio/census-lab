@@ -2056,17 +2056,21 @@ function initSharedTraits() {
     expanded = false;
     draw();
   }
+  function browse(group) {
+    selectGroup(group);
+    explore("traits", "browse_trait");
+  }
   for (const [category, label] of [["mouth", "tongue out"], ["eyes", "3d glasses"], ["head", "halo"]]) {
     const pick = groups.get(JSON.stringify([category, label]));
     if (!pick || pick.members.size < 2) continue;
     const button = node("button", pick.label);
     button.type = "button";
-    button.onclick = () => selectGroup(pick);
+    button.onclick = () => browse(pick);
     shortcuts.set(pick, button);
     el("trait-shuffle").before(button);
   }
   function step(offset) {
-    selectGroup(choices[(picker.selectedIndex + offset + choices.length) % choices.length]);
+    browse(choices[(picker.selectedIndex + offset + choices.length) % choices.length]);
   }
   el("trait-prev").onclick = () => step(-1);
   el("trait-next").onclick = () => step(1);
@@ -2074,10 +2078,10 @@ function initSharedTraits() {
   el("trait-shuffle").onclick = () => {
     const current = shared.indexOf(choices[picker.selectedIndex]);
     const offset = 1 + Math.floor(Math.random() * (shared.length - 1));
-    selectGroup(shared[(current + offset) % shared.length]);
+    browse(shared[(current + offset) % shared.length]);
   };
-  family.onchange = () => selectGroup(shared.find(g => normalize(g.category) === family.value));
-  picker.onchange = () => selectGroup(choices[picker.selectedIndex]);
+  family.onchange = () => browse(shared.find(g => normalize(g.category) === family.value));
+  picker.onchange = () => browse(choices[picker.selectedIndex]);
   el("shared-more").onclick = () => { expanded = !expanded; draw(); };
   el("shuffle-pfps").onclick = () => {
     const group = choices[picker.selectedIndex];
@@ -2098,6 +2102,7 @@ function initSharedTraits() {
     }
     draw();
     el("lineup-status").textContent = "PFPs shuffled";
+    explore("traits", "shuffle_lineup");
   };
   el("save-lineup").onclick = async () => {
     const save = el("save-lineup");
@@ -2159,7 +2164,7 @@ function initSharedTraits() {
     const card = data.lineupCards[JSON.stringify([normalize(group.category), normalize(group.label)])];
     const matching = card?.rounds.find(round => round.ids.every((id, i) => id === lineup.get(card.slugs[i])?.token));
     const preview = matching && new URL("lineups/" + matching.path + (expanded && card.slugs.length > 6 ? "/all/" : "/"), url);
-    copyStudyLink(preview || url, el("lineup-status"));
+    copyStudyLink(preview || url, el("lineup-status"), "traits");
   };
   const query = new URLSearchParams(location.search);
   const requested = groups.get(JSON.stringify([query.get("category"), query.get("trait")]));
@@ -2204,10 +2209,11 @@ function studyURL(tab, slug) {
 function editionURL(tab) {
   return new URL("https://ryanio.github.io/census-lab/editions/" + data.edition + "/" + tab + ".html");
 }
-async function copyStudyLink(url, status) {
+async function copyStudyLink(url, status, study) {
   try {
     await navigator.clipboard.writeText(url.href);
     status.textContent = "Link copied";
+    trackEvent("share", study, {method: "copy_link", content_type: "study", item_id: study});
   } catch {
     const field = node("input");
     field.readOnly = true;
@@ -2222,10 +2228,11 @@ for (const button of document.querySelectorAll("[data-share-study]")) {
     const tab = button.dataset.shareStudy;
     const url = editionURL(tab);
     url.hash = tab + "/" + el(tab === "overlap" ? "community" : "hold-series").value;
-    copyStudyLink(url, button.nextElementSibling);
+    copyStudyLink(url, button.nextElementSibling, tab);
   };
 }
 function navigate(tab, slug) {
+  explore(tab, "switch_collection");
   location.href = studyURL(tab, slug);
 }
 function getPairs(s) {
@@ -2302,6 +2309,7 @@ function map(s) {
         const tr = node("tr"),
           cell = node("td"),
           a = link(names[r.other], studyURL("overlap", r.other));
+        a.addEventListener("click", () => explore("overlap", "switch_collection"));
         cell.append(a);
         tr.append(
           cell,
@@ -2583,22 +2591,26 @@ function startAnalytics() {
   script.async = true;
   script.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
   document.head.append(script);
-  let referrer = document.referrer;
-  return (tab) => {
-    const url = new URL(location.href);
-    url.hash = "";
-    gtag("event", "page_view", {
-      page_title: el(tab)
-        .querySelector("h1")
-        .innerText.replace(/\s+/g, " ")
-        .trim(),
-      page_location: url.href,
-      page_referrer: referrer,
-    });
-    referrer = url.href;
+  return (event, study, params) => {
+    gtag("event", event, { content_group: study, ...params });
   };
 }
-const trackEdition = startAnalytics();
+const trackEvent = startAnalytics();
+function explore(study, action) {
+  trackEvent("study_explore", study, { study_action: action });
+}
+let referrer = document.referrer;
+function trackEdition(tab) {
+  const url = new URL(location.href);
+  url.hash = "";
+  trackEvent("page_view", tab, {
+    page_title: el(tab).querySelector("h1").innerText.replace(/\s+/g, " ").trim(),
+    page_location: url.href,
+    page_referrer: referrer,
+  });
+  referrer = url.href;
+}
+el("holds-download").addEventListener("click", () => explore("hands", "download_csv"));
 let lastTab = "";
 window.addEventListener("hashchange", () => {
   render();

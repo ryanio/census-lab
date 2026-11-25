@@ -99,17 +99,21 @@ function initSharedTraits() {
     expanded = false;
     draw();
   }
+  function browse(group) {
+    selectGroup(group);
+    explore("traits", "browse_trait");
+  }
   for (const [category, label] of [["mouth", "tongue out"], ["eyes", "3d glasses"], ["head", "halo"]]) {
     const pick = groups.get(JSON.stringify([category, label]));
     if (!pick || pick.members.size < 2) continue;
     const button = node("button", pick.label);
     button.type = "button";
-    button.onclick = () => selectGroup(pick);
+    button.onclick = () => browse(pick);
     shortcuts.set(pick, button);
     el("trait-shuffle").before(button);
   }
   function step(offset) {
-    selectGroup(choices[(picker.selectedIndex + offset + choices.length) % choices.length]);
+    browse(choices[(picker.selectedIndex + offset + choices.length) % choices.length]);
   }
   el("trait-prev").onclick = () => step(-1);
   el("trait-next").onclick = () => step(1);
@@ -117,10 +121,10 @@ function initSharedTraits() {
   el("trait-shuffle").onclick = () => {
     const current = shared.indexOf(choices[picker.selectedIndex]);
     const offset = 1 + Math.floor(Math.random() * (shared.length - 1));
-    selectGroup(shared[(current + offset) % shared.length]);
+    browse(shared[(current + offset) % shared.length]);
   };
-  family.onchange = () => selectGroup(shared.find(g => normalize(g.category) === family.value));
-  picker.onchange = () => selectGroup(choices[picker.selectedIndex]);
+  family.onchange = () => browse(shared.find(g => normalize(g.category) === family.value));
+  picker.onchange = () => browse(choices[picker.selectedIndex]);
   el("shared-more").onclick = () => { expanded = !expanded; draw(); };
   el("shuffle-pfps").onclick = () => {
     const group = choices[picker.selectedIndex];
@@ -141,6 +145,7 @@ function initSharedTraits() {
     }
     draw();
     el("lineup-status").textContent = "PFPs shuffled";
+    explore("traits", "shuffle_lineup");
   };
   el("save-lineup").onclick = async () => {
     const save = el("save-lineup");
@@ -202,7 +207,7 @@ function initSharedTraits() {
     const card = data.lineupCards[JSON.stringify([normalize(group.category), normalize(group.label)])];
     const matching = card?.rounds.find(round => round.ids.every((id, i) => id === lineup.get(card.slugs[i])?.token));
     const preview = matching && new URL("lineups/" + matching.path + (expanded && card.slugs.length > 6 ? "/all/" : "/"), url);
-    copyStudyLink(preview || url, el("lineup-status"));
+    copyStudyLink(preview || url, el("lineup-status"), "traits");
   };
   const query = new URLSearchParams(location.search);
   const requested = groups.get(JSON.stringify([query.get("category"), query.get("trait")]));

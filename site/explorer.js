@@ -32,10 +32,11 @@ function studyURL(tab, slug) {
 function editionURL(tab) {
   return new URL("https://ryanio.github.io/census-lab/editions/" + data.edition + "/" + tab + ".html");
 }
-async function copyStudyLink(url, status) {
+async function copyStudyLink(url, status, study) {
   try {
     await navigator.clipboard.writeText(url.href);
     status.textContent = "Link copied";
+    trackEvent("share", study, {method: "copy_link", content_type: "study", item_id: study});
   } catch {
     const field = node("input");
     field.readOnly = true;
@@ -50,10 +51,11 @@ for (const button of document.querySelectorAll("[data-share-study]")) {
     const tab = button.dataset.shareStudy;
     const url = editionURL(tab);
     url.hash = tab + "/" + el(tab === "overlap" ? "community" : "hold-series").value;
-    copyStudyLink(url, button.nextElementSibling);
+    copyStudyLink(url, button.nextElementSibling, tab);
   };
 }
 function navigate(tab, slug) {
+  explore(tab, "switch_collection");
   location.href = studyURL(tab, slug);
 }
 function getPairs(s) {
@@ -130,6 +132,7 @@ function map(s) {
         const tr = node("tr"),
           cell = node("td"),
           a = link(names[r.other], studyURL("overlap", r.other));
+        a.addEventListener("click", () => explore("overlap", "switch_collection"));
         cell.append(a);
         tr.append(
           cell,
@@ -411,22 +414,26 @@ function startAnalytics() {
   script.async = true;
   script.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
   document.head.append(script);
-  let referrer = document.referrer;
-  return (tab) => {
-    const url = new URL(location.href);
-    url.hash = "";
-    gtag("event", "page_view", {
-      page_title: el(tab)
-        .querySelector("h1")
-        .innerText.replace(/\s+/g, " ")
-        .trim(),
-      page_location: url.href,
-      page_referrer: referrer,
-    });
-    referrer = url.href;
+  return (event, study, params) => {
+    gtag("event", event, { content_group: study, ...params });
   };
 }
-const trackEdition = startAnalytics();
+const trackEvent = startAnalytics();
+function explore(study, action) {
+  trackEvent("study_explore", study, { study_action: action });
+}
+let referrer = document.referrer;
+function trackEdition(tab) {
+  const url = new URL(location.href);
+  url.hash = "";
+  trackEvent("page_view", tab, {
+    page_title: el(tab).querySelector("h1").innerText.replace(/\s+/g, " ").trim(),
+    page_location: url.href,
+    page_referrer: referrer,
+  });
+  referrer = url.href;
+}
+el("holds-download").addEventListener("click", () => explore("hands", "download_csv"));
 let lastTab = "";
 window.addEventListener("hashchange", () => {
   render();
